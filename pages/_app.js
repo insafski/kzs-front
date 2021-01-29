@@ -22,26 +22,28 @@ const MyApp = ({ Component, pageProps }) => {
   }
   const { metadata } = global;
 
+  console.log("metadata", metadata);
+
   return (
     <>
       {/* Favicon */}
       <Head>
-        <link rel="shortcut icon" href={getStrapiMedia(global.favicon.url)} />
+        {/* <link rel="shortcut icon" href={getStrapiMedia(global.favicon.url)} /> */}
       </Head>
       {/* Global site metadata */}
       <DefaultSeo
         titleTemplate={`%s | ${global.metaTitleSuffix}`}
         title={"Page"}
         description={metadata.metaDescription}
-        openGraph={{
-          images: Object.values(metadata.shareImage.formats).map((image) => {
-            return {
-              url: getStrapiMedia(image.url),
-              width: image.width,
-              height: image.height,
-            };
-          }),
-        }}
+        // openGraph={{
+        //   images: Object.values(metadata.shareImage.formats).map((image) => {
+        //     return {
+        //       url: getStrapiMedia(image.url),
+        //       width: image.width,
+        //       height: image.height,
+        //     };
+        //   }),
+        // }}
         twitter={{
           cardType: metadata.twitterCardType,
           handle: metadata.twitterUsername,

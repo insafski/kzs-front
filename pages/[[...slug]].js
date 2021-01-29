@@ -4,6 +4,8 @@ import Sections from "@/components/sections";
 import Seo from "@/components/elements/seo";
 import { useRouter } from "next/dist/client/router";
 
+import data from "data";
+
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
@@ -30,9 +32,10 @@ const DynamicPage = ({ sections, metadata, preview }) => {
   );
 };
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   // Get all pages from Strapi
-  const pages = await (await fetch(getStrapiURL("/pages"))).json();
+  // const pages = await (await fetch(getStrapiURL("/pages"))).json();
+  const pages = data.pages;
   const paths = pages.map((page) => {
     // Decompose the slug that was saved in Strapi
     const slugArray = page.slug.split("__");

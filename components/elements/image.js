@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { mediaPropTypes } from "utils/types";
 
 const Image = ({ media, className }) => {
-  const { url, alternativeText } = media;
-  const fullUrl = getStrapiMedia(url);
+  // const { url, alternativeText } = media;
+  // const fullUrl = getStrapiMedia(url);
 
-  return (
-    <img src={fullUrl} alt={alternativeText || ""} className={className} />
-  );
+  // return (
+  //   <img src={fullUrl} alt={alternativeText || ""} className={className} />
+  // );
+  return null
 };
 
 Image.propTypes = {

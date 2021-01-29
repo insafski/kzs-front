@@ -1,4 +1,7 @@
+import { global as ss} from "data";
+
 export function getStrapiURL(path) {
+  console.log(121)
   return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
 }
 
@@ -26,7 +29,9 @@ export async function getPageData(slug, preview = false) {
 }
 
 // Get site data from Strapi (metadata, navbar, footer...)
-export async function getGlobalData() {
-  const global = await fetchAPI("/global");
+export function getGlobalData() {
+  // const global = await fetchAPI("/global");
+
+  const global = ss;
   return global;
 }
