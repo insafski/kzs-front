@@ -8,6 +8,9 @@ import TestimonialsGroup from "@/components/sections/testimonials-group";
 import RichText from "./sections/rich-text";
 import Pricing from "./sections/pricing";
 
+
+// import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+
 // Map Strapi sections to section components
 const sectionComponents = {
   "sections.hero": Hero,
@@ -57,17 +60,28 @@ const PreviewModeBanner = () => {
 // Display the list of sections
 const Sections = ({ sections, preview }) => {
   return (
-    <div className="flex flex-col">
-      {/* Show a banner if preview mode is on */}
-      {preview && <PreviewModeBanner />}
-      {/* Show the actual sections */}
-      {sections.map((section) => (
-        <Section
-          sectionData={section}
-          key={`${section.__component}${section.id}`}
-        />
-      ))}
-    </div>
+      <div className="flex flex-col">
+          {/* Show a banner if preview mode is on */}
+          {preview && <PreviewModeBanner />}
+          {/* Show the actual sections */}
+          {/* <Parallax
+              pages={3}
+              scrolling={false}
+              horizontal
+              ref={(ref) => (this.parallax = ref)}
+          > */}
+              {sections.map((section) => (
+                  // <ParallaxLayer offset={0} speed={0.5}>
+                      // <span onClick={() => this.parallax.scrollTo(1)}>
+                          <Section
+                              sectionData={section}
+                              key={`${section.__component}${section.id}`}
+                          />
+                      // </span>
+                  // </ParallaxLayer>
+              ))}
+          {/* </Parallax> */}
+      </div>
   );
 };
 

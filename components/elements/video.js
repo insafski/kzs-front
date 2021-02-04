@@ -19,7 +19,7 @@ const Video = ({
       controls={controls}
       autoPlay={autoPlay}
     >
-      <source src={fullVideoUrl} type={media.mime} />
+      {/* <source src={fullVideoUrl} type={media.mime} /> */}
     </video>
   );
 };

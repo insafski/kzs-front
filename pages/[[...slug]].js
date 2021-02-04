@@ -36,9 +36,9 @@ export function getStaticPaths() {
   // Get all pages from Strapi
   // const pages = await (await fetch(getStrapiURL("/pages"))).json();
   const pages = data.pages;
-  const paths = pages.map((page) => {
+  const paths = Object.entries(pages).map((page) => {
     // Decompose the slug that was saved in Strapi
-    const slugArray = page.slug.split("__");
+    const slugArray = data.pageList;
     return {
       params: { slug: slugArray },
     };

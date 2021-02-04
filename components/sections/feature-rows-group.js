@@ -31,11 +31,11 @@ const FeatureRowsGroup = ({ data }) => {
           {/* Media section */}
           <div className="w-full sm:9/12 lg:w-4/12 max-h-full">
             {/* Images */}
-            {feature.media.mime.startsWith("image") && (
+            {feature.media?.mime.startsWith("image") && (
               <Image media={feature.media} className="w-full h-auto" />
             )}
             {/* Videos */}
-            {feature.media.mime.startsWith("video") && (
+            {feature.media?.mime.startsWith("video") && (
               <Video
                 media={feature.media}
                 className="w-full h-auto"
