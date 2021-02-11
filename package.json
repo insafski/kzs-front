@@ -38,17 +38,5 @@
 		"postcss-preset-env": "^6.7.0",
 		"prettier": "^2.2.1",
 		"tailwindcss": "^1.4.6"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js}": [
-			"eslint --fix",
-			"prettier --write",
-			"git add -A"
-		]
 	}
 }

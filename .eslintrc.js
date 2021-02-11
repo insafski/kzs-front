@@ -1,5 +1,5 @@
 module.exports = {
-	settings: {
+	"settings": {
 		ecmascript: 6,
 		react: {
 			version: "detect",
@@ -8,24 +8,24 @@ module.exports = {
 			onlyFilesWithFlowAnnotation: false,
 		},
 	},
-	env: {
+	"env": {
 		browser: true,
 		es6: true,
 		node: true,
 		jest: true,
-		es2021: true
+		es2021: true,
 	},
-	extends: [
+	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
-		"prettier"
+		"prettier",
 	],
-	globals: {
+	"globals": {
 		__: false,
 		__DEV__: false,
 	},
-	parser: "babel-eslint",
-	parserOptions: {
+	"parser": "babel-eslint",
+	"parserOptions": {
 		allowImportExportEverywhere: true,
 		ecmaVersion: 2018,
 		sourceType: "module",
@@ -33,11 +33,11 @@ module.exports = {
 			jsx: true,
 		},
 	},
-	rules: {
+	"rules": {
 		"no-compare-neg-zero": "error",
 		"no-cond-assign": [
 			"error",
-			"always"
+			"always",
 		],
 		"no-console": "off",
 		"no-constant-condition": "warn",
@@ -53,8 +53,7 @@ module.exports = {
 		"no-extra-parens": [
 			2,
 			"all",
-			{ ignoreJSX: "all"
-			}
+			{ ignoreJSX: "all" },
 		],
 		"no-extra-semi": "error",
 		"no-func-assign": "error",
@@ -84,20 +83,19 @@ module.exports = {
 		"class-methods-use-this": [
 			"error",
 			{ exceptMethods: [
-					"render"
-				]
-			}
+				"render",
+			] },
 		],
-		complexity: "off",
+		"complexity": "off",
 		"consistent-return": "error",
-		curly: [
+		"curly": [
 			"error",
-			"all"
+			"all",
 		],
 		"default-case": "error",
 		"dot-location": [
 			"error",
-			"property"
+			"property",
 		],
 		"dot-notation": [
 			"error",
@@ -105,11 +103,11 @@ module.exports = {
 				allowKeywords: true,
 			},
 		],
-		eqeqeq: [
+		"eqeqeq": [
 			"error",
 			"always",
 			{
-				null: "ignore",
+				"null": "ignore",
 			},
 		],
 		"guard-for-in": "error",
@@ -124,7 +122,7 @@ module.exports = {
 				allow: [
 					"arrowFunctions",
 					"functions",
-					"methods"
+					"methods",
 				],
 			},
 		],
@@ -174,7 +172,7 @@ module.exports = {
 		"no-warning-comments": "off",
 		"no-with": "error",
 		"prefer-promise-reject-errors": "off",
-		radix: "error",
+		"radix": "error",
 		"require-await": "off",
 		"vars-on-top": "error",
 		"wrap-iife": [
@@ -184,10 +182,10 @@ module.exports = {
 				functionPrototypeMethods: false,
 			},
 		],
-		yoda: "error",
-		strict: [
+		"yoda": "error",
+		"strict": [
 			"error",
-			"never"
+			"never",
 		],
 		"init-declarations": "off",
 		"no-catch-shadow": "off",
@@ -220,11 +218,11 @@ module.exports = {
 		"no-sync": "off",
 		"array-bracket-spacing": [
 			"error",
-			"never"
+			"never",
 		],
 		"block-spacing": [
 			"error",
-			"always"
+			"always",
 		],
 		"brace-style": [
 			"error",
@@ -233,11 +231,11 @@ module.exports = {
 				allowSingleLine: false,
 			},
 		],
-		camelcase: 0, // FIXME:
+		"camelcase": 0, // FIXME:
 		"capitalized-comments": "off",
 		"comma-dangle": [
 			"error",
-			"always-multiline"
+			"always-multiline",
 		],
 		"comma-spacing": [
 			"error",
@@ -248,20 +246,20 @@ module.exports = {
 		],
 		"comma-style": [
 			"error",
-			"last"
+			"last",
 		],
 		"computed-property-spacing": [
 			"error",
-			"never"
+			"never",
 		],
 		"consistent-this": "off",
 		"eol-last": [
 			"error",
-			"always"
+			"always",
 		],
 		"func-call-spacing": [
 			"error",
-			"never"
+			"never",
 		],
 		"func-name-matching": "off",
 		"func-names": "warn",
@@ -269,7 +267,7 @@ module.exports = {
 		"id-blacklist": "off",
 		"id-length": "off",
 		"id-match": "off",
-		indent: [
+		"indent": [
 			"error",
 			"tab",
 			{
@@ -278,7 +276,7 @@ module.exports = {
 		],
 		"jsx-quotes": [
 			"error",
-			"prefer-double"
+			"prefer-double",
 		],
 		"key-spacing": [
 			"error",
@@ -297,7 +295,7 @@ module.exports = {
 		"line-comment-position": "off",
 		"linebreak-style": [
 			"error",
-			"unix"
+			"unix",
 		],
 		"lines-around-comment": "off",
 		"lines-around-directive": [
@@ -374,25 +372,25 @@ module.exports = {
 		],
 		"object-curly-spacing": [
 			1,
-			"always"
+			"always",
 		],
 		"object-property-newline": "error",
 		"one-var": [
 			"error",
-			"never"
+			"never",
 		],
 		"one-var-declaration-per-line": [
 			"error",
-			"always"
+			"always",
 		],
 		"operator-assignment": [
 			"error",
-			"always"
+			"always",
 		],
 		"operator-linebreak": "off",
 		"padded-blocks": [
 			"error",
-			"never"
+			"never",
 		],
 		"quote-props": [
 			"error",
@@ -403,7 +401,7 @@ module.exports = {
 				numbers: true,
 			},
 		],
-		quotes: [
+		"quotes": [
 			"error",
 			"double",
 			{
@@ -411,9 +409,9 @@ module.exports = {
 			},
 		],
 		"require-jsdoc": "off",
-		semi: [
+		"semi": [
 			"error",
-			"always"
+			"always",
 		],
 		"semi-spacing": [
 			"error",
@@ -435,7 +433,7 @@ module.exports = {
 		],
 		"space-in-parens": [
 			"error",
-			"never"
+			"never",
 		],
 		"space-infix-ops": "error",
 		"space-unary-ops": [
@@ -452,21 +450,21 @@ module.exports = {
 				line: {
 					exceptions: [
 						"-",
-						"+"
+						"+",
 					],
 					markers: [
 						"=",
-						"!"
+						"!",
 					],
 				},
 				block: {
 					exceptions: [
 						"-",
-						"+"
+						"+",
 					],
 					markers: [
 						"=",
-						"!"
+						"!",
 					],
 					balanced: false,
 				},
@@ -475,13 +473,13 @@ module.exports = {
 		"template-tag-spacing": "off",
 		"unicode-bom": [
 			"error",
-			"never"
+			"never",
 		],
 		"wrap-regex": "off",
 		"arrow-body-style": "off",
 		"arrow-parens": [
 			"error",
-			"as-needed"
+			"as-needed",
 		],
 		"arrow-spacing": [
 			"error",
@@ -539,24 +537,24 @@ module.exports = {
 		"require-yield": "error",
 		"rest-spread-spacing": [
 			"error",
-			"never"
+			"never",
 		],
 		"sort-imports": "off",
 		"symbol-description": "error",
 		"template-curly-spacing": [
 			"error",
-			"never"
+			"never",
 		],
 		"yield-star-spacing": [
 			"error",
-			"after"
+			"after",
 		],
 		"react/react-in-jsx-scope": 1,
 		"react/jsx-uses-react": "error",
 		"react/jsx-uses-vars": "error",
 		"react/require-render-return": 1,
 	},
-	plugins: [
-		"prettier"
+	"plugins": [
+		"prettier",
 	],
 };
