@@ -1,0 +1,5 @@
+build/**/*.js
+src/**/*.spec.js
+src/**/*.test.js
+scripts/**/*.*
+config/**/*.*
