@@ -8,9 +8,8 @@ import { DefaultSeo } from "next-seo";
 // import { getStrapiMedia } from "utils/media";
 import { /* getStrapiURL,  */getGlobalData } from "utils/api";
 
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import "@/styles/index.css";
-
 export default function App2dget({ Component, pageProps }) {
 	// Prevent Next bug when it tries to render the [[...slug]] route
 	const router = useRouter();
@@ -54,7 +53,6 @@ export default function App2dget({ Component, pageProps }) {
 					handle: metadata.twitterUsername,
 				}}
 			/>
-			{/* Display the content */}
 			<Layout global={global}>
 				<Component {...pageProps} />
 			</Layout>

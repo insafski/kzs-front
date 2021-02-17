@@ -1,37 +1,40 @@
-import Image from "./image";
+import React from "react";
 import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
-import CustomLink from "./custom-link";
 
-const Footer = ({ footer }) => {
+import Image from "../../elements/Image";
+
+export default function Footer({ footer }) {
 	return (
 		<footer className="pt-12 bg-gray-100">
 			<div className="container flex flex-col lg:flex-row lg:justify-between">
 				<div>
-					{footer.logo && (
-						<Image media={footer.logo} className="h-8 w-auto object-contain" />
-					)}
+					{
+						footer.logo && (
+							<Image media={footer.logo} className="h-8 w-auto object-contain" />
+						)
+					}
 				</div>
 				<nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
-					{footer.columns.map(footerColumn => (
-						<div
-							key={footerColumn.id}
-							className="mt-10 lg:mt-0 w-6/12 lg:w-auto"
-						>
-							<p className="uppercase tracking-wide font-semibold">
-								{footerColumn.title}
-							</p>
-							<ul className="mt-2">
-								{footerColumn.links.map(link => (
-									<li key={link.id} className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900">
-										<CustomLink link={link}>
+					{
+						footer.columns.map(footerColumn => (
+							<div
+								key={footerColumn.id}
+								className="mt-10 lg:mt-0 w-6/12 lg:w-auto"
+							>
+								<p className="uppercase tracking-wide font-semibold">
+									{footerColumn.title}
+								</p>
+								<ul className="mt-2">
+									{footerColumn.links.map(link => (
+										<li key={link.id} className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900">
 											{link.text}
-										</CustomLink>
-									</li>
-								))}
-							</ul>
-						</div>
-					))}
+										</li>
+									))}
+								</ul>
+							</div>
+						))
+					}
 				</nav>
 			</div>
 			<div className="text-sm bg-gray-200 py-6 text-gray-700">
@@ -39,7 +42,7 @@ const Footer = ({ footer }) => {
 			</div>
 		</footer>
 	);
-};
+}
 
 Footer.propTypes = {
 	footer: PropTypes.shape({
@@ -55,5 +58,3 @@ Footer.propTypes = {
 		smallText: PropTypes.string.isRequired,
 	}),
 };
-
-export default Footer;
