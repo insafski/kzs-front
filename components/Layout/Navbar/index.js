@@ -1,6 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Navbar() {
+export default function Navbar({ data = {} }) {
+	console.log("navbar data", data);
+
 	return (
 		<nav>
 			<div className="max-w-7xl mx-auto">
@@ -43,3 +46,7 @@ export default function Navbar() {
 		</nav>
 	);
 }
+
+Navbar.propTypes = {
+	data: PropTypes.object,
+};
