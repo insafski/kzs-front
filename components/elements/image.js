@@ -2,6 +2,8 @@ import { getStrapiMedia } from "utils/media";
 import PropTypes from "prop-types";
 import { mediaPropTypes } from "utils/types";
 
+// FIXME: Need to fix this component
+
 const Image = ({ media, className }) => {
 	const mediaObject = media ? media : {};
 
