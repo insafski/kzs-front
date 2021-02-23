@@ -11,6 +11,7 @@ import TestimonialsGroup from "@/components/sections/testimonials-group";
 import RichText from "./sections/rich-text";
 import Pricing from "./sections/pricing";
 import Advantages from "./sections/advantages";
+import Developers from "./sections/developers";
 
 // import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
@@ -25,6 +26,7 @@ const sectionComponents = {
 	"sections.rich-text": RichText,
 	"sections.pricing": Pricing,
 	"sections.advantages": Advantages,
+	"sections.developers": Developers,
 };
 
 // Display a section individually

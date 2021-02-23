@@ -24,7 +24,7 @@ const DynamicPage = ({ sections, metadata, preview, slug }) => {
 		return <div className="container">Loading...</div>;
 	}
 
-	console.log(sections);
+	console.log("sections", sections);
 
 	return (
 		<>

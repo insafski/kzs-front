@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "../elements/image";
 import PropTypes from "prop-types";
+import Image from "../elements/image";
 
-const Advantages = ({ data }) => {
-	console.log("advantages", data);
+const Developers = ({ data }) => {
+	console.log("developers", data);
 
 	return (
 		<>
@@ -18,8 +18,6 @@ const Advantages = ({ data }) => {
 						return (
 							<div key={idx}>
 								<Image media={{ url: item.logo.url }} />
-								<p>{item.title}</p>
-								<p>{item.description}</p>
 							</div>
 						);
 					})
@@ -29,11 +27,11 @@ const Advantages = ({ data }) => {
 	);
 };
 
-Advantages.propTypes = {
+Developers.propTypes = {
 	data: PropTypes.shape({
 		title: PropTypes.string,
 		items: PropTypes.array,
 	}),
 };
 
-export default Advantages;
+export default Developers;
