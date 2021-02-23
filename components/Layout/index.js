@@ -17,7 +17,7 @@ export default function Layout({ children, global }) {
 						Интернет магазин
 					</div>
 				}
-				navbar={<Navbar />}
+				navbar={<Navbar data={global.navbar} />}
 				bottom={<div>Форма</div>}
 			/>
 			<div className="flex-1">
