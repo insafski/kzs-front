@@ -11,7 +11,7 @@ import Seo from "@/components/elements/seo";
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
-const DynamicPage = ({ sections, metadata, preview }) => {
+const DynamicPage = ({ sections, metadata, preview, slug }) => {
 	const router = useRouter();
 
 	// Check if the required data was provided
@@ -24,12 +24,19 @@ const DynamicPage = ({ sections, metadata, preview }) => {
 		return <div className="container">Loading...</div>;
 	}
 
+	console.log(sections);
+
 	return (
 		<>
 			{/* Add meta tags for SEO*/}
 			<Seo metadata={metadata} />
 			{/* Display content sections */}
 			{ sections && <Sections sections={sections} preview={preview} />}
+			{slug === "contact" && (
+				<div width={"100%"}>
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A886f655d541db893c449c7ec6e4ab1ee6bbc51500a8d7834e993042b0df2e456&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+				</div>
+			)}
 		</>
 	);
 };
@@ -38,6 +45,7 @@ DynamicPage.propTypes = {
 	sections: PropTypes.array,
 	metadata: PropTypes.object,
 	preview: PropTypes.bool,
+	slug: PropTypes.string,
 };
 
 export async function getStaticPaths() {
@@ -88,6 +96,7 @@ export async function getStaticProps({ params, preview = null }) {
 			preview,
 			sections: contentSections,
 			metadata,
+			slug: chainedSlugs,
 		},
 	};
 }

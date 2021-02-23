@@ -12,11 +12,11 @@ export default function Layout({ children, global }) {
 	return (
 		<div className="flex flex-col justify-between min-h-screen">
 			<Header
-				top={
-					<div className={"pb-2 border-b border-gray-200"}>
-						Интернет магазин
-					</div>
-				}
+				// top={
+				// 	<div className={"pb-2 border-b border-gray-200"}>
+				// 		Интернет магазин
+				// 	</div>
+				// }
 				navbar={<Navbar data={global.navbar} />}
 				bottom={<div>Форма</div>}
 			/>
