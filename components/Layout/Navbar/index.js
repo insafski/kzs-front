@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useRouter } from "next/router";
+import get from "lodash/get";
 
 export default function Navbar({ data = {} }) {
 	console.log("navbar data", data);
+
+	const { query: { slug } = {} } = useRouter();
 
 	return (
 		<nav>
@@ -22,14 +26,21 @@ export default function Navbar({ data = {} }) {
 					<div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
 						<div className="flex-shrink-0 flex items-center">
 							<img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
-							<img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+							<a href={"/"}>
+								<img className="hidden lg:block h-8 w-auto" width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} />
+
+								{/* <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" /> */}
+							</a>
+						</div>
+						<div className="flex-shrink-0 flex items-center sm:ml-5">
+							<input placeholder={"Поиск"} className={"search-input"} type={"text"} />
 						</div>
 						<div className="hidden sm:block sm:ml-6">
 							<div className="flex space-x-4">
 								{
 									data.links.map(({ url, text, id }) => {
 										return (
-											<a key={id} href={url} className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{text}</a>
+											<a key={id} href={url} className={`${get(slug, "[0]", "") === url.replace("/", "") ? "bg-gray-900 text-white font-mediumbg-gray-900 text-white" : "text-gray-700 hover:bg-gray-700 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}>{text}</a>
 										);
 									})
 								}

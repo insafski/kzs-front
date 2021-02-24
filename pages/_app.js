@@ -10,6 +10,8 @@ import { /* getStrapiURL,  */getGlobalData } from "utils/api";
 
 import Layout from "@/components/Layout";
 import "@/styles/index.css";
+import "react-image-gallery/styles/css/image-gallery.css";
+
 export default function App2dget({ Component, pageProps }) {
 	// Prevent Next bug when it tries to render the [[...slug]] route
 	const router = useRouter();
