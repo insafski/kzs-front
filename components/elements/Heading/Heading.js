@@ -4,7 +4,12 @@ import cx from "classnames";
 
 import "./Heading.scss";
 
-export default function Heading({ type, className, text, subText, underline }) {
+export default function Heading({ type, className, text, subText, subTitle, underline }) {
+	const heading = {
+		h1: "h1 md:text-5xl",
+		h2: "h2 md:text-6xl",
+	};
+
 	return (
 		<div className={cx("heading", { heading__underline: underline })}>
 			{
@@ -13,12 +18,17 @@ export default function Heading({ type, className, text, subText, underline }) {
 					{
 						className: cx(className),
 					},
-					[text],
+					text,
+				)
+			}
+			{
+				subTitle && (
+					<span className={"heading__subtitle"}>{subTitle}</span>
 				)
 			}
 			{
 				subText && (
-					<span className={"heading__sub"}>{subText}</span>
+					<span className={"heading__subtext"}>{subText}</span>
 				)
 			}
 		</div>
@@ -30,6 +40,7 @@ Heading.propTypes = {
 	className: PropTypes.string,
 	text: PropTypes.string,
 	subText: PropTypes.string,
+	subTitle: PropTypes.string,
 	underline: PropTypes.bool,
 };
 
@@ -38,6 +49,7 @@ Heading.defaultProps = {
 	className: "",
 	text: "",
 	subText: "",
+	subTitle: "",
 	underline: true,
 };
 
