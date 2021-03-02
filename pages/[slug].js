@@ -25,7 +25,7 @@ const DynamicPage = ({ sections, metadata, preview, slug }) => {
 		return <div className="container">Loading...</div>;
 	}
 
-	console.log("slug", slug);
+	// console.log("slug", slug);
 
 	return (
 		<>
@@ -59,16 +59,12 @@ DynamicPage.propTypes = {
 };
 
 export async function getStaticPaths() {
-	// Get all pages from Strapi
 	const pages = await (await fetch(getStrapiURL("/pages"))).json();
-	//   const pages = data.pages;
+	console.log(pages);
 
 	const paths = pages.map(page => {
-		// Decompose the slug that was saved in Strapi
-		const slugArray = page.slug.split("__");
-
 		return {
-			params: { slug: slugArray },
+			params: page,
 		};
 	});
 
@@ -79,35 +75,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = null }) {
-	// Find the page data for the current slug
-	let chainedSlugs;
-	if (params === {} || !params.slug) {
-		// To get the homepage, find the only page where slug is an empty string
-		chainedSlugs = "";
-	} else {
-		// Otherwise find a page with a matching slug
-		// Recompose the slug that was saved in Strapi
-		chainedSlugs = params.slug.join("__");
-	}
+	// const pages = await (await fetch(getStrapiURL("/pages"))).json();
 
-	// Fetch pages. Include drafts if preview mode is on
-	const pageData = await getPageData(chainedSlugs, preview);
-
-	if (pageData == null) {
-		// Giving the page no props will trigger a 404 page
-		return { props: {} };
-	}
-
-	// We have the required page data, pass it to the page component
-	const { contentSections = {}, metadata = {} } = pageData;
+	console.log({
+		params,
+		preview,
+	});
 
 	return {
-		props: {
-			preview,
-			sections: contentSections,
-			metadata,
-			slug: chainedSlugs,
-		},
+		props: {},
 	};
 }
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import ImageGallery from "react-image-gallery";
 
 const Developers = ({ data }) => {
-	console.log("developers", data);
+//	console.log("developers", data);
 
 	const imgs = [
 		{

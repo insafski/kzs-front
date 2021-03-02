@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children, global }) {
 	const { footer } = global;
-	console.log({ global });
+	// console.log({ global });
 
 	return (
 		<div className="flex flex-col justify-between min-h-screen">

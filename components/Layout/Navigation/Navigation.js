@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import get from "lodash/get";
 
 export default function Navbar({ data = {} }) {
-	console.log("navbar data", data);
+	// console.log("navbar data", data);
 
 	const { query: { slug } = {} } = useRouter();
 

@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Advantages = ({ data }) => {
-	console.log("advantages", data);
+//	console.log("advantages", data);
 
 	return (
 		<>
