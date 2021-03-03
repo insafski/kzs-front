@@ -1,3 +1,8 @@
+import { gql } from "@apollo/client";
+import get from "lodash/get";
+
+import { client } from "../pages/api/apollo";
+
 export function getHasuraURL(path) {
 	return `${process.env.NEXT_HASURA_ENDPOINT || "http://localhost:1337"}${path}`;
 }
@@ -30,7 +35,26 @@ export async function getPageData(slug, preview = false) {
 
 // Get site data from Strapi (metadata, navbar, footer...)
 export async function getGlobalData() {
-	const global = await fetchAPI("/global");
+	const result = await client.query({
+		query: gql`
+			query Globals {
+				globals {
+					updatedAt
+					settings
+					metaData
+					params
+					id
+					header
+					footer
+					deletedAt
+					createdAt
+					contacts
+				}
+			}
+		`,
+	});
+
+	const global = get(result, "data.globals[0]", {});
 
 	return global;
 }

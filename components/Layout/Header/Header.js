@@ -4,7 +4,7 @@ import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
 
 export default function Header({ top, navbar }) {
 	return (
-		<header className={"p-2 bg-gray-100"}>
+		<header className={"p-6 bg-gray-100"}>
 			<div className={"container"}>
 				{top}
 				{navbar}
