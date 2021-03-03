@@ -6,7 +6,7 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 // import { getStrapiMedia } from "utils/media";
-import { /* getStrapiURL,  */getGlobalData } from "utils/api";
+// import { /* getStrapiURL,  */getGlobalData } from "utils/api";
 
 import Layout from "@/components/Layout";
 import "@/styles/index.css";
@@ -40,7 +40,7 @@ export default function App2dget({ Component, pageProps }) {
 			<DefaultSeo
 				titleTemplate={`%s | ${global.metaTitleSuffix}`}
 				title={"Page"}
-				description={metadata.metaDescription}
+				// description={metadata.metaDescription}
 				// openGraph={{
 				//   images: Object.values(metadata.shareImage.formats).map((image) => {
 				//     return {
@@ -50,10 +50,10 @@ export default function App2dget({ Component, pageProps }) {
 				//     };
 				//   }),
 				// }}
-				twitter={{
-					cardType: metadata.twitterCardType,
-					handle: metadata.twitterUsername,
-				}}
+				// twitter={{
+				// 	cardType: metadata.twitterCardType,
+				// 	handle: metadata.twitterUsername,
+				// }}
 			/>
 			<Layout global={global}>
 				<Component {...pageProps} />
@@ -70,13 +70,13 @@ App2dget.getInitialProps = async ctx => {
 	// Calls page's `getInitialProps` and fills `appProps.pageProps`
 	const appProps = await App.getInitialProps(ctx);
 	// Fetch global site settings from Strapi
-	const global = await getGlobalData();
+	// const global = await getGlobalData();
 
 	// Pass the data to our page via props
 	return {
 		...appProps,
 		pageProps: {
-			global,
+			global: {},
 			path: ctx.pathname,
 		},
 	};

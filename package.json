@@ -11,13 +11,16 @@
 		"lint:fix": "eslint src/**/*.js  --fix"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.3.11",
 		"@tailwindcss/typography": "^0.2.0",
 		"autoprefixer": "^10.2.4",
 		"classnames": "^2.2.6",
 		"date-fns": "2.14.0",
+		"graphql": "^15.5.0",
 		"isomorphic-unfetch": "3.0.0",
 		"lodash": "^4.17.21",
 		"next": "^10.0.7",
+		"next-apollo": "^5.0.4",
 		"next-seo": "^4.7.1",
 		"postcss": "^8.2.6",
 		"postcss-nested": "^4.2.3",

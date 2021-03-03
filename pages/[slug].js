@@ -1,16 +1,16 @@
 import React from "react";
 import ErrorPage from "next/error";
-import { getStrapiURL, getPageData } from "utils/api";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";
 import ImageGallery from "react-image-gallery";
 
+import { gql } from "@apollo/client";
+import get from "lodash/get";
+
 import Sections from "@/components/sections";
 import Seo from "@/components/elements/seo";
 
-// The file is called [[...slug]].js because we're using Next's
-// optional catch all routes feature. See the related docs:
-// https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
+import { client } from "./api/apollo";
 
 const DynamicPage = ({ sections, metadata, preview, slug }) => {
 	const router = useRouter();
@@ -59,31 +59,52 @@ DynamicPage.propTypes = {
 };
 
 export async function getStaticPaths() {
-	const pages = await (await fetch(getStrapiURL("/pages"))).json();
-	console.log(pages);
-
-	const paths = pages.map(page => {
-		return {
-			params: page,
-		};
+	const result = await client.query({
+		query: gql`
+			query Pages {
+				pages {
+					slug
+				}
+			}
+		`,
 	});
+
+	const paths = get(result, "data.pages", []).map(({ slug }) => ({ params: { slug } }));
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 }
 
 export async function getStaticProps({ params, preview = null }) {
-	// const pages = await (await fetch(getStrapiURL("/pages"))).json();
-
-	console.log({
-		params,
-		preview,
+	const result = await client.query({
+		query: gql`
+			query Page($slug: String!) {
+				pages(where: {slug: {_eq: $slug}}) {
+					id
+					createdAt
+					deletedAt
+					description
+					picture
+					sections
+					seo
+					settings
+					slug
+					status
+					subTitle
+					title
+					updatedAt
+				}
+			}
+		`,
+		variables: params,
 	});
 
+	const page = get(result, "data.pages[0]", {});
+
 	return {
-		props: {},
+		props: page,
 	};
 }
 

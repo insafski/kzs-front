@@ -23,7 +23,7 @@ export default function Layout({ children, global }) {
 			<div className="flex-1">
 				<div>{children}</div>
 			</div>
-			<Footer footer={footer} />
+			{/* <Footer footer={footer} /> */}
 		</div>
 	);
 }
