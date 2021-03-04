@@ -2,11 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import "./Block.scss";
+import Heading from "@/components/elements/Heading";
 
-export default function Block({ className, children }) {
+// import "./Block.scss";
+
+export default function Block({ className, children, heading }) {
 	return (
 		<div className={cx("block", className)}>
+			<div className={"container mx-auto"}>
+				<Heading heading={heading} />
+			</div>
 			<div className={"container mx-auto"}>
 				{children}
 			</div>
@@ -17,11 +22,13 @@ export default function Block({ className, children }) {
 Block.propTypes = {
 	className: PropTypes.string.isRequired,
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+	heading: PropTypes.object,
 };
 
 Block.defaultProps = {
 	className: "flex py-6",
 	children: null,
+	heading: {},
 };
 
 Block.displayName = "Block";

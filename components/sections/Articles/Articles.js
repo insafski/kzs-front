@@ -3,26 +3,20 @@ import PropTypes from "prop-types";
 
 import Block from "../../containers/Block";
 
-export default function About({ heading }) {
+export default function Articles({ heading }) {
 	return (
-		<Block heading={heading} className={"about"}>
-			<div className="container mx-auto">
-				О нас
-			</div>
+		<Block
+			heading={heading}
+		>
+
 		</Block>
 	);
 }
 
-About.propTypes = {
+Articles.propTypes = {
 	heading: PropTypes.shape({
 		title: PropTypes.string,
 		subTitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
 };
-
-About.defaultProps = {
-	data: {},
-};
-
-About.displayName = "About";

@@ -1,11 +1,13 @@
 import React, { createElement } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import get from "lodash/get";
 
-import "./Heading.scss";
+// import "./Heading.scss";
 
-export default function Heading({ type, className, text, subText, subTitle, underline }) {
-	const heading = {
+export default function Heading({ type, className, heading, underline }) {
+	const { title, subText, subTitle } = heading;
+	const classNames = {
 		h1: "h1 md:text-5xl",
 		h2: "h2 md:text-6xl",
 	};
@@ -16,9 +18,9 @@ export default function Heading({ type, className, text, subText, subTitle, unde
 				createElement(
 					type,
 					{
-						className: cx(className),
+						className: cx("heading__title relative", className, classNames[type]),
 					},
-					text,
+					title,
 				)
 			}
 			{
@@ -38,18 +40,14 @@ export default function Heading({ type, className, text, subText, subTitle, unde
 Heading.propTypes = {
 	type: PropTypes.string.isRequired,
 	className: PropTypes.string,
-	text: PropTypes.string,
-	subText: PropTypes.string,
-	subTitle: PropTypes.string,
+	heading: PropTypes.object,
 	underline: PropTypes.bool,
 };
 
 Heading.defaultProps = {
 	type: "h2",
 	className: "",
-	text: "",
-	subText: "",
-	subTitle: "",
+	headong: {},
 	underline: true,
 };
 
