@@ -12,12 +12,14 @@ import RichText from "./sections/rich-text";
 import Pricing from "./sections/pricing";
 import Advantages from "./sections/advantages";
 import Developers from "./sections/developers";
+import about from "./sections/About";
 
 // import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
 // Map Strapi sections to section components
 const sectionComponents = {
 	"hero": Hero,
+	"about": about,
 	"large-video": LargeVideo,
 	"feature-columns-group": FeatureColumnsGroup,
 	"feature-rows-group": FeatureRowsGroup,
