@@ -8,7 +8,7 @@ import Heading from "@/components/elements/Heading";
 
 export default function Block({ className, children, heading }) {
 	return (
-		<section className={cx("block", className)}>
+		<section className={cx("block py-16", className)}>
 			<div className={"container mx-auto"}>
 				<Heading heading={heading} />
 			</div>
