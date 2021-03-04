@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import Header from "./Header";
 import Navbar from "./Navigation";
 import Footer from "./Footer";
+import ContactBar from "./Bars/Contact";
 
 export default function Layout({ children, global }) {
-	const { footer, header } = global;
+	const { footer, header: { middle: headerMiddle }, contacts } = global;
 
 	console.log({ global });
 
@@ -16,29 +17,12 @@ export default function Layout({ children, global }) {
 		<div className="flex flex-col justify-between min-h-screen">
 			<Header
 				top={
-					<div className={"header-top pb-4 border-b border-gray-200"}>
-						<div className={"container mx-auto"}>
-							<div className={"header-top__contacts flex justify-end"}>
-								<ul className={"header-top__list flex"}>
-									<li className={"header-top__item ml-4"}>
-										<a href="tel:+79148884566">
-											+7 914 888 45 66
-										</a>
-									</li>
-									<li className={"header-top__item ml-4"}>
-										<a href="mailto:piss@mail.ru">
-											piss@mail.ru
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					<ContactBar data={global} />
 				}
 				middle={
 					<div className={"header-middle pt-4"}>
 						<div className={"container mx-auto"}>
-							<Navbar data={header} />
+							<Navbar data={headerMiddle} />
 						</div>
 					</div>
 				}
@@ -53,7 +37,7 @@ export default function Layout({ children, global }) {
 				}
 			/>
 			{children}
-			<Footer footer={footer} />
+			<Footer footer={footer} contacts={contacts} />
 		</div>
 	);
 }

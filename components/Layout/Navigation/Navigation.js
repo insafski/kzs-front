@@ -5,7 +5,7 @@ import Link from "next/link";
 import get from "lodash/get";
 
 export default function Navbar({ data = {} }) {
-	const navbar = get(data, "navbar", []);
+	const navigation = get(data, "navigation", []);
 
 	// const { query: { slug } = {} } = useRouter();
 
@@ -17,10 +17,10 @@ export default function Navbar({ data = {} }) {
 			<nav className={"navigation__container"}>
 				<ul className={"navigation__list flex"}>
 					{
-						navbar.map(({ slug, title }, idx) => {
+						navigation.map(({ link, title }, idx) => {
 							return (
 								<li key={idx} className={"navigation__item ml-4"}>
-									<Link href={slug} className={"navigation__link"}>
+									<Link href={link} className={"navigation__link"}>
 										{title}
 									</Link>
 								</li>
