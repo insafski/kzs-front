@@ -8,14 +8,12 @@ import Heading from "@/components/elements/Heading";
 
 export default function Block({ className, children, heading }) {
 	return (
-		<div className={cx("block", className)}>
+		<section className={cx("block", className)}>
 			<div className={"container mx-auto"}>
 				<Heading heading={heading} />
 			</div>
-			<div className={"container mx-auto"}>
-				{children}
-			</div>
-		</div>
+			{children}
+		</section>
 	);
 }
 

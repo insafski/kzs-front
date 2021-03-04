@@ -9,8 +9,6 @@ import Seo from "@/components/elements/seo";
 export default function Page({ sections, metadata, preview, slug, description }) {
 	const router = useRouter();
 
-	console.log("SOOQA");
-
 	// // Check if the required data was provided
 	// if (!router.isFallback && !sections?.length) {
 	// 	return <ErrorPage statusCode={404} />;
@@ -39,10 +37,10 @@ Page.propTypes = {
 };
 
 Page.defaultProps = {
-	sections: PropTypes.array,
-	metadata: PropTypes.object,
-	preview: PropTypes.bool,
-	slug: PropTypes.string,
+	sections: [],
+	metadata: {},
+	preview: false,
+	slug: "",
 };
 
 Page.displayName = "Page";

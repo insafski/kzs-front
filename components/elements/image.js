@@ -1,15 +1,14 @@
-import { getStrapiMedia } from "utils/media";
+import React from "react";
 import PropTypes from "prop-types";
-import { mediaPropTypes } from "utils/types";
 
 // FIXME: Need to fix this component
 
-const Image = ({ media, className }) => {
-	const mediaObject = media ? media : {};
+const Image = ({ picture, className }) => {
+	const mediaObject = picture ? picture : {};
 
 	const { url = "", alternativeText = "" } = mediaObject;
 
-	const fullUrl = url && getStrapiMedia(url);
+	const fullUrl = url && 0;
 
 	return fullUrl && (
 		<img src={fullUrl} alt={alternativeText || ""} className={className} />
@@ -19,7 +18,8 @@ const Image = ({ media, className }) => {
 };
 
 Image.propTypes = {
-	media: mediaPropTypes.isRequired,
+	// TODO: Need to use shape of types
+	picture: PropTypes.array,
 	className: PropTypes.string,
 };
 
