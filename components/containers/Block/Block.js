@@ -7,7 +7,9 @@ import "./Block.scss";
 export default function Block({ className, children }) {
 	return (
 		<div className={cx("block", className)}>
-			{children}
+			<div className={"container mx-auto"}>
+				{children}
+			</div>
 		</div>
 	);
 }

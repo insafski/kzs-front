@@ -5,10 +5,12 @@ import { linkPropTypes, mediaPropTypes } from "utils/types";
 import Image from "../../elements/Image";
 
 export default function Footer({ footer }) {
+	console.log({ footer });
+
 	return (
-		<footer className="footer py-14 bg-gray-100">
-			<div className="container flex flex-col lg:flex-row lg:justify-between">
-				<div className={"footer__item"}>
+		<footer className="footer bg-gray-100">
+			<div className="container mx-auto py-4 flex flex-col lg:flex-row lg:justify-between">
+				<div className={"footer__item w-1/4"}>
 					<>
 						<img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} />
 						{footer.logo && (
@@ -17,8 +19,28 @@ export default function Footer({ footer }) {
 						}
 					</>
 				</div>
+				<div className={"footer__item w-1/4"}>
+					<h6>Каталог</h6>
+				</div>
+				<div className={"footer__item w-1/4"}>
+					<h6>Наивгация</h6>
+				</div>
+				<div className={"footer__item w-1/4"}>
+					<h6>Контакты</h6>
+					<div className={"w-6/12"}>
+						{footer.smallText}
+					</div>
+					<div className={"w-6/12 text-center"}>
+						<i className={"icon-phone"} />
+						+7 922488 30 88
+					</div>
+					<div className={"w-6/12 text-right"}>
+						<i className={"icon-clock"} />
+						Пн-Сб 10:00-21:00
+					</div>
+				</div>
 
-				<nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
+				{/* <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
 					{
 						footer.columns.map(footerColumn => (
 							<div
@@ -38,21 +60,12 @@ export default function Footer({ footer }) {
 							</div>
 						))
 					}
-				</nav>
+				</nav> */}
 			</div>
-			<div className="footer__copyright text-sm bg-gray-200 py-6 text-gray-700">
-				<div className="container flex">
-					<div className={"w-6/12"}>
-						{footer.smallText}
-					</div>
-					<div className={"w-6/12 text-center"}>
-						<i className={"icon-phone"} />
-						+7 922488 30 88
-					</div>
-					<div className={"w-6/12 text-right"}>
-						<i className={"icon-clock"} />
-						Пн-Сб 10:00-21:00
-					</div>
+			<div className="footer__copyright text-sm py-4 text-gray-700 border-t border-gray-200">
+				<div className="container mx-auto flex justify-between">
+					<span>КазЗапчастьСервис</span>
+					<span>2021</span>
 				</div>
 			</div>
 		</footer>

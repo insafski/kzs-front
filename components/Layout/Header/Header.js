@@ -2,20 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types";
 
-export default function Header({ top, navbar }) {
+export default function Header({ top, middle, bottom }) {
 	return (
-		<header className={"p-6 bg-gray-100"}>
-			<div className={"container"}>
-				{top}
-				{navbar}
-			</div>
+		<header className={"header py-4 bg-gray-100"}>
+			{top}
+			{middle}
+			{bottom}
 		</header>
 	);
 }
 
 Header.propTypes = {
 	top: PropTypes.object,
-	navbar: PropTypes.shape({
+	middle: PropTypes.object,
+	bottom: PropTypes.shape({
 		logo: mediaPropTypes,
 		links: PropTypes.arrayOf(linkPropTypes),
 		button: buttonLinkPropTypes,
