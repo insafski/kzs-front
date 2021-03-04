@@ -17,23 +17,23 @@ import Developers from "./sections/developers";
 
 // Map Strapi sections to section components
 const sectionComponents = {
-	"sections.hero": Hero,
-	"sections.large-video": LargeVideo,
-	"sections.feature-columns-group": FeatureColumnsGroup,
-	"sections.feature-rows-group": FeatureRowsGroup,
-	"sections.bottom-actions": BottomActions,
-	"sections.testimonials-group": TestimonialsGroup,
-	"sections.rich-text": RichText,
-	"sections.pricing": Pricing,
-	"sections.advantages": Advantages,
-	"sections.developers": Developers,
+	"hero": Hero,
+	"large-video": LargeVideo,
+	"feature-columns-group": FeatureColumnsGroup,
+	"feature-rows-group": FeatureRowsGroup,
+	"bottom-actions": BottomActions,
+	"testimonials-group": TestimonialsGroup,
+	"rich-text": RichText,
+	"pricing": Pricing,
+	"advantages": Advantages,
+	"developers": Developers,
 };
 
 // Display a section individually
 const Section = ({ sectionData }) => {
 	// Prepare the component
 	// eslint-disable-next-line no-underscore-dangle
-	const SectionComponent = sectionComponents[sectionData.__component];
+	const SectionComponent = sectionComponents[sectionData.component];
 
 	if (!SectionComponent) {
 		return null;
@@ -87,7 +87,7 @@ const Sections = ({ sections, preview }) => {
 				<Section
 					sectionData={section}
 					// eslint-disable-next-line no-underscore-dangle
-					key={`${section.__component}${section.id}`}
+					key={`${section.component}${section.id}`}
 				/>
 				// </span>
 				// </ParallaxLayer>
