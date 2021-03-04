@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
 
 import Image from "../../elements/Image";
+import Icon from "../../elements/Icon";
 
 export default function Footer({ footer }) {
-	console.log({ footer });
-
 	return (
 		<footer className="footer bg-gray-100">
 			<div className="container mx-auto py-4 flex flex-col lg:flex-row lg:justify-between">
@@ -31,11 +30,11 @@ export default function Footer({ footer }) {
 						{footer.smallText}
 					</div>
 					<div className={"w-6/12 text-center"}>
-						<i className={"icon-phone"} />
+						<Icon type={"phone"} />
 						+7 922488 30 88
 					</div>
 					<div className={"w-6/12 text-right"}>
-						<i className={"icon-clock"} />
+						<Icon type={"clock"} />
 						Пн-Сб 10:00-21:00
 					</div>
 				</div>

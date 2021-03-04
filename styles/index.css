@@ -1,8 +1,8 @@
+@import "fonts/fontello/css/fontello.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./fonts/fontello/css/fontello.css"
 
 html {
   font-size: 13px;
