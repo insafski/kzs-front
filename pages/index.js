@@ -1,4 +1,3 @@
-import React from "react";
 import { gql } from "@apollo/client";
 import get from "lodash/get";
 
@@ -17,7 +16,7 @@ export async function getStaticProps({ params, preview = null }) {
 					description
 					picture
 					sections
-					seo
+					metaData
 					settings
 					slug
 					status

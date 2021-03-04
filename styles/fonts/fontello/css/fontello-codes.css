@@ -1,0 +1,12 @@
+
+.kzs-phone:before { content: '\e800'; } /* '' */
+.kzs-location:before { content: '\e801'; } /* '' */
+.kzs-clock:before { content: '\e802'; } /* '' */
+.kzs-thumbs-up:before { content: '\e803'; } /* '' */
+.kzs-ok:before { content: '\e804'; } /* '' */
+.kzs-mail:before { content: '\e805'; } /* '' */
+.kzs-twitter:before { content: '\f099'; } /* '' */
+.kzs-rouble:before { content: '\f158'; } /* '' */
+.kzs-youtube-play:before { content: '\f16a'; } /* '' */
+.kzs-instagram:before { content: '\f16d'; } /* '' */
+.kzs-vkontakte:before { content: '\f189'; } /* '' */

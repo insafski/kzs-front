@@ -34,7 +34,7 @@ export async function getStaticProps({ params, preview = null }) {
 					description
 					picture
 					sections
-					seo
+					metaData
 					settings
 					slug
 					status
