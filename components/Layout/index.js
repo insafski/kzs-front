@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import Header from "./Header";
 import Navbar from "./Navigation";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 export default function Layout({ children, global }) {
-	const { footer } = global;
+	// const { footer } = global;
 	// console.log({ global });
 
 	return (
@@ -17,7 +17,7 @@ export default function Layout({ children, global }) {
 				// 		Интернет магазин
 				// 	</div>
 				// }
-				navbar={<Navbar data={global.navbar} />}
+				navbar={<Navbar data={global.header} />}
 				bottom={<div>Форма</div>}
 			/>
 			<div className="flex-1">
