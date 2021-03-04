@@ -46,6 +46,7 @@ export default function Layout({ children, global }) {
 					<div className={"header-middle pt-4"}>
 						<div className={"container mx-auto"}>
 							<button>Каталог</button>
+							<input type="checkbox" className="rounded text-pink-500" />
 							<input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
 						</div>
 					</div>
