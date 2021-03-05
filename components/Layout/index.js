@@ -9,8 +9,6 @@ import ContactBar from "./Bars/Contact";
 export default function Layout({ children, global }) {
 	const { footer, header: { middle: headerMiddle }, contacts } = global;
 
-	console.log({ global });
-
 	// TODO: Need to make multiple fields for footer andd header (navigation, meta, etc. ).
 
 	return (
