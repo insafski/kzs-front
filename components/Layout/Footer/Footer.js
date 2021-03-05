@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
+import Link from "next/link";
 
 // import Image from "../../elements/Image";
 import get from "lodash/get";
@@ -27,9 +28,9 @@ export default function Footer({ footer, contacts }) {
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
-									<a href={link}>
+									<Link href={link}>
 										{title}
-									</a>
+									</Link>
 								</li>
 							))
 						}
@@ -41,9 +42,9 @@ export default function Footer({ footer, contacts }) {
 						{
 							get(footer, "navigation", []).map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
-									<a href={link}>
+									<Link href={link}>
 										{title}
-									</a>
+									</Link>
 								</li>
 							))
 						}
