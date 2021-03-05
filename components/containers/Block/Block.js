@@ -4,12 +4,12 @@ import cx from "classnames";
 
 import Heading from "@/components/elements/Heading";
 
-// import "./Block.scss";
+import styles from "./Block.module.scss";
 
 export default function Block({ className, children, heading }) {
 	return (
-		<section className={cx("block py-16", className)}>
-			<div className={"container mx-auto"}>
+		<section className={cx(`${styles.block}`, "block py-16", className)}>
+			<div className={"container mx-auto px-4"}>
 				<Heading heading={heading} />
 			</div>
 			{children}

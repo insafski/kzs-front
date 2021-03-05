@@ -6,7 +6,7 @@ import Block from "../../containers/Block";
 export default function About({ heading }) {
 	return (
 		<Block heading={heading} className={"about"}>
-			<div className="container mx-auto">
+			<div className={"container mx-auto px-4"}>
 				О нас
 			</div>
 		</Block>

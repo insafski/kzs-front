@@ -10,9 +10,9 @@ import get from "lodash/get";
 
 export default function Footer({ footer, contacts }) {
 	return (
-		<footer className="footer bg-gray-100 px-4">
-			<div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row lg:justify-between">
-				<div className={"footer__item md:w-1/5 lg:w-1/4"}>
+		<footer className="footer bg-gray-100">
+			<div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between">
+				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<>
 						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
 						{footer.logo.picture && (
@@ -22,12 +22,12 @@ export default function Footer({ footer, contacts }) {
 						}
 					</>
 				</div>
-				<div className={"footer__item md:w-1/5 lg:w-1/4"}>
-					<a href={"/catalog"} className={"text-xl"}>Каталог</a>
-					<ul className={"mt-8"}>
+				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+					<a href={"/catalog"} className={"text-3xl"}>Каталог</a>
+					<ul className={"mt-8 px-4"}>
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-2 text-base"}>
+								<li key={idx} className={"mb-4 text-base"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -36,12 +36,12 @@ export default function Footer({ footer, contacts }) {
 						}
 					</ul>
 				</div>
-				<div className={"footer__item md:w-1/5 lg:w-1/4"}>
-					<a href={"/catalog"} className={"text-xl"}>Наивгация</a>
-					<ul className={"mt-8"}>
+				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+					<a href={"/catalog"} className={"text-3xl"}>Навигация</a>
+					<ul className={"mt-8 px-4"}>
 						{
 							get(footer, "navigation", []).map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-2 text-base"}>
+								<li key={idx} className={"mb-4 text-base"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -50,8 +50,8 @@ export default function Footer({ footer, contacts }) {
 						}
 					</ul>
 				</div>
-				<div className={"footer__item md:w-2/5 lg:w-1/4"}>
-					<a href={"/contacts"} className={"text-xl"}>Контакты</a>
+				<div className={"footer__item mb-8 md:mb-0 md:w-2/5 lg:w-1/4"}>
+					<a href={"/contacts"} className={"text-3xl"}>Контакты</a>
 					{
 						contacts.map(({ icon, title }, idx) => {
 							return (
@@ -62,37 +62,7 @@ export default function Footer({ footer, contacts }) {
 							);
 						})
 					}
-					{/* <div className={"mt-8 w-6/12"}>
-						{footer.smallText}
-					</div>
-
-					<div className={"w-6/12 text-right"}>
-						<Icon type={"clock"} />
-						Пн-Сб 10:00-21:00
-					</div> */}
 				</div>
-
-				{/* <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
-					{
-						footer.columns.map(footerColumn => (
-							<div
-								key={footerColumn.id}
-								className="footer__item mt-10 lg:mt-0 w-6/12 lg:w-auto"
-							>
-								<p className="uppercase tracking-wide font-semibold">
-									{footerColumn.title}
-								</p>
-								<ul className="mt-2">
-									{footerColumn.links.map(link => (
-										<li key={link.id} className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900">
-											{link.text}
-										</li>
-									))}
-								</ul>
-							</div>
-						))
-					}
-				</nav> */}
 			</div>
 			<div className="footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-200">
 				<div className="container mx-auto flex justify-between">

@@ -6,10 +6,10 @@ import List from "../../containers/List";
 
 export default function Articles({ heading, items }) {
 	return (
-		<Block
-			heading={heading}
-		>
-			<List items={items} type={"article"} />
+		<Block heading={heading}>
+			<div className={"container mx-auto px-4"}>
+				<List items={items} type={"article"} />
+			</div>
 		</Block>
 	);
 }
