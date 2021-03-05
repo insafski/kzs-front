@@ -5,7 +5,7 @@ import Image from "../../Image";
 
 export default function Advantage({ title, description, picture }) {
 	return (
-		<div className={"advantage-item"}>
+		<div className={"advantage-item w-1/2 md:w-1/4"}>
 			<Image picture={picture} />
 			<span className={"advantage-item__title mb-4"}>
 				{title}

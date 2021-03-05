@@ -52,20 +52,22 @@ export default function Footer({ footer, contacts }) {
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-2/5 lg:w-1/4"}>
 					<a href={"/contacts"} className={"text-3xl"}>Контакты</a>
-					{
-						contacts.map(({ icon, title }, idx) => {
-							return (
-								<div key={idx} className={"w-6/12"}>
-									<i className={`kzs-${icon} text-yellow-400`} />
-									{title}
-								</div>
-							);
-						})
-					}
+					<ul className={"mt-8 px-4"}>
+						{
+							contacts.map(({ icon, title }, idx) => {
+								return (
+									<div key={idx} className={"w-6/12"}>
+										<i className={`kzs-${icon} text-yellow-400`} />
+										{title}
+									</div>
+								);
+							})
+						}
+					</ul>
 				</div>
 			</div>
-			<div className="footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-200">
-				<div className="container mx-auto flex justify-between">
+			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-200"}>
+				<div className={"container mx-auto flex justify-between"}>
 					<span>КазЗапчастьСервис</span>
 					<span>2021</span>
 				</div>

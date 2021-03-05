@@ -3,30 +3,14 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 
 export default function ContactBar({ data }) {
-	return (
-	// <div className={"container mx-auto flex justify-between"}>
-	// 	<span className={"flex w-4/12"}>
-	// 		Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-	// 	</span>
-	// 	<ul className={"flex w-8/12"}>
-	// 		<li className={"contact-bar__item"}>
-	// 			<a href="" className={"contact-bar__link"}>
-	// 				+79148888888
-	// 			</a>
-	// 		</li>
-	// 		<li className={"contact-bar__item"}>
-	// 			<a href="" className={"contact-bar__link"}>
-	// 				sooqa@sooqa.ru
-	// 			</a>
-	// 		</li>
-	// 	</ul>
-	// </div>
+	const title = get(data, "header.top.title", "");
 
-		<div className={"header-top pb-4 border-b border-gray-200"}>
-			<div className={"container mx-auto"}>
+	return (
+		<div className={"header-top hidden md:block pb-4 border-b border-gray-200"}>
+			<div className={"container mx-auto px-4"}>
 				<div className={"header-top__contacts flex justify-between"}>
 					<div className={"flex w-4/12"}>
-						{get(data, "header.top.title", "")}
+						{title}
 					</div>
 					<ul className={"header-top__list flex w-8/12 justify-end"}>
 						<li className={"header-top__item ml-4"}>
