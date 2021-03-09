@@ -5,6 +5,7 @@ import Baner from "./Baner";
 import Feedback from "./Feedback";
 import Manufacturers from "./Manufacturers";
 import Products from "./Products";
+import Text from "./Text";
 
 export default {
 	about: About,
@@ -14,6 +15,7 @@ export default {
 	feedback: Feedback,
 	manufacturers: Manufacturers,
 	products: Products,
+	text: Text,
 	imperial: "div",
 	get(type) {
 		return this[type] || this.imperial;

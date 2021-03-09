@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import Block from "../../containers/Block";
 import List from "../../containers/List";
 
-export default function Manufacturers({ heading, items }) {
+export default function Manufacturers({ heading, manufacturers }) {
 	return (
 		<Block heading={heading} className={"manufacturers"}>
 			<div className="container mx-auto">
-				<List items={items} type={"manufacturer"} />
+				<List items={manufacturers} type={"manufacturer"} className={"flex flex-wrap px-4"} />
 			</div>
 		</Block>
 	);
@@ -20,5 +20,5 @@ Manufacturers.propTypes = {
 		subTitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
-	items: PropTypes.array,
+	manufacturers: PropTypes.array,
 };

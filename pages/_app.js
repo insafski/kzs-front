@@ -6,7 +6,7 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 // import { getStrapiMedia } from "utils/media";
-import { getGlobalData } from "utils/api";
+import { getGlobalData, getManufacturersData } from "utils/api";
 
 import Layout from "@/components/Layout";
 import "@/styles/index.css";
@@ -61,15 +61,10 @@ export default function Application({ Component, pageProps }) {
 	);
 }
 
-// getInitialProps disables automatic static optimization for pages that don't
-// have getStaticProps. So [[...slug]] pages still get SSG.
-// Hopefully we can replace this with getStaticProps once this issue is fixed:
-// https://github.com/vercel/next.js/discussions/10949
 Application.getInitialProps = async ctx => {
-	// Calls page's `getInitialProps` and fills `appProps.pageProps`
 	const appProps = await App.getInitialProps(ctx);
-	// Fetch global site settings from Strapi
 	const global = await getGlobalData();
+	const manufacturers = await getManufacturersData();
 
 	// Pass the data to our page via props
 	return {
@@ -77,6 +72,7 @@ Application.getInitialProps = async ctx => {
 		pageProps: {
 			global,
 			path: ctx.pathname,
+			manufacturers,
 		},
 	};
 };

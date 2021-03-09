@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Sections from "../Sections";
 import Seo from "@/components/elements/seo";
 
-export default function Page({ sections, metadata, preview, slug, description }) {
+export default function Page({ sections, metadata, manufacturers, preview, slug, description }) {
 	const router = useRouter();
 
 	// // Check if the required data was provided
@@ -24,7 +24,7 @@ export default function Page({ sections, metadata, preview, slug, description })
 	return (
 		<>
 			<Seo metadata={metadata} />
-			<Sections sections={sections} />
+			<Sections sections={sections} manufacturers={manufacturers} />
 		</>
 	);
 }
