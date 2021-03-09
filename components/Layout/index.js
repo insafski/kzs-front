@@ -30,10 +30,10 @@ export default function Layout({ children, global }) {
 						<div className={"container mx-auto px-4 mb-4"}>
 							<Catalog />
 						</div>
-						<div className={"container mx-auto px-4"}>
+						<div className={"container mx-auto px-4 text-md"}>
 							<input
 								type="text"
-								className="block w-full rounded-md border-gray-100 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50"
+								className={"block w-full rounded-md border-gray-100 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50"}
 								placeholder={"Поиск"}
 							/>
 						</div>

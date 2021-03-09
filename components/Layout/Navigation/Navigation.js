@@ -1,19 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useToggle } from "ahooks";
-import Drawer from "rc-drawer";
 import Link from "next/link";
 // import { useRouter } from "next/router";
 import get from "lodash/get";
 import cx from "classnames";
 
 import Icon from "../../elements/Icon";
-
-import "rc-drawer/assets/index.css";
+import Drawer from "../../containers/Drawer";
 
 import styles from "./Navigation.module.css";
-
-console.log({ styles });
 
 export default function Navbar({ data = {} }) {
 	const [state, { toggle }] = useToggle();

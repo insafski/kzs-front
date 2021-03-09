@@ -33,6 +33,7 @@
 		"rc-collapse": "^3.1.0",
 		"rc-drawer": "^4.3.1",
 		"react": "^17.0.1",
+		"react-device-detect": "^1.15.0",
 		"react-dom": "^17.0.1",
 		"react-icons": "^3.10.0",
 		"react-image-gallery": "^1.0.9",
