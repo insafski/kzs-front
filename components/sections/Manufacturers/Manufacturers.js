@@ -8,7 +8,11 @@ export default function Manufacturers({ heading, manufacturers }) {
 	return (
 		<Block heading={heading} className={"manufacturers"}>
 			<div className="container mx-auto">
-				<List items={manufacturers} type={"manufacturer"} className={"flex flex-wrap px-4"} />
+				<List
+					items={manufacturers}
+					type={"manufacturer"}
+					className={"flex flex-wrap flex-col md:flex-row px-4"}
+				/>
 			</div>
 		</Block>
 	);
