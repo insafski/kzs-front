@@ -129,7 +129,8 @@ export default function Catalog() {
 				height={"90vh"}
 			>
 				<div>
-					<div className={"catsalog-bar__header px-4 py-4 flex justify-end bg-gray-100"}>
+					<div className={"catsalog-bar__header px-4 py-4 flex justify-between bg-gray-100"}>
+						<h4>Каталог</h4>
 						<button onClick={() => toggle(false)}>
 							Закрыть
 						</button>

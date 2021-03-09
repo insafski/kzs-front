@@ -55,4 +55,12 @@ a {
   margin-left: 0.5em;
 }
 
+.rc-collapse-content {
+	padding: 0;
+}
+
+.rc-collapse-content > .rc-collapse-content-box {
+	margin: 0;
+}
+
 
