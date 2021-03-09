@@ -80,9 +80,9 @@ export default function Navbar({ data = {} }) {
 				</nav>
 			</Drawer>
 			<button className={"navigation__burger w-7"} onClick={toggle}>
-				<span className={cx("block h-1 w-full mb-2 bg-yellow-400", styles.navigation__burger)} />
-				<span className={cx("block h-1 w-full mb-2 bg-yellow-400", styles.navigation__burger)} />
-				<span className={cx("block h-1 w-full mb-2 bg-yellow-400", styles.navigation__burger)} />
+				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
+				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
+				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
 			</button>
 		</div>
 	);

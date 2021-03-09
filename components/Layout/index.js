@@ -5,6 +5,7 @@ import Header from "./Header";
 import Navbar from "./Navigation";
 import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
+import Catalog from "./Bars/Catalog";
 
 export default function Layout({ children, global }) {
 	const { footer, header: { middle: headerMiddle }, contacts } = global;
@@ -19,16 +20,22 @@ export default function Layout({ children, global }) {
 				}
 				middle={
 					<div className={"header-middle md:pt-4"}>
-						<div className={"container mx-auto px-4"}>
+						<div className={"container mx-auto px-4 py-4 bg-gray-100"}>
 							<Navbar data={headerMiddle} />
 						</div>
 					</div>
 				}
 				bottom={
 					<div className={"header-middle pt-4"}>
+						<div className={"container mx-auto px-4 mb-4"}>
+							<Catalog />
+						</div>
 						<div className={"container mx-auto px-4"}>
-							<button>Каталог</button>
-							<input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50" />
+							<input
+								type="text"
+								className="block w-full rounded-md border-gray-100 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50"
+								placeholder={"Поиск"}
+							/>
 						</div>
 					</div>
 				}

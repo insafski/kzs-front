@@ -4,7 +4,7 @@ import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
 
 export default function Header({ top, middle, bottom }) {
 	return (
-		<header className={"header py-4 bg-gray-100"}>
+		<header className={"header"}>
 			{top}
 			{middle}
 			{bottom}
