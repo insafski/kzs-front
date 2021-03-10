@@ -18,19 +18,19 @@ export default function Heading({ type, className, heading, underline }) {
 				title && createElement(
 					type,
 					{
-						className: cx("heading__title relative", className, classNames[type]),
+						className: cx("heading__title font-bold relative", className, classNames[type]),
 					},
 					title,
 				)
 			}
 			{
 				subTitle && (
-					<span className={"heading__subtitle"}>{subTitle}</span>
+					<p className={"heading__subtitle font-semibold mb-8 text-xl"}>{subTitle}</p>
 				)
 			}
 			{
 				subText && (
-					<span className={"heading__subtext"}>{subText}</span>
+					<p className={"heading__subtext mb-4"}>{subText}</p>
 				)
 			}
 		</div>

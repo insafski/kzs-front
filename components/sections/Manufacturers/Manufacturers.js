@@ -11,7 +11,7 @@ export default function Manufacturers({ heading, manufacturers }) {
 				<List
 					items={manufacturers}
 					type={"manufacturer"}
-					className={"flex flex-wrap flex-col md:flex-row px-4"}
+					className={"flex flex-wrap flex-col md:flex-row justify-center px-4 md:px-2"}
 				/>
 			</div>
 		</Block>
