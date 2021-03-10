@@ -21,7 +21,11 @@ export default function Navbar({ data = {} }) {
 	return (
 		<div className={"navigation flex justify-between"}>
 			<div className={"navigation__logo"}>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Sketch_Logo.svg" alt="" style={{ width: 30 }} />
+				<Link href={"/"}>
+					<a>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Sketch_Logo.svg" alt="" style={{ width: 30 }} />
+					</a>
+				</Link>
 			</div>
 			<Drawer
 				open={state}

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Header from "./Header";
-import Navbar from "./Navigation";
+import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
@@ -21,7 +21,7 @@ export default function Layout({ children, global }) {
 				middle={
 					<div className={"header-middle md:pt-4"}>
 						<div className={"container mx-auto px-4 py-4 bg-gray-100"}>
-							<Navbar data={headerMiddle} />
+							<Navigation data={headerMiddle} />
 						</div>
 					</div>
 				}
@@ -34,7 +34,8 @@ export default function Layout({ children, global }) {
 										className={"w-full inline-flex justify-center py-2 border border-transparent shadow-sm text-md font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 uppercase"}
 									>
 										Каталог
-									</button>}
+									</button>
+								}
 							/>
 						</div>
 						<div className={"container mx-auto px-4 text-md"}>

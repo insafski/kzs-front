@@ -5,12 +5,11 @@ import Head from "next/head";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
-// import { getStrapiMedia } from "utils/media";
 import { getGlobalData, getManufacturersData } from "utils/api";
 
+import { FeedbackProvider } from "@/components/widgets/FeedbackForm";
 import Layout from "@/components/Layout";
 import "@/styles/index.css";
-// import "react-image-gallery/styles/css/image-gallery.css";
 
 export default function Application({ Component, pageProps }) {
 	// Prevent Next bug when it tries to render the [[...slug]] route
@@ -54,9 +53,11 @@ export default function Application({ Component, pageProps }) {
 				// 	handle: metadata.twitterUsername,
 				// }}
 			/>
-			<Layout global={global}>
-				<Component {...pageProps} />
-			</Layout>
+			<FeedbackProvider>
+				<Layout global={global}>
+					<Component {...pageProps} />
+				</Layout>
+			</FeedbackProvider>
 		</>
 	);
 }
