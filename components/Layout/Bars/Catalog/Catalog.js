@@ -1,10 +1,11 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import { useToggle } from "ahooks";
+import { isMobile } from "react-device-detect";
 
 import Drawer from "../../../containers/Drawer";
 import Collapse from "../../../containers/Collapse";
 
-export default function Catalog() {
+export default function Catalog({ trigger }) {
 	const [state, { toggle }] = useToggle();
 
 	const items = [
@@ -112,24 +113,26 @@ export default function Catalog() {
 
 	return (
 		<div className={"catalog-bar"}>
-			<button
-				className={"w-full inline-flex justify-center py-2 border border-transparent shadow-sm text-md font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 uppercase"}
-				onClick={toggle}
-			>
-				Каталог
-			</button>
+			{
+				cloneElement(
+					trigger,
+					{
+						onClick: toggle,
+					},
+				)
+			}
 			<Drawer
 				open={state}
-				placement={"top"}
+				placement={isMobile ? "top" : "left"}
 				onChange={toggle}
 				onClose={() => toggle(false)}
 				handler={false}
 				level={null}
-				width={"100vw"}
-				height={"90vh"}
+				width={isMobile ? "100vw" : "30vw"}
+				height={isMobile ? "90vh" : "100vh"}
 			>
-				<div>
-					<div className={"catsalog-bar__header px-4 py-4 flex justify-between bg-gray-100"}>
+				<>
+					<div className={"catalog-bar__header px-4 py-4 flex justify-between bg-gray-100"}>
 						<h4>Каталог</h4>
 						<button onClick={() => toggle(false)}>
 							Закрыть
@@ -141,7 +144,7 @@ export default function Catalog() {
 							items={items}
 						/>
 					</div>
-				</div>
+				</>
 			</Drawer>
 		</div>
 	);

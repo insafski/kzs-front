@@ -47,7 +47,7 @@ Heading.propTypes = {
 Heading.defaultProps = {
 	type: "h2",
 	className: "",
-	headong: {},
+	heading: {},
 	underline: true,
 };
 

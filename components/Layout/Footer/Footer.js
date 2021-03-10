@@ -17,7 +17,7 @@ export default function Footer({ footer, contacts }) {
 						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
 						{footer.logo.picture && (
 							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
-							<img width={300} src={footer.logo.picture[0].src} />
+							<img width={30} src={footer.logo.picture[0].src} />
 						)
 						}
 					</>

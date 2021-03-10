@@ -5,8 +5,9 @@ import PropTypes from "prop-types";
 
 import Sections from "../Sections";
 import Seo from "@/components/elements/seo";
+import Block from "@/components/containers/Block";
 
-export default function Page({ sections, metadata, manufacturers, preview, slug, description }) {
+export default function Page({ sections, metadata, manufacturers, heading, title, subTitle, preview, slug, description }) {
 	const router = useRouter();
 
 	// // Check if the required data was provided
@@ -19,11 +20,17 @@ export default function Page({ sections, metadata, manufacturers, preview, slug,
 	// 	return <div className="container">Loading...</div>;
 	// }
 
-	// console.log("slug", slug);
+	if (!heading) {
+		heading = {
+			title,
+			subTitle,
+		};
+	}
 
 	return (
 		<>
 			<Seo metadata={metadata} />
+			<Block heading={heading} />
 			<Sections sections={sections} manufacturers={manufacturers} />
 		</>
 	);
@@ -34,6 +41,11 @@ Page.propTypes = {
 	metadata: PropTypes.object,
 	preview: PropTypes.bool,
 	slug: PropTypes.string,
+	heading: PropTypes.shape({
+		title: PropTypes.string,
+		subTitle: PropTypes.string,
+		subText: PropTypes.string,
+	}),
 };
 
 Page.defaultProps = {
@@ -41,6 +53,9 @@ Page.defaultProps = {
 	metadata: {},
 	preview: false,
 	slug: "",
+	// heading: {
+	// 	title: "Самостоятельная страница",
+	// },
 };
 
 Page.displayName = "Page";
