@@ -15,7 +15,7 @@ export default function Heading({ type, className, heading, underline }) {
 	return (
 		<div className={cx("heading", { heading__underline: underline })}>
 			{
-				createElement(
+				title && createElement(
 					type,
 					{
 						className: cx("heading__title relative", className, classNames[type]),

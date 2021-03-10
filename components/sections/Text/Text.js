@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Block from "../../containers/Block";
+import Block from "@/components/containers/Block";
 
 export default function Text({ heading }) {
 	return (
