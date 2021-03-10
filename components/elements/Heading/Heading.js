@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import get from "lodash/get";
 
-// import "./Heading.scss";
+import styles from "./heading.module.scss";
 
+console.log({ styles });
 export default function Heading({ type, className, heading, underline }) {
 	const { title, subText, subTitle } = heading;
 	const classNames = {
@@ -18,7 +19,7 @@ export default function Heading({ type, className, heading, underline }) {
 				title && createElement(
 					type,
 					{
-						className: cx("heading__title font-bold relative", className, classNames[type]),
+						className: cx("heading__title font-bold relative", className, classNames[type], styles._title),
 					},
 					title,
 				)

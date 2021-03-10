@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+
+.heading {
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    h4 {}
+
+    h5 {}
+}
+
+._title {
+    &:after {
+        content: "";
+        display: block;
+        width: 30%;
+        height: 3px;
+        background-color: #fbbf24;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+}
