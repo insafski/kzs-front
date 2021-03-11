@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
 import Link from "next/link";
+import { BrowserView, MobileView } from "react-device-detect";
 
 // import Image from "../../elements/Image";
 import get from "lodash/get";
@@ -10,8 +11,8 @@ import get from "lodash/get";
 
 export default function Footer({ footer, contacts }) {
 	return (
-		<footer className="footer bg-gray-100">
-			<div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between">
+		<footer className={"footer bg-gray-100"}>
+			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<>
 						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
