@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
+import Icon from "@/components/elements/Icon";
+
 export default function ContactBar({ data }) {
 	const title = get(data, "header.top.title", "");
 
@@ -15,12 +17,13 @@ export default function ContactBar({ data }) {
 					<ul className={"header-top__list flex w-8/12 justify-end"}>
 						<li className={"header-top__item ml-4"}>
 							<a href="tel:+79148884566">
-								{/* /huinyo eto / */}
+								<Icon type={"phone"} className={"mr-4"} />
 								{get(data, "contacts[3].title")}
 							</a>
 						</li>
 						<li className={"header-top__item ml-4"}>
 							<a href="mailto:piss@mail.ru">
+								<Icon type={"mail"} className={"mr-4"} />
 								{get(data, "contacts[0].title")}
 							</a>
 						</li>

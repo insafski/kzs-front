@@ -29,9 +29,9 @@ export default function Layout({ children, global }) {
 					</div>
 				}
 				bottom={
-					<div className={"header-middle md:pt-4 md:pt-0"}>
+					<div className={"header-middle"}>
 						<div className={"container mx-auto flex flex-col md:flex-row px-4 mb-4"}>
-							<div className={"w-full mb-4 mr-4 md:w-3/12"}>
+							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-3/12"}>
 								<Catalog
 									trigger={
 										<Button key={`catalog-trigger-${isMobile}`}>
