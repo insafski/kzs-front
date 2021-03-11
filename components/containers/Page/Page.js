@@ -7,7 +7,7 @@ import Sections from "../Sections";
 import Seo from "@/components/elements/seo";
 import Block from "@/components/containers/Block";
 
-export default function Page({ sections, metadata, manufacturers, heading, title, subTitle, preview, slug, description }) {
+export default function Page({ sections, metadata, manufacturers, heading, mainPage, title, subTitle, preview, slug, description }) {
 	const router = useRouter();
 
 	// // Check if the required data was provided
@@ -30,7 +30,8 @@ export default function Page({ sections, metadata, manufacturers, heading, title
 	return (
 		<>
 			<Seo metadata={metadata} />
-			<Block heading={heading} />
+			{
+				!mainPage && (<Block heading={heading} />)}
 			<Sections sections={sections} manufacturers={manufacturers} />
 		</>
 	);
@@ -46,6 +47,7 @@ Page.propTypes = {
 		subTitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
+	mainPage: PropTypes.bool,
 };
 
 Page.defaultProps = {
@@ -56,6 +58,7 @@ Page.defaultProps = {
 	// heading: {
 	// 	title: "Самостоятельная страница",
 	// },
+	mainPage: false,
 };
 
 Page.displayName = "Page";

@@ -1,3 +1,4 @@
+import React from "react";
 import { gql } from "@apollo/client";
 import get from "lodash/get";
 
@@ -36,4 +37,8 @@ export async function getStaticProps({ params, preview = null }) {
 	};
 }
 
-export default Page;
+function MainPage(props) {
+	return <Page {...props} mainPage />;
+}
+
+export default MainPage;

@@ -27,20 +27,22 @@ export default function Layout({ children, global }) {
 					</div>
 				}
 				bottom={
-					<div className={"header-middle pt-4"}>
-						<div className={"container mx-auto px-4 mb-4"}>
-							<Catalog
-								trigger={
-									<Button text={"Каталог"} />
-								}
-							/>
-						</div>
-						<div className={"container mx-auto px-4 text-md"}>
-							<input
-								type="text"
-								className={"block w-full rounded-md border-gray-100 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50"}
-								placeholder={"Поиск"}
-							/>
+					<div className={"header-middle pt-4 md:pt-0"}>
+						<div className={"container mx-auto flex flex-col md:flex-row px-4 mb-4"}>
+							<div className={"w-full mb-4 mr-4 md:w-3/12"}>
+								<Catalog
+									trigger={
+										<Button text={"Каталог"} />
+									}
+								/>
+							</div>
+							<div className={"w-full md:w-9/12"}>
+								<input
+									type="text"
+									className={"block w-full rounded-md border-gray-100 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50 p-4"}
+									placeholder={"Поиск"}
+								/>
+							</div>
 						</div>
 					</div>
 				}
