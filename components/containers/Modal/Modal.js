@@ -4,7 +4,7 @@ import Dialog from "rc-dialog";
 
 import "rc-dialog/assets/index.css";
 
-export default function Modal({ title, className, visible, wrapClassName, animation, maskAnimation, onClose, style, forceRender, children }) {
+export default function Modal({ title, className, visible, wrapClassName, animation, maskAnimation, onClose, style, mousePosition, forceRender, children }) {
 	return (
 		<Dialog
 			className={className}
@@ -15,7 +15,7 @@ export default function Modal({ title, className, visible, wrapClassName, animat
 			onClose={onClose}
 			style={style}
 			title={title}
-			// mousePosition={mousePosition}
+			mousePosition={mousePosition}
 			destroyOnClose={true}
 			forceRender={forceRender}
 			focusTriggerAfterClose={false}
@@ -34,6 +34,7 @@ Modal.propTypes = {
 	maskAnimation: PropTypes.string,
 	onClose: PropTypes.func,
 	style: PropTypes.object,
+	mousePosition: PropTypes.object,
 	forceRender: PropTypes.bool,
 	children: PropTypes.node,
 };
@@ -47,6 +48,10 @@ Modal.defaultProps = {
 	maskAnimation: "fade",
 	onClose: () => Function,
 	style: {},
+	mousePosition: {
+		x: null,
+		y: null,
+	},
 	forceRender: false,
 	children: null,
 };

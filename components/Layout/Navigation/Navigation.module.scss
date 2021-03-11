@@ -1,0 +1,25 @@
+.navigation {}
+
+.burger {
+    width: 32px;
+
+    span {
+        height: 4px;
+		width: 100%;
+		transition: width .3s ease;
+
+        &:nth-child(2) {
+            width: 50%;
+        }
+
+        &:nth-child(3) {
+            width: 90%;
+        }
+    }
+
+	&:hover {
+		span {
+			width: 100%;
+		}
+	}
+}

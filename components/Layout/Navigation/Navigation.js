@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useToggle } from "ahooks";
+import { useToggle, useDebounceFn } from "ahooks";
 import Link from "next/link";
 // import { useRouter } from "next/router";
 import get from "lodash/get";
@@ -9,10 +9,20 @@ import cx from "classnames";
 import Icon from "../../elements/Icon";
 import Drawer from "../../containers/Drawer";
 
-import styles from "./Navigation.module.css";
+import styles from "./Navigation.module.scss";
+
+console.log({ styles });
 
 export default function Navbar({ data = {} }) {
 	const [state, { toggle }] = useToggle();
+	const { run } = useDebounceFn(
+		() => {
+			toggle();
+		},
+		{
+			wait: 200,
+		},
+	);
 
 	const navigation = get(data, "navigation", []);
 
@@ -23,7 +33,7 @@ export default function Navbar({ data = {} }) {
 			<div className={"navigation__logo"}>
 				<Link href={"/"}>
 					<a>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Sketch_Logo.svg" alt="" style={{ width: 30 }} />
+						<img src="https://images.vexels.com/media/users/3/130482/isolated/preview/ff5d9147b237d695b87e1f005a885ab1-fronthoe-loader-icon-by-vexels.png" alt="" style={{ width: 30 }} />
 					</a>
 				</Link>
 			</div>
@@ -94,10 +104,10 @@ export default function Navbar({ data = {} }) {
 					</div>
 				</nav>
 			</Drawer>
-			<button className={"navigation__burger w-7 md:hidden"} onClick={toggle}>
-				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
-				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
-				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
+			<button className={cx("burger flex flex-col justify-between items-end md:hidden", styles.burger)} onClick={run}>
+				<span className={cx("bg-gray-700 rounded-md", styles.burger__line)} />
+				<span className={cx("bg-gray-700 rounded-md", styles.burger__line)} />
+				<span className={cx("bg-gray-700 rounded-md", styles.burger__line)} />
 			</button>
 		</div>
 	);

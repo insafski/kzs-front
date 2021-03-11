@@ -10,7 +10,7 @@ export default function Heading({ type, className, heading, underline }) {
 	const { title, subText, subTitle } = heading;
 	const classNames = {
 		h1: "h1 mb-6 text-3xl md:text-5xl",
-		h2: "h2 mb-6 text-3xl md:text-6xl",
+		h2: "h2 mb-6 text-3xl md:text-4xl",
 	};
 
 	return (

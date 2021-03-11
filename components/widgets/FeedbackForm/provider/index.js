@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useToggle } from "ahooks";
 
@@ -7,12 +7,20 @@ import { FeedbackContextProvider } from "../context";
 
 export default function FeedbackProvider({ children }) {
 	const [isOpen, { toggle }] = useToggle();
+	const [mousePosition, setMousePosition] = useState({
+		x: null,
+		y: null,
+	});
 
 	function handleClose() {
 		toggle(false);
 	}
 
-	function handleOpen() {
+	function handleOpen(event) {
+		setMousePosition({
+			x: event.pageX,
+			y: event.pageY,
+		});
 		toggle(true);
 	}
 
@@ -29,6 +37,11 @@ export default function FeedbackProvider({ children }) {
 				title={"Обратка"}
 				visible={isOpen}
 				onClose={handleClose}
+				mousePosition={mousePosition}
+				wrapClassName={"center"}
+				style={{
+					width: 600,
+				}}
 			>
 			</Modal>
 			{children}

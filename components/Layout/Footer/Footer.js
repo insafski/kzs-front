@@ -11,7 +11,7 @@ import get from "lodash/get";
 
 export default function Footer({ footer, contacts }) {
 	return (
-		<footer className={"footer bg-gray-100"}>
+		<footer className={"footer bg-gray-300"}>
 			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<>
@@ -67,7 +67,7 @@ export default function Footer({ footer, contacts }) {
 					</ul>
 				</div>
 			</div>
-			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-200"}>
+			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-500"}>
 				<div className={"container mx-auto flex justify-between"}>
 					<span>КазЗапчастьСервис</span>
 					<span>2021</span>
