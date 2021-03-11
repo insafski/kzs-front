@@ -6,6 +6,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
+import Button from "@/components/elements/Form/Button";
 
 export default function Layout({ children, global }) {
 	const { footer, header: { middle: headerMiddle }, contacts } = global;
@@ -19,8 +20,8 @@ export default function Layout({ children, global }) {
 					<ContactBar data={global} />
 				}
 				middle={
-					<div className={"header-middle md:pt-4"}>
-						<div className={"container mx-auto px-4 py-4 bg-gray-100"}>
+					<div className={"header-middle"}>
+						<div className={"container mx-auto px-4 py-4 bg-gray-100 md:bg-white"}>
 							<Navigation data={headerMiddle} />
 						</div>
 					</div>
@@ -30,11 +31,7 @@ export default function Layout({ children, global }) {
 						<div className={"container mx-auto px-4 mb-4"}>
 							<Catalog
 								trigger={
-									<button
-										className={"w-full inline-flex justify-center py-2 border border-transparent shadow-sm text-md font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 uppercase"}
-									>
-										Каталог
-									</button>
+									<Button text={"Каталог"} />
 								}
 							/>
 						</div>

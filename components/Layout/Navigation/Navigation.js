@@ -27,6 +27,21 @@ export default function Navbar({ data = {} }) {
 					</a>
 				</Link>
 			</div>
+			<nav className={"navigation__container flex hidden md:block"}>
+				<ul className={"navigation__body flex"}>
+					{
+						navigation.map(({ link, title }, idx) => {
+							return (
+								<li key={idx} className={"navigation__item ml-4"}>
+									<Link href={link} className={"navigation__link"}>
+										{title}
+									</Link>
+								</li>
+							);
+						})
+					}
+				</ul>
+			</nav>
 			<Drawer
 				open={state}
 				placement={"right"}
@@ -36,7 +51,7 @@ export default function Navbar({ data = {} }) {
 				level={null}
 				width={"90vw"}
 			>
-				<nav className={"navigation__container flex flex-col h-full w-full absolute md:relative"}>
+				<nav className={"navigation__container flex flex-col h-full w-full absolute"}>
 					<div className={"navigation__header px-4 py-4 flex justify-end bg-gray-100"}>
 						<button onClick={() => toggle(false)}>
 							Закрыть
@@ -79,7 +94,7 @@ export default function Navbar({ data = {} }) {
 					</div>
 				</nav>
 			</Drawer>
-			<button className={"navigation__burger w-7"} onClick={toggle}>
+			<button className={"navigation__burger w-7 md:hidden"} onClick={toggle}>
 				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
 				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />
 				<span className={cx("block h-1 w-full mb-2 bg-black", styles.navigation__burger)} />

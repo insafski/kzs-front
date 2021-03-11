@@ -117,7 +117,9 @@ export default function Catalog({ trigger }) {
 				cloneElement(
 					trigger,
 					{
-						onClick: toggle,
+						handlers: {
+							onClick: toggle,
+						},
 					},
 				)
 			}
