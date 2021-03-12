@@ -22,15 +22,15 @@ export default function Layout({ children, global }) {
 					<ContactBar data={global} />
 				}
 				middle={
-					<div className={"header-middle"}>
-						<div className={"container mx-auto px-4 py-4"}>
+					<div className={"header-middle py-4 md:py-0"}>
+						<div className={"container"}>
 							<Navigation data={headerMiddle} />
 						</div>
 					</div>
 				}
 				bottom={
 					<div className={"header-middle"}>
-						<div className={"container mx-auto flex flex-col md:flex-row px-4 mb-4"}>
+						<div className={"container flex flex-col md:flex-row px-4 mb-4"}>
 							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-3/12"}>
 								<Catalog
 									trigger={

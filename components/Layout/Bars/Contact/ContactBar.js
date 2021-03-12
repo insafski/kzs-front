@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
 import Icon from "@/components/elements/Icon";
+import { AddressContext } from "@/components/widgets/Address";
 
 export default function ContactBar({ data }) {
+	const { handleOpen } = useContext(AddressContext);
+
 	const title = get(data, "header.top.title", "");
 
 	return (
@@ -17,14 +20,20 @@ export default function ContactBar({ data }) {
 					<ul className={"header-top__list flex w-8/12 justify-end"}>
 						<li className={"header-top__item ml-4"}>
 							<a href="tel:+79148884566">
-								<Icon type={"phone"} className={"mr-4"} />
+								<Icon type={"phone"} className={"mr-2"} />
 								{get(data, "contacts[3].title")}
 							</a>
 						</li>
 						<li className={"header-top__item ml-4"}>
 							<a href="mailto:piss@mail.ru">
-								<Icon type={"mail"} className={"mr-4"} />
+								<Icon type={"mail"} className={"mr-2"} />
 								{get(data, "contacts[0].title")}
+							</a>
+						</li>
+						<li className={"header-top__item ml-4"}>
+							<a href={"/#"} onClick={handleOpen}>
+								<Icon type={"location"} className={"mr-2"} />
+								Карла маркса, 5
 							</a>
 						</li>
 					</ul>

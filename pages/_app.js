@@ -8,6 +8,7 @@ import { DefaultSeo } from "next-seo";
 import { getGlobalData, getManufacturersData } from "utils/api";
 
 import { FeedbackProvider } from "@/components/widgets/FeedbackForm";
+import { AddressProvider } from "@/components/widgets/Address";
 import Layout from "@/components/Layout";
 import "@/styles/index.css";
 
@@ -54,9 +55,11 @@ export default function Application({ Component, pageProps }) {
 				// }}
 			/>
 			<FeedbackProvider>
-				<Layout global={global}>
-					<Component {...pageProps} />
-				</Layout>
+				<AddressProvider>
+					<Layout global={global}>
+						<Component {...pageProps} />
+					</Layout>
+				</AddressProvider>
 			</FeedbackProvider>
 		</>
 	);

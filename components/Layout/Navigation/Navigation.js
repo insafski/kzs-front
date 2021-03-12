@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { useToggle, useDebounceFn } from "ahooks";
 import Link from "next/link";
@@ -6,8 +6,9 @@ import Link from "next/link";
 import get from "lodash/get";
 import cx from "classnames";
 
-import Icon from "../../elements/Icon";
-import Drawer from "../../containers/Drawer";
+import Icon from "@/components/elements/Icon";
+import Drawer from "@/components/containers/Drawer";
+import { AddressContext } from "@/components/widgets/Address";
 
 import styles from "./Navigation.module.scss";
 
@@ -23,6 +24,7 @@ export default function Navbar({ data = {} }) {
 			wait: 200,
 		},
 	);
+	const { handleOpen } = useContext(AddressContext);
 
 	const navigation = get(data, "navigation", []);
 
@@ -42,9 +44,11 @@ export default function Navbar({ data = {} }) {
 					{
 						navigation.map(({ link, title }, idx) => {
 							return (
-								<li key={idx} className={"navigation__item ml-4"}>
-									<Link href={link} className={"navigation__link"}>
-										{title}
+								<li key={idx} className={"navigation__item"}>
+									<Link href={link}>
+										<a className={"navigation__link block p-4 hover:bg-yellow-500"}>
+											{title}
+										</a>
 									</Link>
 								</li>
 							);
@@ -83,7 +87,7 @@ export default function Navbar({ data = {} }) {
 					<div className="navigation__footer mt-auto bg-gray-100">
 						<ul className={"flex flex-col"}>
 							<li className={"py-4 px-4 border-b border-gray-200"}>
-								<a href="/">
+								<a href="/#" onClick={handleOpen}>
 									<Icon type={"location"} />
 									<span className={"ml-4"}>Карла Маркса, 5</span>
 								</a>
