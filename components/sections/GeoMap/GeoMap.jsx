@@ -2,16 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Block from "@/components/containers/Block";
+import GeoMap from "@/components/elements/GeoMap";
 
-export default function Text({ heading }) {
+export default function MapSection({ heading }) {
 	return (
 		<Block heading={heading} className={"text"}>
-
+			<div className={"w-full h-60 md:h-96 mb-4"}>
+				<GeoMap />
+			</div>
 		</Block>
 	);
 }
 
-Text.propTypes = {
+MapSection.propTypes = {
 	heading: PropTypes.shape({
 		title: PropTypes.string,
 		subTitle: PropTypes.string,

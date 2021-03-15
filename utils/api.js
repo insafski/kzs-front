@@ -60,25 +60,25 @@ export async function getGlobalData() {
 }
 
 export async function getManufacturersData() {
-	const result = await client.query({
-		query: gql`
-			query Manufacturers {
-				manufacturers {
-					createdAt
-					deletedAt
-					id
-					picture
-					seo
-					status
-					title
-					updatedAt
-					url
-				}
-			}
-		`,
-	});
+	// const result = await client.query({
+	// 	query: gql`
+	// 		query Manufacturers {
+	// 			manufacturers {
+	// 				createdAt
+	// 				deletedAt
+	// 				id
+	// 				picture
+	// 				seo
+	// 				status
+	// 				title
+	// 				updatedAt
+	// 				url
+	// 			}
+	// 		}
+	// 	`,
+	// });
 
-	const manufacturers = get(result, "data.manufacturers", {});
+	const manufacturers = [];// get(result, "data.manufacturers", {});
 
 	return manufacturers;
 }

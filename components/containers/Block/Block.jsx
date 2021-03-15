@@ -8,7 +8,7 @@ import styles from "./Block.module.scss";
 
 export default function Block({ className, children, heading, style }) {
 	return (
-		<section className={cx(`${styles.block}`, "section py-12 md:py-14 lg:py-16", className)} style={style}>
+		<section className={cx(`${styles.block}`, "section pt-12 md:py-14 lg:py-16", className)} style={style}>
 			<div className={"container mx-auto relative px-4"}>
 				<Heading heading={heading} />
 			</div>

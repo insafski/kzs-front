@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Block from "../../containers/Block";
-import List from "../../containers/List";
+import Block from "@/components/containers/Block";
+import List from "@/components/containers/List";
 
 export default function Articles({ heading, items }) {
 	return (
 		<Block heading={heading}>
-			<div className={"container mx-auto px-4"}>
+			<div className={"container px-4"}>
 				<List items={items} type={"article"} />
 			</div>
 		</Block>
