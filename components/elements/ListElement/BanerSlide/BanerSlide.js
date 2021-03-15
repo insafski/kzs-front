@@ -17,8 +17,8 @@ export default function BanerSlide({ picture, title, description, link }) {
 			/>
 			<div className={"baner-slide__content w-full absolute top-0"}>
 				<div className={"container mx-auto px-12 mt-16"}>
-					<h2 className={"text-6xl text-white mb-4 font-bold"}>Заголовок</h2>
-					<p className={"text-5xl text-white font-semibold"}>Описание</p>
+					<h2 className={"text-6xl text-white mb-4 font-bold"}>{title}</h2>
+					<p className={"text-5xl text-white font-semibold"}>{description}</p>
 				</div>
 			</div>
 		</div>
