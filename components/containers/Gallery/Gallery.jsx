@@ -7,16 +7,10 @@ import uniqueId from "lodash/uniqueId";
 import "photoswipe/dist/photoswipe.css";
 import "photoswipe/dist/default-skin/default-skin.css";
 
-export default function Gallery({ id, items }) {
+export default function Gallery({ id, children }) {
 	return (
 		<DromGallery id={id}>
-			{
-				items.map(({ src }, idx) => {
-					return (
-						<div key={"idx"}>{src}</div>
-					);
-				})
-			}
+			{children}
 		</DromGallery>
 	);
 }
