@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isMobile } from "react-device-detect";
+import get from "lodash/get";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -11,7 +12,9 @@ import Button from "@/components/elements/Form/Button";
 import Icon from "@/components/elements/Icon";
 
 export default function Layout({ children, global }) {
-	const { footer, header: { middle: headerMiddle }, contacts } = global;
+	const footer = get(global, "footer", {});
+	const contacts = get(global, "contacts", []);
+	const headerMiddle = get(global, "headr.middle", {});
 
 	// TODO: Need to make multiple fields for footer andd header (navigation, meta, etc. ).
 

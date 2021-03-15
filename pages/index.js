@@ -12,17 +12,15 @@ export async function getStaticProps({ params, preview = null }) {
 			query Page {
 				pages(where: {slug: {_eq: "/"}}) {
 					id
+					heading
 					createdAt
 					deletedAt
-					description
 					picture
 					sections
 					metaData
 					settings
 					slug
 					status
-					subTitle
-					title
 					updatedAt
 				}
 			}

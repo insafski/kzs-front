@@ -29,17 +29,15 @@ export async function getStaticProps({ params, preview = null }) {
 			query Manufacturer($slug: String!) {
 				manufacturers(where: {slug: {_eq: $slug}, _not: {slug: {_eq: "/"}}}) {
 					id
+					heading
 					createdAt
 					deletedAt
-					description
 					picture
 					sections
 					metaData
 					settings
 					slug
 					status
-					subTitle
-					title
 					updatedAt
 				}
 			}

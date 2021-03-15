@@ -10,13 +10,13 @@ export async function getStaticProps({ params, preview = null }) {
 		query: gql`
 			query Manufactures {
 				manufacturers {
+					id
+					heading
 					createdAt
 					deletedAt
-					id
 					picture
 					seo
 					status
-					title
 					updatedAt
 					url
 				}

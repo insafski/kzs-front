@@ -16,7 +16,7 @@ export default function Footer({ footer, contacts }) {
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<>
 						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
-						{footer.logo.picture && (
+						{footer.logo && footer.logo.picture && (
 							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
 							<img width={30} src={footer.logo.picture[0].src} />
 						)
