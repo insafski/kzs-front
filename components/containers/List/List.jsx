@@ -7,7 +7,7 @@ import ListItem from "../../elements/ListElement";
 import Gallery from "../Gallery";
 
 const containersMap = {
-	"image-gallery": Gallery,
+	"photo-gallery": Gallery,
 	"imperial": "div",
 	get(type) {
 		return this[type] || this.imperial;

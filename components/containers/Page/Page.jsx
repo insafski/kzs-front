@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import Sections from "../Sections";
 import Seo from "@/components/elements/seo";
 import Block from "@/components/containers/Block";
+import List from "@/components/containers/List";
 
 export default function Page({ sections, metadata, manufacturers, heading, mainPage, title, subTitle, preview, slug, description }) {
 	const router = useRouter();

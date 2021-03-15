@@ -10,7 +10,9 @@ import "photoswipe/dist/default-skin/default-skin.css";
 export default function Gallery({ id, children }) {
 	return (
 		<DromGallery id={id}>
-			{children}
+			<div className={"image-gallery flex py-4"}>
+				{children}
+			</div>
 		</DromGallery>
 	);
 }

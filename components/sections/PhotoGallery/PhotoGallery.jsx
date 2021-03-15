@@ -7,8 +7,8 @@ import List from "@/components/containers/List";
 export default function VideoGallery({ heading, items }) {
 	return (
 		<Block heading={heading} className={"photo-gallery"}>
-			<div className={"container"}>
-				<List items={items} type={"photo"} container={"gallery"} />
+			<div className="container">
+				<List items={items} type={"photo"} container={"photo-gallery"} />
 			</div>
 		</Block>
 	);
