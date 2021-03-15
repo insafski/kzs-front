@@ -1,8 +1,11 @@
 import React, { createElement } from "react";
 import PropTypes from "prop-types";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ListItem from "../../elements/ListElement";
+
+SwiperCore.use([Navigation, Pagination]);
 
 export default function Carousel({ items, type }) {
 	return (
@@ -11,6 +14,9 @@ export default function Carousel({ items, type }) {
 			slidesPerView={1}
 			onSlideChange={() => console.log("slide change")}
 			onSwiper={swiper => console.log(swiper)}
+			navigation
+			pagination={{ clickable: true }}
+			scrollbar={{ draggable: true }}
 		>
 			{
 				items.map(({ picture, title, description, link }, idx) => {
