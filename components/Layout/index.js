@@ -38,7 +38,7 @@ export default function Layout({ children, global }) {
 							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-2/12"}>
 								<Catalog
 									trigger={
-										<Button key={`catalog-trigger-${isMobile}`}>
+										<Button key={`catalog-trigger-${isMobile}`} className={"border-transparent bg-yellow-400"}>
 											{"Каталог"}
 											<Icon type={isMobile ? "angle-down" : "angle-right"} />
 										</Button>
