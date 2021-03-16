@@ -8,7 +8,7 @@ import Seo from "@/components/elements/seo";
 import Block from "@/components/containers/Block";
 import List from "@/components/containers/List";
 
-export default function Page({ sections, metadata, manufacturers, heading, mainPage, title, subTitle, preview, slug, description }) {
+export default function Page({ sections, metadata, manufacturers, heading, mainPage, title, subtitle, preview, slug, description }) {
 	const router = useRouter();
 
 	// // Check if the required data was provided
@@ -24,7 +24,7 @@ export default function Page({ sections, metadata, manufacturers, heading, mainP
 	if (!heading) {
 		heading = {
 			title,
-			subTitle,
+			subtitle,
 		};
 	}
 
@@ -32,7 +32,7 @@ export default function Page({ sections, metadata, manufacturers, heading, mainP
 		<>
 			<Seo metadata={metadata} />
 			{
-				!mainPage && (<Block heading={heading} />)}
+				!mainPage && (<Block heading={heading} padding={"pt-14"} underline={false} />)}
 			<Sections sections={sections} manufacturers={manufacturers} />
 		</>
 	);
@@ -45,7 +45,7 @@ Page.propTypes = {
 	slug: PropTypes.string,
 	heading: PropTypes.shape({
 		title: PropTypes.string,
-		subTitle: PropTypes.string,
+		subtitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
 	mainPage: PropTypes.bool,

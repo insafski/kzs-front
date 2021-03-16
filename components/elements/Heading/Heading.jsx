@@ -5,32 +5,32 @@ import cx from "classnames";
 import styles from "./heading.module.scss";
 
 console.log({ styles });
-export default function Heading({ type, className, heading, underline }) {
-	const { title, subText, subTitle } = heading;
+export default function Heading({ className, heading, underline }) {
+	const { title, description, subtitle, type } = heading;
 	const classNames = {
-		h1: "h1 mb-6 text-3xl md:text-5xl",
+		h1: cx("h1 text-3xl md:text-5xl", { "mb-6": underline }),
 		h2: "h2 mb-6 text-3xl md:text-4xl",
 	};
 
 	return (
-		<div className={cx("heading", { heading__underline: underline })}>
+		<div className={"heading"}>
 			{
 				title && createElement(
 					type,
 					{
-						className: cx("heading__title font-bold relative", className, classNames[type], styles._title),
+						className: cx("heading__title font-bold relative", className, classNames[type], { [styles._title]: underline }),
 					},
 					title,
 				)
 			}
 			{
-				subTitle && (
-					<p className={"heading__subtitle font-semibold mb-8 text-xl"}>{subTitle}</p>
+				subtitle && (
+					<p className={"heading__subtitle font-semibold mb-8 text-xl"}>{subtitle}</p>
 				)
 			}
 			{
-				subText && (
-					<p className={"heading__subtext mb-4"}>{subText}</p>
+				description && (
+					<p className={"heading__subtext mb-4"}>{description}</p>
 				)
 			}
 		</div>

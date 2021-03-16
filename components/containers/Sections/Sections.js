@@ -10,11 +10,7 @@ export default function Sections({ sections, manufacturers }) {
 			{
 				(sections || []).map((section, idx) => {
 					const component = get(section, "component", "");
-					const heading = {
-						title: get(section, "title"),
-						subTitle: get(section, "subtitle"),
-						subText: get(section, "description"),
-					};
+					const heading = get(section, "heading");
 
 					return createElement(
 						sectionsHashMap.get(component),

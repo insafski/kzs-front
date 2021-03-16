@@ -6,11 +6,11 @@ import Heading from "@/components/elements/Heading";
 
 import styles from "./Block.module.scss";
 
-export default function Block({ className, children, heading, style }) {
+export default function Block({ className, children, heading, style, padding, underline }) {
 	return (
-		<section className={cx(`${styles.block}`, "section pt-12 md:py-14 lg:py-16", className)} style={style}>
+		<section className={cx(`${styles.block}`, "section", padding, className)} style={style}>
 			<div className={"container relative px-4"}>
-				<Heading heading={heading} />
+				<Heading heading={heading} underline={underline} />
 			</div>
 			{children}
 		</section>
@@ -22,13 +22,17 @@ Block.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 	heading: PropTypes.object,
 	style: PropTypes.object,
+	padding: PropTypes.string,
+	underline: PropTypes.bool,
 };
 
 Block.defaultProps = {
-	className: "flex py-6",
+	className: "flex",
 	children: null,
 	heading: {},
 	style: {},
+	padding: "py-6 pt-12 md:py-14 lg:py-16",
+	underline: true,
 };
 
 Block.displayName = "Block";

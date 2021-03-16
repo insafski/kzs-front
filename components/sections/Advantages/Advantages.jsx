@@ -17,7 +17,7 @@ export default function Advantages({ heading, items }) {
 Advantages.propTypes = {
 	heading: PropTypes.shape({
 		title: PropTypes.string,
-		subTitle: PropTypes.string,
+		subtitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
 	items: PropTypes.array,
@@ -26,7 +26,7 @@ Advantages.propTypes = {
 Advantages.defaultProps = {
 	heading: {
 		title: "",
-		subTitle: "",
+		subtitle: "",
 		subText: "",
 	},
 	items: [],
