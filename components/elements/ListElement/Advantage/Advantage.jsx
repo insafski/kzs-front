@@ -5,14 +5,14 @@ import Image from "../../Image";
 
 export default function Advantage({ title, description, picture }) {
 	return (
-		<div className={"advantage-item w-1/2 md:w-1/4"}>
+		<div className={"advantage-item text-center px-2 mb-8 md:mb-4 w-full md:w-1/4"}>
 			<Image picture={picture} />
-			<span className={"advantage-item__title mb-4"}>
+			<h3 className={"advantage-item__title mb-4 text-3xl"}>
 				{title}
-			</span>
-			<span className={"advantage-item__description"}>
+			</h3>
+			<p className={"advantage-item__description"}>
 				{description}
-			</span>
+			</p>
 		</div>
 	);
 }
