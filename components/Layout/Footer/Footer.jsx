@@ -10,22 +10,23 @@ import get from "lodash/get";
 // import Icon from "../../elements/Icon";
 
 export default function Footer({ footer, contacts }) {
+	const navigation = get(footer, "navigation", []);
+
 	return (
 		<footer className={"footer bg-gray-100"}>
 			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<>
-						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
+					<div className={"mt-8 md:mt-0 px-4"}>
 						{
 							footer.logo && footer.logo.picture && (
 							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
-								<img width={30} src={footer.logo.picture[0].src} />
+								<img src={footer.logo.picture[0].src} />
 							)
 						}
-					</>
+					</div>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<ul className={"mt-8 px-4"}>
+					<ul className={"mt-8 md:mt-0 px-4"}>
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
@@ -38,9 +39,9 @@ export default function Footer({ footer, contacts }) {
 					</ul>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<ul className={"mt-8 px-4"}>
+					<ul className={"mt-8 md:mt-0 px-4"}>
 						{
-							get(footer, "navigation", []).map(({ link, title }, idx) => (
+							navigation.map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
 									<Link href={link}>
 										{title}
@@ -51,14 +52,19 @@ export default function Footer({ footer, contacts }) {
 					</ul>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-2/5 lg:w-1/4"}>
-					<ul className={"mt-8 px-4"}>
+					<ul className={"mt-8 md:mt-0 px-4"}>
 						{
-							contacts.map(({ icon, title }, idx) => {
+							contacts.map(({ icon, title, showtitle, link }, idx) => {
 								return (
-									<div key={idx} className={"w-6/12 md:w-full"}>
-										<i className={`kzs-${icon} text-yellow-400`} />
-										{title}
-									</div>
+									<li key={idx} className={"w-6/12 md:w-full text-lg mb-4"}>
+										<div className={"mb-1"}>
+											<i className={`kzs-${icon} mr-2`} />
+											{title}
+										</div>
+										<a href={link}>
+											{showtitle}
+										</a>
+									</li>
 								);
 							})
 						}

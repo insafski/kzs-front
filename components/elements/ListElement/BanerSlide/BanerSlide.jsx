@@ -7,7 +7,10 @@ import styles from "./BanerSlide.module.scss";
 
 export default function BanerSlide({ picture, title, description, link }) {
 	return (
-		<div className={cx("baner-slide relative", styles["baner-slide"])} style={{ height: "60vh" }}>
+		<div
+			className={cx("baner-slide relative rounded-md overflow-hidden", styles["baner-slide"])}
+			style={{ height: "60vh" }}
+		>
 			<Link href={link}>
 				<a>
 					<img
