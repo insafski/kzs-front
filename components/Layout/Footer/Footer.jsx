@@ -11,24 +11,24 @@ import get from "lodash/get";
 
 export default function Footer({ footer, contacts }) {
 	return (
-		<footer className={"footer bg-gray-300"}>
+		<footer className={"footer bg-gray-100"}>
 			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<>
 						{/* <img width={300} src={"https://static.tildacdn.com/tild3531-6461-4331-a164-363362633034/_2.jpg"} /> */}
-						{footer.logo && footer.logo.picture && (
+						{
+							footer.logo && footer.logo.picture && (
 							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
-							<img width={30} src={footer.logo.picture[0].src} />
-						)
+								<img width={30} src={footer.logo.picture[0].src} />
+							)
 						}
 					</>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<a href={"/catalog"} className={"text-3xl"}>Каталог</a>
 					<ul className={"mt-8 px-4"}>
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-4 text-base"}>
+								<li key={idx} className={"mb-2 text-base"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -38,11 +38,10 @@ export default function Footer({ footer, contacts }) {
 					</ul>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<a href={"/catalog"} className={"text-3xl"}>Навигация</a>
 					<ul className={"mt-8 px-4"}>
 						{
 							get(footer, "navigation", []).map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-4 text-base"}>
+								<li key={idx} className={"mb-2 text-base"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -52,12 +51,11 @@ export default function Footer({ footer, contacts }) {
 					</ul>
 				</div>
 				<div className={"footer__item mb-8 md:mb-0 md:w-2/5 lg:w-1/4"}>
-					<a href={"/contacts"} className={"text-3xl"}>Контакты</a>
 					<ul className={"mt-8 px-4"}>
 						{
 							contacts.map(({ icon, title }, idx) => {
 								return (
-									<div key={idx} className={"w-6/12"}>
+									<div key={idx} className={"w-6/12 md:w-full"}>
 										<i className={`kzs-${icon} text-yellow-400`} />
 										{title}
 									</div>

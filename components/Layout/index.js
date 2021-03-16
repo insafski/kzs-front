@@ -34,7 +34,7 @@ export default function Layout({ children, global }) {
 				bottom={
 					<div className={"header-middle"}>
 						<div className={"container flex flex-col md:flex-row px-4 mb-4"}>
-							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-3/12"}>
+							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-2/12"}>
 								<Catalog
 									trigger={
 										<Button key={`catalog-trigger-${isMobile}`}>
@@ -44,7 +44,7 @@ export default function Layout({ children, global }) {
 									}
 								/>
 							</div>
-							<div className={"w-full md:w-9/12"}>
+							<div className={"w-full md:w-10/12"}>
 								<input
 									type="text"
 									className={"block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50"}
