@@ -1,14 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, cloneElement } from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
 import Icon from "@/components/elements/Icon";
 import { AddressContext } from "@/components/widgets/Address";
 
-export default function ContactBar({ data }) {
+export default function ContactBar({ global }) {
 	const { handleOpen } = useContext(AddressContext);
 
-	const title = get(data, "header.top.title", "");
+	const handlersMap = {
+		location: {
+			onClick: handleOpen,
+		},
+	};
+
+	const title = get(global, "header.top.title", "");
+	const contacts = get(global, "contacts.contacts", []);
 
 	return (
 		<div className={"header-top hidden md:block py-2 border-b border-yellow-400"}>
@@ -18,24 +25,25 @@ export default function ContactBar({ data }) {
 						{title}
 					</div>
 					<ul className={"header-top__list flex w-8/12 justify-end"}>
-						<li className={"header-top__item ml-4"}>
-							<a href="tel:+79148884566">
-								<Icon type={"phone"} className={"mr-2"} />
-								{get(data, "contacts[3].title")}
-							</a>
-						</li>
-						<li className={"header-top__item ml-4"}>
-							<a href="mailto:piss@mail.ru">
-								<Icon type={"mail"} className={"mr-2"} />
-								{get(data, "contacts[0].title")}
-							</a>
-						</li>
-						<li className={"header-top__item ml-4"}>
-							<a href={"/#"} onClick={handleOpen}>
-								<Icon type={"location"} className={"mr-2"} />
-								Карла маркса, 5
-							</a>
-						</li>
+						{
+							contacts.map(({ link, icon, showtitle }, idx) => {
+								return (
+									<li key={idx} className={"header-top__item ml-4"}>
+										{
+											cloneElement(
+												<a href={link} className={"text-sm"}>
+													<Icon type={icon} className={"mr-1"} />
+													{showtitle}
+												</a>,
+												{
+													...handlersMap[icon],
+												},
+											)
+										}
+									</li>
+								);
+							})
+						}
 					</ul>
 				</div>
 			</div>
@@ -44,5 +52,5 @@ export default function ContactBar({ data }) {
 }
 
 ContactBar.propTypes = {
-	data: PropTypes.object,
+	global: PropTypes.object,
 };

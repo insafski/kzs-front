@@ -23,7 +23,7 @@ export default function Layout({ children, global }) {
 		<div className="flex flex-col justify-between min-h-screen">
 			<Header
 				top={
-					<ContactBar data={global} />
+					<ContactBar global={global} />
 				}
 				middle={
 					<div className={"header-middle py-4 md:py-0"}>

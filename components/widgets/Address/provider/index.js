@@ -13,7 +13,10 @@ export default function AddressProvider({ children }) {
 		toggle(false);
 	}
 
-	function handleOpen() {
+	function handleOpen(event) {
+		event.preventDefault();
+		event.stopPropagation();
+
 		toggle(true);
 	}
 
