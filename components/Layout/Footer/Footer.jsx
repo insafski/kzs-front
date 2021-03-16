@@ -67,7 +67,7 @@ export default function Footer({ footer, contacts, social }) {
 							})
 						}
 					</ul>
-					<Social items={social}/>
+					<Social items={social} className={"px-4"} />
 				</div>
 			</div>
 			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-500"}>
