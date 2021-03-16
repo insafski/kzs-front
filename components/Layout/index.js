@@ -13,7 +13,8 @@ import Icon from "@/components/elements/Icon";
 
 export default function Layout({ children, global }) {
 	const footer = get(global, "footer", {});
-	const contacts = get(global, "contacts", []);
+	const contacts = get(global, "contacts.contacts", []);
+	const social = get(global, "contacts.social", []);
 	const headerMiddle = get(global, "header.middle", {});
 
 	// TODO: Need to make multiple fields for footer andd header (navigation, meta, etc. ).
@@ -56,7 +57,11 @@ export default function Layout({ children, global }) {
 				}
 			/>
 			{children}
-			<Footer footer={footer} contacts={contacts} />
+			<Footer
+				footer={footer}
+				contacts={contacts}
+				social={social}
+			/>
 		</div>
 	);
 }

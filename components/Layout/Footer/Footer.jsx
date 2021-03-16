@@ -3,13 +3,11 @@ import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
 import Link from "next/link";
 import { BrowserView, MobileView } from "react-device-detect";
-
-// import Image from "../../elements/Image";
 import get from "lodash/get";
 
-// import Icon from "../../elements/Icon";
-
-export default function Footer({ footer, contacts }) {
+import Social from "@/components/elements/Social";
+import Icon from "@/components/elements/Icon";
+export default function Footer({ footer, contacts, social }) {
 	const navigation = get(footer, "navigation", []);
 
 	return (
@@ -58,7 +56,7 @@ export default function Footer({ footer, contacts }) {
 								return (
 									<li key={idx} className={"w-6/12 md:w-full text-lg mb-4"}>
 										<div className={"mb-1"}>
-											<i className={`kzs-${icon} mr-2`} />
+											<Icon type={icon} className={"mr-2"} />
 											{title}
 										</div>
 										<a href={link}>
@@ -69,6 +67,7 @@ export default function Footer({ footer, contacts }) {
 							})
 						}
 					</ul>
+					<Social items={social}/>
 				</div>
 			</div>
 			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-500"}>
@@ -95,4 +94,5 @@ Footer.propTypes = {
 		smallText: PropTypes.string.isRequired,
 	}),
 	contacts: PropTypes.array,
+	social: PropTypes.array,
 };
