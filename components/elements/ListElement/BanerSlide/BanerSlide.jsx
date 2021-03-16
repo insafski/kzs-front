@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import Link from "next/link";
+import get from "lodash/get";
 
 import styles from "./BanerSlide.module.scss";
 
 export default function BanerSlide({ picture, title, description, link }) {
+	const src = get(picture, "[0].src", "");
+
 	return (
 		<div
 			className={cx("baner-slide relative rounded-md overflow-hidden", styles["baner-slide"])}
@@ -19,7 +22,7 @@ export default function BanerSlide({ picture, title, description, link }) {
 							height: "100%",
 							objectFit: "cover",
 						}}
-						src="https://tutby.gcdn.co/n/nedvizhimost/08/d/universalnyj-pogruzchik-amkodor-334s.jpg"
+						src={src}
 						alt=""
 					/>
 					<div className={"baner-slide__content w-full absolute top-0"}>
@@ -27,6 +30,9 @@ export default function BanerSlide({ picture, title, description, link }) {
 							<h2 className={"text-4xl md:text-5xl text-white mb-8 font-semibold md:font-bold"}>{title}</h2>
 							<p className={"text-3xl md:text-3xl text-white font-semibold"}>{description}</p>
 						</div>
+					</div>
+					<div className={"baner-slide__link absolute right-0 bottom-0"}>
+						Подробнее
 					</div>
 				</a>
 			</Link>
