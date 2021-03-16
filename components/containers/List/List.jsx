@@ -4,10 +4,10 @@ import cx from "classnames";
 
 import ListItem from "../../elements/ListElement";
 
-import Gallery from "../Gallery";
+import ImageGallery from "../ImageGallery";
 
 const containersMap = {
-	"photo-gallery": Gallery,
+	"photo-gallery": ImageGallery,
 	"imperial": "div",
 	get(type) {
 		return this[type] || this.imperial;

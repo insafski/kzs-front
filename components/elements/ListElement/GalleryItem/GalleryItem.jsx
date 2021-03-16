@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Item } from "react-photoswipe-gallery";
 
-export default function Photo({ original, thumbnail, width, height, title, id }) {
+export default function GalleryItem({ original, thumbnail, width, height, title, id }) {
 	return (
 		<div className={"photo w-1/4 p-2"}>
 			<Item
@@ -28,3 +29,23 @@ export default function Photo({ original, thumbnail, width, height, title, id })
 		</div>
 	);
 }
+
+GalleryItem.propTypes = {
+	original: PropTypes.string,
+	thumbnail: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	title: PropTypes.string,
+	id: PropTypes.string,
+};
+
+GalleryItem.defaultProps = {
+	original: PropTypes.string,
+	thumbnail: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	title: PropTypes.string,
+	id: PropTypes.string,
+};
+
+GalleryItem.displayName = "GalleryItem";

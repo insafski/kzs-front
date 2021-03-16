@@ -47,7 +47,7 @@ export default function Layout({ children, global }) {
 							<div className={"w-full md:w-9/12"}>
 								<input
 									type="text"
-									className={"block w-full rounded-md border-gray-100 shadow-sm hover:border-yellow-600 focus:border-yellow-600 focus:ring focus:ring-yellow-500 focus:ring-opacity-50 p-4"}
+									className={"block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50"}
 									placeholder={"Поиск"}
 								/>
 							</div>

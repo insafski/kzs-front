@@ -3,7 +3,7 @@ import Article from "./Article";
 import BanerSlide from "./BanerSlide";
 import Default from "./Default";
 import Manufacturer from "./Manufacturer";
-import Photo from "./Photo";
+import GalleryItem from "./GalleryItem";
 
 export default {
 	advantage: Advantage,
@@ -11,7 +11,7 @@ export default {
 	imperial: Default,
 	baner: BanerSlide,
 	manufacturer: Manufacturer,
-	photo: Photo,
+	photo: GalleryItem,
 	get(type) {
 		return this[type] || this.imperial;
 	},

@@ -11,7 +11,7 @@ export default function ContactBar({ data }) {
 	const title = get(data, "header.top.title", "");
 
 	return (
-		<div className={"header-top hidden md:block pb-4 md:pt-4 border-b border-yellow-600"}>
+		<div className={"header-top hidden md:block py-2 border-b border-yellow-400"}>
 			<div className={"container mx-auto px-4"}>
 				<div className={"header-top__contacts flex justify-between"}>
 					<div className={"flex w-4/12"}>

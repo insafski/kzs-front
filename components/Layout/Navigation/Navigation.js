@@ -31,7 +31,7 @@ export default function Navbar({ data = {} }) {
 	// const { query: { slug } = {} } = useRouter();
 
 	return (
-		<div className={"navigation flex justify-between"}>
+		<div className={"navigation flex justify-between px-2"}>
 			<div className={"navigation__logo"}>
 				<Link href={"/"}>
 					<a>
@@ -46,7 +46,7 @@ export default function Navbar({ data = {} }) {
 							return (
 								<li key={idx} className={"navigation__item"}>
 									<Link href={link}>
-										<a className={"navigation__link block p-4 hover:bg-yellow-500"}>
+										<a className={"navigation__link block p-4 hover:bg-yellow-400"}>
 											{title}
 										</a>
 									</Link>
