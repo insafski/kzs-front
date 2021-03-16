@@ -7,7 +7,7 @@ export default function About({ heading }) {
 	return (
 		<Block heading={heading} className={"about"}>
 			<div className={"container mx-auto px-4"}>
-				О нас
+				{/* О нас */}
 			</div>
 		</Block>
 	);
