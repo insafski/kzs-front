@@ -7,10 +7,10 @@ export default function Advantage({ title, description, picture }) {
 	return (
 		<div className={"advantage-item text-center px-2 md:px-4 mb-8 md:mb-4 w-full md:w-1/4"}>
 			<Image picture={picture} />
-			<h3 className={"advantage-item__title mb-4 text-3xl"}>
+			<h3 className={"advantage-item__title mb-4 text-2xl md:text-xl font-semibold"}>
 				{title}
 			</h3>
-			<p className={"advantage-item__description"}>
+			<p className={"advantage-item__description md:text-sm"}>
 				{description}
 			</p>
 		</div>
