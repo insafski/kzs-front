@@ -9,7 +9,7 @@ export default function Heading({ className, heading, underline }) {
 	const { title, description, subtitle, type } = heading;
 	const classNames = {
 		h1: cx("h1 text-3xl md:text-5xl", { "mb-6": underline }),
-		h2: "h2 mb-6 text-3xl md:text-4xl",
+		h2: "h2 mb-6 text-3xl",
 	};
 
 	return (

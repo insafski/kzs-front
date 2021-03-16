@@ -4,15 +4,15 @@ import Link from "next/link";
 export default function Article() {
 	return (
 		<div className={"article"}>
-			<div className={"article__img"}>
+			<div className={"article__img mb-4"}>
 				<Link href="/">
 					<a>
 						<img src="" alt="" />
 					</a>
 				</Link>
 			</div>
-			<div className="artcile__date">
-
+			<div className={"artcile__date mb-2"}>
+				12.01.2012
 			</div>
 			<div className="article__title">
 				<Link href="/">

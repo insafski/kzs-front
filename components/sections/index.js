@@ -6,6 +6,7 @@ import Contacts from "./Contacts";
 import Feedback from "./Feedback";
 import GeoMap from "./GeoMap";
 import Manufacturers from "./Manufacturers";
+import News from "./News";
 import PhotoGallery from "./PhotoGallery";
 import Products from "./Products";
 import Text from "./Text";
@@ -20,6 +21,7 @@ export default {
 	"feedback": Feedback,
 	"manufacturers": Manufacturers,
 	"map": GeoMap,
+	"news": News,
 	"photo-gallery": PhotoGallery,
 	"products": Products,
 	"text": Text,
