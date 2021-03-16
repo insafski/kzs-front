@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export const FeedbackContext = createContext(
 	{
@@ -11,6 +11,9 @@ export const FeedbackContext = createContext(
 
 FeedbackContext.displayName = "FeedbackContext";
 
+export function useFeedback() {
+	return useContext(FeedbackContext);
+}
 export const FeedbackContextProvider = FeedbackContext.Provider;
 export const FeedbackConsumer = FeedbackContext.Consumer;
 export default FeedbackContext;

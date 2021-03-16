@@ -1,4 +1,4 @@
-import FeedbackContext, { FeedbackConsumer } from "./context";
+import FeedbackContext, { FeedbackConsumer, useFeedback } from "./context";
 import FeedbackProvider from "./provider";
 
-export { FeedbackContext, FeedbackConsumer, FeedbackProvider };
+export { FeedbackContext, FeedbackConsumer, FeedbackProvider, useFeedback };

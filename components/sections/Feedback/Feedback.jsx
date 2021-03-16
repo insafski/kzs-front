@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Block from "@/components/containers/Block";
 import Button from "@/components/elements/Form/Button";
-import { FeedbackContext } from "@/components/widgets/FeedbackForm";
+import { useFeedback } from "@/components/widgets/FeedbackForm";
 
 import styles from "./Feedback.module.scss";
 
 export default function Feedback({ heading }) {
-	const { handleOpen } = useContext(FeedbackContext);
+	const { handleOpen } = useFeedback();
 
 	return (
 		<Block

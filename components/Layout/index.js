@@ -10,12 +10,15 @@ import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
 import Button from "@/components/elements/Form/Button";
 import Icon from "@/components/elements/Icon";
+import { useFeedback } from "@/components/widgets/FeedbackForm";
 
 export default function Layout({ children, global }) {
 	const footer = get(global, "footer", {});
 	const contacts = get(global, "contacts.contacts", []);
 	const social = get(global, "contacts.social", []);
 	const headerMiddle = get(global, "header.middle", {});
+
+	const { handleOpen } = useFeedback();
 
 	// TODO: Need to make multiple fields for footer andd header (navigation, meta, etc. ).
 
@@ -45,12 +48,18 @@ export default function Layout({ children, global }) {
 									}
 								/>
 							</div>
-							<div className={"w-full md:w-10/12"}>
+							<div className={"w-full mr-4 md:w-8/12"}>
 								<input
 									type="text"
 									className={"block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50"}
 									placeholder={"Поиск"}
 								/>
+							</div>
+							<div className={"hidden md:block md:w-2/12"}>
+								<Button className={"border-transparent bg-yellow-400"} handlers={{ onClick: handleOpen }}>
+									<Icon type={"phone"} className={"mr-2"} />
+									{"Связаться"}
+								</Button>
 							</div>
 						</div>
 					</div>
