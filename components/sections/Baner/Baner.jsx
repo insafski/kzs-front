@@ -7,7 +7,18 @@ export default function Baner({ items }) {
 	return (
 		<div className={"baner"}>
 			<div className={"container"}>
-				<Carousel items={items} />
+				<Carousel
+					items={items}
+					type={"baner"}
+					slidesPerView={1}
+					navigation
+					pagination={{ clickable: true }}
+					autoplay={
+						{
+							delay: 6000,
+						}
+					}
+				/>
 			</div>
 		</div>
 	);

@@ -1,14 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import get from "lodash/get";
 
 export default function Manufacturer({ heading, slug, picture }) {
+	const src = get(picture, "[0].src", "");
+	const title = get(heading, "title", "");
+	const description = get(heading, "description", "");
+
 	return (
-		<div className={"manufacturer md:px-2 md:w-2/4 lg:w-2/6 xl:w-3/12"}>
+		<div className={"manufacturer flex justify-center md:px-8"}>
 			<a href={`/catalog/${slug}`}>
-				<div className={"flex justify-between items-center text-xl p-8 bg-gray-100 mb-4 rounded-md"}>
-					{heading.title}
-					<img src="https://nationalrent.ru/local/templates/nationalrent/img/catalog/doosan-logo.png" alt="" style={{ height: 40 }}/>
-				</div>
+				<img
+					src={src}
+					alt={title}
+					title={description || title}
+					style={{ width: "100%" }}
+				/>
 			</a>
 		</div>
 	);

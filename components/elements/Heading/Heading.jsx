@@ -12,8 +12,10 @@ export default function Heading({ className, heading, underline }) {
 		h2: "h2 mb-6 text-3xl",
 	};
 
-	return (
-		<div className={"heading"}>
+	const renderHeading = title || subtitle || description;
+
+	return !!renderHeading && (
+		<div className={"heading mb-12 md:mb-14"}>
 			{
 				title && createElement(
 					type,

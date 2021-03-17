@@ -19,8 +19,10 @@ export default function ImageGallery({ id, children }) {
 
 ImageGallery.propTypes = {
 	id: PropTypes.string,
+	children: PropTypes.node,
 };
 
 ImageGallery.defaultProps = {
 	id: uniqueId(),
+	children: null,
 };

@@ -5,9 +5,11 @@ import cx from "classnames";
 import ListItem from "../../elements/ListElement";
 
 import ImageGallery from "../ImageGallery";
+import Carousel from "../Carousel";
 
 const containersMap = {
-	"photo-gallery": ImageGallery,
+	"carousel": Carousel,
+	"image-gallery": ImageGallery,
 	"imperial": "div",
 	get(type) {
 		return this[type] || this.imperial;

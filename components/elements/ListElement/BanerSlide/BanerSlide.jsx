@@ -8,8 +8,10 @@ import Icon from "../../../elements/Icon";
 
 import styles from "./BanerSlide.module.scss";
 
-export default function BanerSlide({ picture, title, description, link }) {
+export default function BanerSlide({ picture, heading, link }) {
 	const src = get(picture, "[0].src", "");
+	const title = get(heading, "title", "");
+	const description = get(heading, "description", "");
 
 	return (
 		<div
@@ -45,14 +47,12 @@ export default function BanerSlide({ picture, title, description, link }) {
 
 BanerSlide.propTypes = {
 	picture: PropTypes.array,
-	title: PropTypes.string,
-	description: PropTypes.string,
+	heading: PropTypes.object,
 	link: PropTypes.string,
 };
 
 BanerSlide.defaultProps = {
 	picture: [],
-	title: "",
-	description: "",
+	heading: {},
 	link: "/",
 };

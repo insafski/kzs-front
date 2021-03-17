@@ -1,25 +1,27 @@
 import React, { createElement } from "react";
 import PropTypes from "prop-types";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ListItem from "../../elements/ListElement";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-export default function Carousel({ items, type }) {
+export default function Carousel({ items, type, slidesPerView, navigation, pagination, breakpoints, autoplay }) {
 	return (
 		<Swiper
 			spaceBetween={32}
-			slidesPerView={1}
+			slidesPerView={slidesPerView}
 			onSlideChange={() => console.log("slide change")}
 			onSwiper={swiper => console.log(swiper)}
-			navigation
-			pagination={{ clickable: true }}
+			navigation={navigation}
+			pagination={pagination}
 			scrollbar={{ draggable: true }}
+			breakpoints={breakpoints}
+			autoplay={autoplay}
 		>
 			{
-				items.map(({ picture, title, description, link }, idx) => {
+				items.map((item, idx) => {
 					return (
 						<SwiperSlide
 							key={idx}
@@ -29,10 +31,7 @@ export default function Carousel({ items, type }) {
 									ListItem.get(type),
 									{
 										key: `${type}-${idx}`,
-										picture,
-										title,
-										description,
-										link,
+										...item,
 									},
 									null,
 								)
@@ -48,9 +47,19 @@ export default function Carousel({ items, type }) {
 Carousel.propTypes = {
 	items: PropTypes.array,
 	type: PropTypes.string,
+	slidesPerView: PropTypes.number,
+	navigation: PropTypes.bool,
+	pagination: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+	breakpoints: PropTypes.object,
+	autoplay: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 };
 
 Carousel.defaultProps = {
-	items: [1, 2, 4, 5],
+	items: [],
 	type: "baner",
+	slidesPerView: 1,
+	navigation: false,
+	pagination: false,
+	breakpoints: {},
+	autoplay: false,
 };
