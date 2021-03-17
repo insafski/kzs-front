@@ -31,11 +31,15 @@ export default function Navbar({ data = {} }) {
 	// const { query: { slug } = {} } = useRouter();
 
 	return (
-		<div className={"navigation flex justify-between px-2"}>
+		<div className={"navigation flex justify-between items-center px-2"}>
 			<div className={"navigation__logo"}>
 				<Link href={"/"}>
 					<a>
-						<img src="https://images.vexels.com/media/users/3/130482/isolated/preview/ff5d9147b237d695b87e1f005a885ab1-fronthoe-loader-icon-by-vexels.png" alt="" style={{ width: 30 }} />
+						<img
+							src="https://kzs.s3.eu-north-1.amazonaws.com/images/header-logo.svg"
+							alt={"КазЗапчастьСервис"}
+							style={{ width: 200 }}
+						/>
 					</a>
 				</Link>
 			</div>

@@ -14,7 +14,7 @@ export default function Footer({ footer, contacts, social }) {
 		<footer className={"footer bg-gray-100"}>
 			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<div className={"mt-8 md:mt-0 px-4"}>
+					<div className={"mt-8 md:mt-0 px-4 md:px-14"}>
 						{
 							footer.logo && footer.logo.picture && (
 							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
