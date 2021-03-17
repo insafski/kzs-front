@@ -80,3 +80,12 @@ a {
 	display: flex;
 	align-items: center;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+	color: white !important;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: white !important;
+}

@@ -7,7 +7,7 @@ import GeoMap from "@/components/elements/GeoMap";
 export default function MapSection() {
 	return (
 		<Block className={"text"} padding={""}>
-			<div className={"w-full h-60 md:h-96"}>
+			<div className={"w-full h-60 md:h-96"} style={{ height: "50vh" }}>
 				<GeoMap />
 			</div>
 		</Block>

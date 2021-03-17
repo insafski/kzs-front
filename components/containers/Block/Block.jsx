@@ -31,7 +31,7 @@ Block.defaultProps = {
 	children: null,
 	heading: {},
 	style: {},
-	padding: "py-6 pt-12 md:py-14 lg:py-16",
+	padding: "py-12 md:py-14 lg:py-16",
 	underline: true,
 };
 

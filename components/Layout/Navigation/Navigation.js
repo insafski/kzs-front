@@ -38,7 +38,7 @@ export default function Navbar({ data = {} }) {
 						<img
 							src="https://kzs.s3.eu-north-1.amazonaws.com/images/header-logo.svg"
 							alt={"КазЗапчастьСервис"}
-							style={{ width: 200 }}
+							style={{ width: 180 }}
 						/>
 					</a>
 				</Link>
