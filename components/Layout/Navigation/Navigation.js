@@ -93,19 +93,19 @@ export default function Navbar({ data = {} }) {
 							<li className={"py-4 px-4 border-b border-gray-200"}>
 								<a href="/#" onClick={handleOpen}>
 									<Icon type={"location"} />
-									<span className={"ml-4"}>Карла Маркса, 5</span>
+									<span className={"ml-4"}>г. Казань, ул. В.Кулагина 10</span>
 								</a>
 							</li>
 							<li className={"py-4 px-4 border-b border-gray-200"}>
-								<a href="mailto:123@mail.ru">
+								<a href="mailto:marat-agro@mail.ru">
 									<Icon type={"mail"} />
-									<span className={"ml-4"}>mailto:123@mail.ru</span>
+									<span className={"ml-4"}>marat-agro@mail.ru</span>
 								</a>
 							</li>
 							<li className={"py-4 px-4"}>
-								<a href="tel:+79148888888">
+								<a href="tel:+79872265040">
 									<Icon type={"phone"} />
-									<span className={"ml-4"}>+7 914 888 88 88</span>
+									<span className={"ml-4"}>+7 (987) 226-50-40</span>
 								</a>
 							</li>
 						</ul>

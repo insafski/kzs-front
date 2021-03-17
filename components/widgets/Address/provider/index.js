@@ -42,7 +42,7 @@ export default function AddressProvider({ children }) {
 
 				<>
 					<div className={"px-4 py-4 flex justify-between bg-gray-100"}>
-						<h4>Карла Маркса, 5</h4>
+						<h4>г. Казань, ул. В.Кулагина 10</h4>
 						<button onClick={() => toggle(false)}>
 							Закрыть
 						</button>
