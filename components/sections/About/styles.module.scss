@@ -1,0 +1,17 @@
+.about {
+    &__image {
+        transform: translate(-1rem, -1rem);
+        box-shadow: 1rem 1rem 0px #fbbf24;
+
+        // &:before {
+        //     content: "";
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     top: 1rem;
+        //     left: 1rem;
+        //     background-color: #fbbf24;
+        //     border-radius: 1.5rem;
+        // }
+    }
+}
