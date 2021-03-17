@@ -77,15 +77,19 @@ a {
 }
 
 .swiper-wrapper {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-	color: white !important;
+    color: white !important;
+}
+
+.swiper-pagination-bullet {
+	background-color: white !important;
 }
 
 .swiper-pagination-bullet-active {
-	background-color: white !important;
+    background-color: white !important;
 }
