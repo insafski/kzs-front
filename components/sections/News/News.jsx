@@ -8,7 +8,7 @@ export default function News({ heading, items }) {
 	return (
 		<Block heading={heading}>
 			<div className={"container px-4"}>
-				<List items={items} type={"article"} />
+				<List items={items} type={"news"} />
 			</div>
 		</Block>
 	);

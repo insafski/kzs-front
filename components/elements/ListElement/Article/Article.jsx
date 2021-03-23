@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Article() {
+export default function Article(props) {
 	return (
 		<div className={"article"}>
 			<div className={"article__img mb-4"}>
