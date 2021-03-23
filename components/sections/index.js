@@ -4,7 +4,7 @@ import Articles from "./Articles";
 import Baner from "./Baner";
 import Contacts from "./Contacts";
 import Feedback from "./Feedback";
-import GeoMap from "./GeoMap";
+import GeoMap, { GeoMapWithContacts } from "./GeoMap";
 import Manufacturers from "./Manufacturers";
 import News from "./News";
 import PhotoGallery from "./PhotoGallery";
@@ -21,6 +21,7 @@ export default {
 	"feedback": Feedback,
 	"manufacturers": Manufacturers,
 	"map": GeoMap,
+	"contacts-map": GeoMapWithContacts,
 	"news": News,
 	"photo-gallery": PhotoGallery,
 	"products": Products,
