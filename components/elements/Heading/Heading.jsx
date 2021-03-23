@@ -15,7 +15,7 @@ export default function Heading({ className, heading, underline }) {
 	const renderHeading = title || subtitle || description;
 
 	return !!renderHeading && (
-		<div className={"heading mb-12 md:mb-14"}>
+		<div className={"heading mb-10 md:mb-12"}>
 			{
 				title && createElement(
 					type,

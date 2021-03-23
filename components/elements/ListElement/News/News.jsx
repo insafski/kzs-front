@@ -12,7 +12,7 @@ export default function News({ title, publishedAt, picture, description }) {
 				<Link href="/">
 					<a>
 						<img
-							className={"w-full"}
+							className={"w-full rounded-md"}
 							src={src}
 							alt={title}
 							title={title}
@@ -30,7 +30,7 @@ export default function News({ title, publishedAt, picture, description }) {
 			</div>
 			<div className={"news-item__description text-sm"}>
 				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium amet tenetur neque, cupiditate maxime reprehenderit similique voluptate saepe hic voluptatibus recusandae iste sapiente mollitia qui. Illum accusamus corrupti similique esse.
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium amet tenetur neque, cupiditate maxime reprehenderit similique.
 				</p>
 			</div>
 		</div>
