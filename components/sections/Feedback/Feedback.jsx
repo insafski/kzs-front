@@ -29,7 +29,7 @@ export default function Feedback({ heading, picture }) {
 				<div className={"md:w-3/12"}>
 					<Button
 						className={"border-2 border-yellow-400 rounded-full text-yellow-400"}
-						text={"Связаться"}
+						text={"Получить консультацию"}
 						handlers={{
 							onClick: handleOpen,
 						}}
