@@ -8,7 +8,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
-import Button from "@/components/elements/Form/Button";
+import { Button } from "@/components/elements/Form";
 import Icon from "@/components/elements/Icon";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 

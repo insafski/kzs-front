@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useToggle } from "ahooks";
 
 import Modal from "@/components/containers/Modal";
+import Form from "@/components/containers/Form";
+import { Input, Button } from "@/components/elements/Form";
 import { FeedbackContextProvider } from "../context";
 
 export default function FeedbackProvider({ children }) {
@@ -34,15 +36,56 @@ export default function FeedbackProvider({ children }) {
 			}}
 		>
 			<Modal
-				title={"Обратка"}
+				title={
+					<div className={"text-center text-black"}>
+						<h2 className={"mb-4 uppercase"}>Заказать звонок</h2>
+						<p>Оставьте ваши контактные данные и мы с вами свяжемся</p>
+					</div>
+				}
 				visible={isOpen}
 				onClose={handleClose}
 				mousePosition={mousePosition}
 				wrapClassName={"center"}
 				style={{
-					width: 600,
+					width: 400,
 				}}
+				footer={
+					<div className={"flex"}>
+						<div className={"pr-2 flex-1"}>
+							<Button
+								text={"Отмена"}
+								handlers={{
+									onClick: handleClose,
+								}}
+							/>
+						</div>
+						<div className={"pl-2 flex-1"}>
+							<Button text={"Заказать"} />
+						</div>
+					</div>
+				}
 			>
+				<Form>
+					<Input
+						name={"firstName"}
+						placeholder={"Введите ваше имя"}
+						className={"mb-4"}
+						required
+					/>
+					<Input
+						name={"lastName"}
+						placeholder={"Введите вашу фамилию"}
+						className={"mb-4"}
+						required
+					/>
+					<Input
+						name={"phone"}
+						placeholder={"Контактный номер телефона"}
+						className={"mb-4"}
+						required
+					/>
+					<Input name={"message"} placeholder={"Введите ваш вопрос"} />
+				</Form>
 			</Modal>
 			{children}
 		</FeedbackContextProvider>

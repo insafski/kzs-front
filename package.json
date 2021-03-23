@@ -34,6 +34,7 @@
 		"rc-collapse": "^3.1.0",
 		"rc-dialog": "^8.5.2",
 		"rc-drawer": "^4.3.1",
+		"rc-field-form": "^1.20.0",
 		"rc-motion": "^2.4.1",
 		"react": "^17.0.1",
 		"react-device-detect": "^1.15.0",

@@ -87,9 +87,13 @@ a {
 }
 
 .swiper-pagination-bullet {
-	background-color: white !important;
+    background-color: white !important;
 }
 
 .swiper-pagination-bullet-active {
     background-color: white !important;
+}
+
+.rc-dialog-content {
+    border-radius: 0.375rem !important;
 }
