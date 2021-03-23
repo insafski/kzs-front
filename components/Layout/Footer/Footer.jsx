@@ -23,8 +23,9 @@ export default function Footer({ footer, contacts, social }) {
 						}
 					</div>
 				</div>
-				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<ul className={"mt-8 md:mt-0 px-4"}>
+				<div className={"footer__item px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+					<h3 className={"mb-4 text-2xl font-semibold"}>Каталог</h3>
+					<ul className={"mt-8 md:mt-0"}>
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
@@ -36,8 +37,9 @@ export default function Footer({ footer, contacts, social }) {
 						}
 					</ul>
 				</div>
-				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
-					<ul className={"mt-8 md:mt-0 px-4"}>
+				<div className={"footer__item px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+					<h3 className={"mb-4 text-2xl font-semibold"}>Основные разделы</h3>
+					<ul className={"mt-8 md:mt-0"}>
 						{
 							navigation.map(({ link, title }, idx) => (
 								<li key={idx} className={"mb-2 text-base"}>
@@ -54,7 +56,7 @@ export default function Footer({ footer, contacts, social }) {
 						{
 							contacts.map(({ icon, title, showtitle, link }, idx) => {
 								return (
-									<li key={idx} className={"w-6/12 md:w-full text-lg mb-4"}>
+									<li key={idx} className={"md:w-full text-lg mb-4"}>
 										<div className={"mb-1"}>
 											<Icon type={icon} className={"mr-2"} />
 											{title}
