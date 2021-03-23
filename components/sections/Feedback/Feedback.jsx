@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import get from "lodash/get";
 
 import Block from "@/components/containers/Block";
 import Button from "@/components/elements/Form/Button";
@@ -8,7 +9,7 @@ import { useFeedback } from "@/components/widgets/FeedbackForm";
 
 import styles from "./Feedback.module.scss";
 
-export default function Feedback({ heading }) {
+export default function Feedback({ heading, picture }) {
 	const { handleOpen } = useFeedback();
 
 	return (
@@ -19,7 +20,7 @@ export default function Feedback({ heading }) {
 			}}
 			className={cx("feedback relative text-white", styles.feedback)}
 			style={{
-				backgroundImage: "url(https://stroy-plys.ru/uploads/posts/2013-11/1385025371_frontalnyy-kolesnyy-pogruzchik-hyundai-hl770-7a.jpg)",
+				backgroundImage: `url(${get(picture, "[0].src", "https://kzs.s3-eu-north-1.amazonaws.com/images/lovol-2.jpeg")})`,
 				backgroundPosition: "center",
 				backgroundSize: "cover",
 			}}
@@ -45,4 +46,5 @@ Feedback.propTypes = {
 		subTitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
+	picture: PropTypes.array,
 };
