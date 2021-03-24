@@ -8,14 +8,14 @@ console.log({ styles });
 export default function Heading({ className, heading, underline }) {
 	const { title, description, subtitle, type } = heading;
 	const classNames = {
-		h1: cx("h1 text-3xl md:text-5xl", { "mb-6": underline }),
+		h1: cx("h1 text-3xl md:text-5xl mb-4", { "mb-6": underline }),
 		h2: "h2 mb-6 text-3xl",
 	};
 
 	const renderHeading = title || subtitle || description;
 
 	return !!renderHeading && (
-		<div className={"heading mb-10 md:mb-12"}>
+		<div className={cx("heading")}>
 			{
 				title && createElement(
 					type,
