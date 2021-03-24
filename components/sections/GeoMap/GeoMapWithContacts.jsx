@@ -9,10 +9,10 @@ import { Button } from "@/components/elements/Form";
 export default function MapSection() {
 	return (
 		<Block className={"text"} padding={""}>
-			<div className={"w-full h-60 md:h-96 relative"} style={{ minHeight: "50vh" }}>
+			<div className={"w-full h-60 md:h-96 relative"} style={{ minHeight: "35rem" }}>
 				<GeoMap />
 				<div className={"hidden md:flex h-full w-3/12 md:absolute top-0 right-20 items-center"}>
-					<div className={"h-5/6 w-full bg-gray-100 p-4 rounded-md flex flex-col items-stretch"}>
+					<div className={"h-5/6 w-full bg-gray-100 border border-gray-300 p-4 rounded-md flex flex-col items-stretch justify-between"}>
 						<div className={"text-center text-black mb-4"}>
 							<h2 className={"mb-4 uppercase"}>Заказать звонок</h2>
 							<p>Оставьте ваши контактные данные и мы с вами свяжемся</p>
