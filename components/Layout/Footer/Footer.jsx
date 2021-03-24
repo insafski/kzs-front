@@ -12,7 +12,7 @@ export default function Footer({ footer, contacts, social }) {
 
 	return (
 		<footer className={"footer bg-gray-100"}>
-			<div className={"container mx-auto px-4 py-16 flex flex-col lg:flex-row lg:justify-between"}>
+			<div className={"container mx-auto md:px-4 py-8 md:py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<div className={"mt-8 md:mt-0 px-4 md:px-14"}>
 						{
@@ -23,7 +23,7 @@ export default function Footer({ footer, contacts, social }) {
 						}
 					</div>
 				</div>
-				<div className={"footer__item px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+				<div className={"footer__item md:px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<h3 className={"mb-4 text-2xl font-semibold"}>Каталог</h3>
 					<ul className={"mt-8 md:mt-0"}>
 						{
@@ -37,7 +37,7 @@ export default function Footer({ footer, contacts, social }) {
 						}
 					</ul>
 				</div>
-				<div className={"footer__item px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
+				<div className={"footer__item md:px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<h3 className={"mb-4 text-2xl font-semibold"}>Основные разделы</h3>
 					<ul className={"mt-8 md:mt-0"}>
 						{
@@ -51,8 +51,8 @@ export default function Footer({ footer, contacts, social }) {
 						}
 					</ul>
 				</div>
-				<div className={"footer__item mb-8 md:mb-0 md:w-2/5 lg:w-1/4"}>
-					<ul className={"mt-8 md:mt-0 px-4"}>
+				<div className={"footer__item md:mb-0 md:w-2/5 lg:w-1/4"}>
+					<ul className={"mt-8 md:mt-0 md:px-4"}>
 						{
 							contacts.map(({ icon, title, showtitle, link }, idx) => {
 								return (
@@ -69,7 +69,7 @@ export default function Footer({ footer, contacts, social }) {
 							})
 						}
 					</ul>
-					<Social items={social} className={"px-4"} />
+					<Social items={social} className={"flex justify-center md:justify-start md:px-4"} />
 				</div>
 			</div>
 			<div className={"footer__copyright text-sm px-4 py-4 text-gray-700 border-t border-gray-500"}>
