@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 import Block from "@/components/containers/Block";
 import List from "@/components/containers/List";
 
-export default function News({ heading, items }) {
+export default function News({ heading, items, news }) {
 	return (
 		<Block className={"news"} heading={heading}>
 			<div className={"container px-4"}>
-				{
-					items.length ? (<List items={items} type={"news"} className={"flex -mx-2 flex-wrap md:flex-nowrap"} />) : <div>В данный момент нет новостей</div>
-				}
+				<List items={news || items} type={"news"} className={"flex -mx-2 flex-wrap md:flex-nowrap"} />
 			</div>
 		</Block>
 	);
@@ -23,4 +21,5 @@ News.propTypes = {
 		subText: PropTypes.string,
 	}),
 	items: PropTypes.array,
+	news: PropTypes.array,
 };

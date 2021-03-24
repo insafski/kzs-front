@@ -21,6 +21,7 @@
 		"graphql": "^15.5.0",
 		"isomorphic-unfetch": "3.0.0",
 		"lodash": "^4.17.21",
+		"moment": "^2.29.1",
 		"next": "^10.0.7",
 		"next-apollo": "^5.0.4",
 		"next-seo": "^4.7.1",

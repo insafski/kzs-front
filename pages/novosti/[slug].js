@@ -2,20 +2,20 @@ import { gql } from "@apollo/client";
 import get from "lodash/get";
 
 import Page from "@/components/containers/Page";
-import { client } from "./api/apollo";
+import { client } from "../api/apollo";
 
 export async function getStaticPaths() {
 	const result = await client.query({
 		query: gql`
-			query Manufacturers {
-				manufacturers {
+			query News {
+				news {
 					slug
 				}
 			}
 		`,
 	});
 
-	const paths = get(result, "data.pages", []).map(({ slug }) => ({ params: { slug } }));
+	const paths = get(result, "data.news", []).map(({ slug }) => ({ params: { slug } }));
 
 	return {
 		paths,
@@ -26,15 +26,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, preview = null }) {
 	const result = await client.query({
 		query: gql`
-			query Manufacturer($slug: String!) {
-				manufacturers(where: {slug: {_eq: $slug}, _not: {slug: {_eq: "/"}}}) {
+			query News($slug: String!) {
+				news(where: {slug: {_eq: $slug}}) {
 					id
 					heading
 					createdAt
 					deletedAt
 					picture
 					sections
-					metaData
 					settings
 					slug
 					status
@@ -45,7 +44,7 @@ export async function getStaticProps({ params, preview = null }) {
 		variables: params,
 	});
 
-	const page = get(result, "data.manufacturers[0]", {});
+	const page = get(result, "data.news[0]", {});
 
 	return {
 		props: page,

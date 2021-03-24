@@ -23,15 +23,26 @@ export async function getStaticProps({ params, preview = null }) {
 					status
 					updatedAt
 				}
+
+				news {
+					heading
+					picture
+					publishedAt
+					slug
+				}
 			}
 		`,
 		variables: params,
 	});
 
 	const page = get(result, "data.pages[0]", {});
+	const news = get(result, "data.news", {});
 
 	return {
-		props: page,
+		props: {
+			...page,
+			news,
+		},
 	};
 }
 

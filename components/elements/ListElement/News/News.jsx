@@ -1,15 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import moment from "moment";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
-export default function News({ title, publishedAt, picture, description }) {
+export default function News({ heading, publishedAt, picture, slug }) {
 	const src = get(picture, "[0].src", "");
+	const title = get(heading, "title", "");
+	const description = get(heading, "description", "");
+	const newsDate = moment(publishedAt).format("DD.MM.YYYY");
 
 	return (
 		<div className={"news-item mb-4 px-2 w-1/2 md:w-4/12"}>
 			<div className={"news-item__picture mb-2"}>
-				<Link href="/">
+				<Link href={`/novosti/${slug}`}>
 					<a>
 						<img
 							className={"w-full rounded-md"}
@@ -21,16 +25,16 @@ export default function News({ title, publishedAt, picture, description }) {
 				</Link>
 			</div>
 			<div className={"news-item__date text-sm text-gray-700 mb-2"}>
-				{publishedAt}
+				{newsDate}
 			</div>
 			<div className={"news-item__title mb-4"}>
-				<Link href={"/"}>
+				<Link href={`/novosti/${slug}`}>
 					<a className={"text-xl font-semibold"}>{title}</a>
 				</Link>
 			</div>
 			<div className={"news-item__description text-sm"}>
 				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium amet tenetur neque, cupiditate maxime reprehenderit similique.
+					{description}
 				</p>
 			</div>
 		</div>
@@ -38,17 +42,19 @@ export default function News({ title, publishedAt, picture, description }) {
 }
 
 News.propTypes = {
-	title: PropTypes.string,
+	heading: PropTypes.object,
 	description: PropTypes.string,
 	publishedAt: PropTypes.string,
 	picture: PropTypes.array,
+	slug: PropTypes.array,
 };
 
 News.propTypes = {
-	title: "",
+	heading: {},
 	description: "",
 	publishedAt: "",
 	picture: [],
+	slug: "",
 };
 
 News.displayName = "NewsItem";
