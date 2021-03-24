@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Dialog from "rc-dialog";
 
-import "rc-dialog/assets/index.css";
+// import "rc-dialog/assets/index.css";
 
 export default function Modal({ title, className, visible, wrapClassName, animation, maskAnimation, onClose, style, mousePosition, forceRender, footer, children }) {
 	return (
