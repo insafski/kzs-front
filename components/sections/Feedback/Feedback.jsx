@@ -25,10 +25,10 @@ export default function Feedback({ heading, picture }) {
 				backgroundSize: "cover",
 			}}
 		>
-			<div className={"container mx-auto relative px-4"}>
+			<div className={"container mx-auto relative mt-8 px-4"}>
 				<div className={"md:w-3/12"}>
 					<Button
-						className={"border-2 border-yellow-400 rounded-full text-yellow-400"}
+						className={"border-2 py-3 border-yellow-400 rounded-full text-yellow-400"}
 						text={"Получить консультацию"}
 						handlers={{
 							onClick: handleOpen,

@@ -9,7 +9,11 @@
 
     h4 {}
 
-    h5 {}
+	h5 {}
+
+	&__subtext {
+		text-indent: 24px;
+	}
 }
 
 ._title {

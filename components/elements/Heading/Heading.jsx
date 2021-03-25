@@ -30,7 +30,7 @@ export default function Heading({ className, heading, underline }) {
 			}
 			{
 				description && (
-					<p className={"heading__subtext mb-4"}>{description}</p>
+					<p className={cx("heading__subtext mb-4", styles.heading__subtext)}>{description}</p>
 				)
 			}
 		</div>
