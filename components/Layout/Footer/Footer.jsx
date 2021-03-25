@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
 import Link from "next/link";
-import { BrowserView, MobileView } from "react-device-detect";
 import get from "lodash/get";
 
 import Social from "@/components/elements/Social";
@@ -59,7 +58,7 @@ export default function Footer({ footer, contacts, social }) {
 									<li key={idx} className={"md:w-full text-lg mb-4"}>
 										<div className={"mb-1"}>
 											<Icon type={icon} className={"mr-2"} />
-											{title}
+											{title}:
 										</div>
 										<a href={link}>
 											{showtitle}

@@ -30,7 +30,7 @@ export default function News({ heading, items, news }) {
 			</div>
 			<div className={"container pt-10 flex justify-center"}>
 				<div className={"w-full md:w-4/12"}>
-					{/* TODO: Need to create Buttom component option loading width loading icon */}
+					{/* TODO: Need to create Button component option loading with loading icon */}
 					<Button
 						text={"Загрузить ещё"}
 						handlers={
