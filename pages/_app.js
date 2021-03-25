@@ -26,7 +26,7 @@ export default function Application({ Component, pageProps }) {
 	if (global == null) {
 		return <ErrorPage statusCode={404} />;
 	}
-	const { metadata } = global;
+	const { metaData } = global;
 
 	// console.log("metadata", metadata);
 
@@ -37,7 +37,7 @@ export default function Application({ Component, pageProps }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 			</Head>
 			<DefaultSeo
-				titleTemplate={`%s | ${global.metaTitleSuffix}`}
+				titleTemplate={`%s | ${metaData.metaTitleSuffix}`}
 				title={"Page"}
 				// description={metadata.metaDescription}
 				// openGraph={{
