@@ -31,7 +31,7 @@ export default function Layout({ children, global }) {
 				middle={
 					<div className={"header-middle py-4 md:py-0"}>
 						<div className={"container"}>
-							<Navigation data={headerMiddle} />
+							<Navigation data={headerMiddle} global={global} />
 						</div>
 					</div>
 				}

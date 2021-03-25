@@ -7,8 +7,6 @@ import Heading from "@/components/elements/Heading";
 
 import styles from "./styles.module.scss";
 
-console.log({ styles });
-
 export default function About({ heading, picture }) {
 	const title = get(heading, "title", "");
 	const src = get(picture, "[0].src", "");

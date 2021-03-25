@@ -12,8 +12,6 @@ import { AddressContext } from "@/components/widgets/Address";
 
 import styles from "./Navigation.module.scss";
 
-console.log({ styles });
-
 export default function Navbar({ data = {} }) {
 	const [state, { toggle }] = useToggle();
 	const { run } = useDebounceFn(

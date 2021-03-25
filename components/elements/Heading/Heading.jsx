@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import styles from "./heading.module.scss";
-
-console.log({ styles });
 export default function Heading({ className, heading, underline }) {
 	const { title, description, subtitle, type } = heading;
 	const classNames = {
