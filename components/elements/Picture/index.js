@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import { isArray } from "lodash";
 
 export function Picture({ items }) {
-	if (!isArray(items) || !items.length) {
-		return null;
-	}
-
+	// TODO: Move to global params
 	const BREAKPOINTS = {
 		"sm": "640px",
 		"md": "768px",
@@ -15,14 +12,19 @@ export function Picture({ items }) {
 		"2xl": "1536px",
 	};
 
-	return (
+	function makeSource(breakpoint, src, alt, title) {
+		switch (breakpoint) {
+			case "main":
+				return <img className={"h-full object-none rounded-md"} src={src} alt={alt} title={title} />;
+			default:
+				return <source srcSet={src} media={`(min-width: ${BREAKPOINTS[breakpoint]})`} />;
+		}
+	}
+
+	return isArray(items) && items.length && (
 		<picture>
 			{
-				items.map(({ breakpoint, src, alt, title }) => {
-					return breakpoint !== "main"
-						? <source srcSet={src} media={`(min-width: ${BREAKPOINTS[breakpoint]})`} />
-						: <img className={"h-full object-none rounded-md"} src={src} alt={alt} title={title} />;
-				})
+				items.map(({ breakpoint, src, alt, title }) => makeSource(breakpoint, src, alt, title))
 			}
 		</picture>
 	);
@@ -35,3 +37,5 @@ Picture.propTypes = {
 Picture.defaultProps = {
 	items: [],
 };
+
+Picture.displayName = "Picture";
