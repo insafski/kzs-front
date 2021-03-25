@@ -7,7 +7,7 @@ import Feedback from "./Feedback";
 import GeoMap, { GeoMapWithContacts } from "./GeoMap";
 import Manufacturers from "./Manufacturers";
 import News from "./News";
-import PhotoGallery from "./PhotoGallery";
+import ImageGallery from "./ImageGallery";
 import Products from "./Products";
 import Text from "./Text";
 import VideoGallery from "./VideoGallery";
@@ -23,7 +23,7 @@ export default {
 	"map": GeoMap,
 	"contacts-map": GeoMapWithContacts,
 	"news": News,
-	"photo-gallery": PhotoGallery,
+	"image-gallery": ImageGallery,
 	"products": Products,
 	"text": Text,
 	"video-gallery": VideoGallery,

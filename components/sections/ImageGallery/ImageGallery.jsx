@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Block from "@/components/containers/Block";
 import List from "@/components/containers/List";
 
-export default function VideoGallery({ heading, items }) {
+export default function ImageGallery({ heading, items }) {
 	return (
 		<Block heading={heading} className={"image-gallery"}>
 			<div className="container">
@@ -14,11 +14,22 @@ export default function VideoGallery({ heading, items }) {
 	);
 }
 
-VideoGallery.propTypes = {
+ImageGallery.propTypes = {
 	heading: PropTypes.shape({
 		title: PropTypes.string,
-		subTitle: PropTypes.string,
-		subText: PropTypes.string,
+		subtitle: PropTypes.string,
+		description: PropTypes.string,
 	}),
 	items: PropTypes.array,
 };
+
+ImageGallery.defaultProps = {
+	heading: {
+		title: "",
+		subtitle: "",
+		description: "",
+	},
+	items: "",
+};
+
+ImageGallery.displayName = "ImageGallery";
