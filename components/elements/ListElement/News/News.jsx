@@ -4,8 +4,9 @@ import moment from "moment";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
+import { Picture } from "@/components/elements/Picture";
+
 export default function News({ heading, publishedAt, picture, slug }) {
-	const src = get(picture, "[0].src", "");
 	const title = get(heading, "title", "");
 	const description = get(heading, "description", "");
 	const newsDate = moment(publishedAt).format("DD.MM.YYYY");
@@ -15,12 +16,7 @@ export default function News({ heading, publishedAt, picture, slug }) {
 			<div className={"news-item__picture mb-2"}>
 				<Link href={`/novosti/${slug}`}>
 					<a>
-						<img
-							className={"w-full rounded-md"}
-							src={src}
-							alt={title}
-							title={title}
-						/>
+						<Picture items={picture} />
 					</a>
 				</Link>
 			</div>
