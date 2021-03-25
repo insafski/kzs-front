@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isArray } from "lodash";
 
-export function Picture({ items }) {
+export default function Picture({ items }) {
 	// TODO: Move to global params
 	const BREAKPOINTS = {
 		"sm": "640px",

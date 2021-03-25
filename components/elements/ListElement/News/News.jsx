@@ -4,7 +4,7 @@ import moment from "moment";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
-import { Picture } from "@/components/elements/Picture";
+import Picture from "@/components/elements/Picture";
 
 export default function News({ heading, publishedAt, picture, slug }) {
 	const title = get(heading, "title", "");
