@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Item } from "react-photoswipe-gallery";
+import get from "lodash/get";
 
 export default function GalleryItem({ original, thumbnail, width, height, title, id }) {
+	const srcOriginal = get(original, "src", "");
+	const srcThumbnail = get(thumbnail, "src", "");
+
 	return (
 		<div className={"photo w-1/4 p-2"}>
 			<Item
-				original="https://placekitten.com/1024/768?image=1"
-				thumbnail="https://placekitten.com/80/60?image=1"
+				original={srcOriginal}
+				thumbnail={srcThumbnail}
 				width="1024"
 				height="768"
 			>
@@ -18,7 +22,7 @@ export default function GalleryItem({ original, thumbnail, width, height, title,
 								className={"w-full"}
 								ref={ref}
 								onClick={open}
-								src="https://placekitten.com/80/60?image=1"
+								src={srcThumbnail}
 								alt={title}
 								title={title}
 							/>
