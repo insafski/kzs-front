@@ -7,7 +7,7 @@ import Sections from "../Sections";
 import Seo from "@/components/elements/seo";
 import Block from "@/components/containers/Block";
 
-export default function Page({ sections, metadata, manufacturers, heading, mainPage, title, subtitle, preview, slug, description, news }) {
+export default function News({ sections, metadata, manufacturers, heading, mainPage, title, subtitle, preview, slug, description, news }) {
 	const router = useRouter();
 
 	// // Check if the required data was provided
@@ -38,7 +38,7 @@ export default function Page({ sections, metadata, manufacturers, heading, mainP
 	);
 }
 
-Page.propTypes = {
+News.propTypes = {
 	sections: PropTypes.array,
 	metadata: PropTypes.object,
 	preview: PropTypes.bool,
@@ -51,7 +51,7 @@ Page.propTypes = {
 	mainPage: PropTypes.bool,
 };
 
-Page.defaultProps = {
+News.defaultProps = {
 	sections: [],
 	metadata: {},
 	preview: false,
