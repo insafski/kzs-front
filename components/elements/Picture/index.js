@@ -21,7 +21,7 @@ export function Picture({ items }) {
 				items.map(({ breakpoint, src, alt, title }) => {
 					return breakpoint !== "main"
 						? <source srcSet={src} media={`(min-width: ${BREAKPOINTS[breakpoint]})`} />
-						: <img className={"h-full object-none"} src={src} alt={alt} title={title} />;
+						: <img className={"h-full object-none rounded-md"} src={src} alt={alt} title={title} />;
 				})
 			}
 		</picture>
