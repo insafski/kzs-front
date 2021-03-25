@@ -1,0 +1,14 @@
+fragment NewsFields on news {
+	createdAt
+	deletedAt
+	heading
+	id
+	picture
+	publishedAt
+	sections
+	seo
+	settings
+	slug
+	status
+	updatedAt
+}

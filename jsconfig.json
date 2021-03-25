@@ -13,6 +13,9 @@
 			],
 			"@/widgets/*": [
 				"widgets/*"
+			],
+			"@/queries/*": [
+				"queries/*"
 			]
 		}
 	}

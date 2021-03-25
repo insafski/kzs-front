@@ -1,14 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { useQuery } from "@apollo/client";
 
 import Block from "@/components/containers/Block";
 import List from "@/components/containers/List";
+import { Button } from "@/components/elements/Form";
+import { NEWS } from "@/queries/queries.graphql";
+
+import { client } from "../../../pages/api/apollo";
 
 export default function News({ heading, items, news }) {
+	const [limit, setLimit] = useState(9);
+
+	// TODO: Need to move useQuery to root component like context
+
+	const { loading, error, data, fetchMore } = useQuery(
+		NEWS, {
+			client,
+			variables: {
+				offset: 0,
+				limit,
+			},
+		});
+
 	return (
 		<Block className={"news"} heading={heading}>
 			<div className={"container px-4"}>
-				<List items={news || items} type={"news"} className={"flex -mx-2 flex-wrap md:flex-nowrap"} />
+				<List items={data && !error && data.news || news || items} type={"news"} className={"flex -mx-2 flex-wrap md:flex-nowrap"} />
+			</div>
+			<div className={"container pt-10 flex justify-center"}>
+				<div className={"w-full md:w-4/12"}>
+					{/* TODO: Need to create Buttom component option loading width loading icon */}
+					<Button
+						text={"Загрузить ещё"}
+						handlers={
+							{
+								onClick() {
+									const offset = data.news.length;
+
+									fetchMore({
+										variables: {
+											offset,
+											limit,
+										},
+									}).then(moreResult => {
+										setLimit(offset + moreResult.data.news.length);
+									}).catch(error => console.error(error));
+								},
+							}
+						}
+					/>
+				</div>
 			</div>
 		</Block>
 	);

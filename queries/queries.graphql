@@ -1,0 +1,13 @@
+#import "./fragments/news.graphql"
+
+query NEWS_INITIAL {
+	news(limit: 9) {
+		...NewsFields
+	}
+}
+
+query NEWS($limit: Int!, $offset: Int!) {
+	news(limit: $limit, offset: $offset) {
+		...NewsFields
+	}
+}
