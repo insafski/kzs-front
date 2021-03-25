@@ -23,7 +23,7 @@ export default function Contacts({ heading }) {
 							Телефон:
 						</div>
 						<a href="tel:+79872265040" className={"ml-4"}>
-							+7 (987) 226-50-40
+							+7 (987) 226-50-40 - Хасанов Марат Васихович (директор)
 						</a>
 					</li>
 					<li className="md:w-full text-lg mb-4 flex">
@@ -32,7 +32,7 @@ export default function Contacts({ heading }) {
 							Телефон:
 						</div>
 						<a href="tel:+79870010565" className={"ml-4"}>
-							+7 (987) 001-05-65 - Рамиль Харисов (менеджер)
+							+7 (987) 001-05-65 - Харисов Рамиль (менеджер)
 						</a>
 					</li>
 					<li className="md:w-full text-lg mb-4 flex">
@@ -61,6 +61,9 @@ export default function Contacts({ heading }) {
 					</a>
 					<a href="https://vk.com/" className="social__item text-3xl" target="_blank" rel="noreferrer">
 						<i className="kzs-vkontakte"></i>
+					</a>
+					<a href="https://www.facebook.com/zapchastinapogruzchik0216/" className="social__item text-3xl" target="_blank" rel="noreferrer">
+						<i className="kzs-facebook-squared"></i>
 					</a>
 				</div>
 			</div>

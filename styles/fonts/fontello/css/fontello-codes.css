@@ -5,11 +5,7 @@
 .kzs-thumbs-up:before { content: '\e803'; } /* '' */
 .kzs-ok:before { content: '\e804'; } /* '' */
 .kzs-mail:before { content: '\e805'; } /* '' */
-.kzs-angle-left:before { content: '\f104'; } /* '' */
-.kzs-angle-right:before { content: '\f105'; } /* '' */
-.kzs-angle-up:before { content: '\f106'; } /* '' */
-.kzs-angle-down:before { content: '\f107'; } /* '' */
 .kzs-rouble:before { content: '\f158'; } /* '' */
 .kzs-instagram:before { content: '\f16d'; } /* '' */
-.kzs-skype:before { content: '\f17e'; } /* '' */
 .kzs-vkontakte:before { content: '\f189'; } /* '' */
+.kzs-facebook-squared:before { content: '\f308'; } /* '' */
