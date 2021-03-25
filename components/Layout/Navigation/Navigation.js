@@ -47,7 +47,7 @@ export default function Navbar({ data = {} }) {
 						navigation.map(({ link, title }, idx) => {
 							return (
 								<li key={idx} className={"navigation__item"}>
-									<Link href={link}>
+									<Link href={`/${link}`}>
 										<a className={"navigation__link block p-4 hover:bg-yellow-400"}>
 											{title}
 										</a>
