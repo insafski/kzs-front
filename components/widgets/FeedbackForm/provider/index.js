@@ -4,7 +4,7 @@ import { useToggle } from "ahooks";
 
 import Modal from "@/components/containers/Modal";
 import Form from "@/components/containers/Form";
-import { Input, Button } from "@/components/elements/Form";
+import { Input, Button, Textarea } from "@/components/elements/Form";
 
 import { FeedbackContextProvider } from "../context";
 
@@ -73,19 +73,19 @@ export default function FeedbackProvider({ children }) {
 						className={"mb-4"}
 						required
 					/>
-					<Input
+					{/* <Input
 						name={"lastName"}
 						placeholder={"Введите вашу фамилию"}
 						className={"mb-4"}
 						required
-					/>
+					/> */}
 					<Input
 						name={"phone"}
 						placeholder={"Контактный номер телефона"}
 						className={"mb-4"}
 						required
 					/>
-					<Input name={"message"} placeholder={"Введите ваш вопрос"} />
+					<Textarea name={"message"} placeholder={"Введите ваш вопрос"} />
 				</Form>
 			</Modal>
 			{children}

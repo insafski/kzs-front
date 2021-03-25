@@ -1,7 +1,7 @@
 import React from "react";
 
 import Form from "@/components/containers/Form";
-import { Input } from "@/components/elements/Form";
+import { Input, Textarea } from "@/components/elements/Form";
 
 export default function FeedbackForm() {
 	return (
@@ -12,19 +12,19 @@ export default function FeedbackForm() {
 				className={"mb-4"}
 				required
 			/>
-			<Input
+			{/* <Input
 				name={"lastName"}
 				placeholder={"Введите вашу фамилию"}
 				className={"mb-4"}
 				required
-			/>
+			/> */}
 			<Input
 				name={"phone"}
 				placeholder={"Контактный номер телефона"}
 				className={"mb-4"}
 				required
 			/>
-			<Input name={"message"} placeholder={"Введите ваш вопрос"} />
+			<Textarea name={"message"} placeholder={"Введите ваш вопрос"} />
 		</Form>
 	);
 }
