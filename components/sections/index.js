@@ -3,6 +3,7 @@ import Advantages from "./Advantages";
 import Articles from "./Articles";
 import Baner from "./Baner";
 import Contacts from "./Contacts";
+import ContentFlow from "./ContentFlow";
 import Feedback from "./Feedback";
 import GeoMap, { GeoMapWithContacts } from "./GeoMap";
 import Manufacturers from "./Manufacturers";
@@ -18,6 +19,7 @@ export default {
 	"articles": Articles,
 	"baner": Baner,
 	"contacts": Contacts,
+	"content-flow": ContentFlow,
 	"feedback": Feedback,
 	"manufacturers": Manufacturers,
 	"map": GeoMap,

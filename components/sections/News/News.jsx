@@ -9,7 +9,7 @@ import { NEWS } from "@/queries/queries.graphql";
 
 import { client } from "../../../pages/api/apollo";
 
-export default function News({ heading, items, news }) {
+export default function News({ heading, items, news, more }) {
 	const [limit, setLimit] = useState(9);
 
 	// TODO: Need to move useQuery to root component like context
@@ -28,30 +28,34 @@ export default function News({ heading, items, news }) {
 			<div className={"container px-4"}>
 				<List items={data && !error && data.news || news || items} type={"news"} className={"flex -mx-2 flex-wrap md:flex-nowrap"} />
 			</div>
-			<div className={"container pt-10 flex justify-center"}>
-				<div className={"w-full md:w-4/12"}>
-					{/* TODO: Need to create Button component option loading with loading icon */}
-					<Button
-						text={"Загрузить ещё"}
-						handlers={
-							{
-								onClick() {
-									const offset = data.news.length;
+			{
+				more && (
+					<div className={"container pt-10 flex justify-center"}>
+						<div className={"w-full md:w-4/12"}>
+							{/* TODO: Need to create Button component option loading with loading icon */}
+							<Button
+								text={"Загрузить ещё"}
+								handlers={
+									{
+										onClick() {
+											const offset = data.news.length;
 
-									fetchMore({
-										variables: {
-											offset,
-											limit,
+											fetchMore({
+												variables: {
+													offset,
+													limit,
+												},
+											}).then(moreResult => {
+												setLimit(offset + moreResult.data.news.length);
+											}).catch(error => console.error(error));
 										},
-									}).then(moreResult => {
-										setLimit(offset + moreResult.data.news.length);
-									}).catch(error => console.error(error));
-								},
-							}
-						}
-					/>
-				</div>
-			</div>
+									}
+								}
+							/>
+						</div>
+					</div>
+				)
+			}
 		</Block>
 	);
 }
@@ -64,4 +68,16 @@ News.propTypes = {
 	}),
 	items: PropTypes.array,
 	news: PropTypes.array,
+	more: PropTypes.bool,
+};
+
+News.defaultProps = {
+	heading: {
+		title: "",
+		subTitle: "",
+		subText: "",
+	},
+	items: [],
+	news: [],
+	more: false,
 };
