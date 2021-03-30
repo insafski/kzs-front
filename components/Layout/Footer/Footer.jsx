@@ -6,6 +6,7 @@ import get from "lodash/get";
 
 import Social from "@/components/elements/Social";
 import Icon from "@/components/elements/Icon";
+import { LogoImage } from "@/components/elements/Logo";
 export default function Footer({ footer, contacts, social }) {
 	const navigation = get(footer, "navigation", []);
 
@@ -14,12 +15,7 @@ export default function Footer({ footer, contacts, social }) {
 			<div className={"container mx-auto md:px-4 py-8 md:py-16 flex flex-col lg:flex-row lg:justify-between"}>
 				<div className={"footer__item mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>
 					<div className={"mt-8 md:mt-0 px-4 md:px-14"}>
-						{
-							footer.logo && footer.logo.picture && (
-							// <Image media={footer.logo.picture} className="h-8 w-auto object-contain" />
-								<img src={footer.logo.picture[0].src} />
-							)
-						}
+						<LogoImage />
 					</div>
 				</div>
 				<div className={"footer__item md:px-4 mb-8 md:mb-0 md:w-1/5 lg:w-1/4"}>

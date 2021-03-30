@@ -9,6 +9,7 @@ import cx from "classnames";
 import Icon from "@/components/elements/Icon";
 import Drawer from "@/components/containers/Drawer";
 import { AddressContext } from "@/components/widgets/Address";
+import { LogoDefault } from "@/components/elements/Logo";
 
 import styles from "./Navigation.module.scss";
 
@@ -31,15 +32,7 @@ export default function Navbar({ data = {} }) {
 	return (
 		<div className={"navigation flex justify-between items-center px-2"}>
 			<div className={"navigation__logo"}>
-				<Link href={"/"}>
-					<a>
-						<img
-							src="https://kzs.s3.eu-north-1.amazonaws.com/images/header-logo.svg"
-							alt={"КазЗапчастьСервис"}
-							style={{ width: 180 }}
-						/>
-					</a>
-				</Link>
+				<LogoDefault className={"h-10"} />
 			</div>
 			<nav className={"navigation__container flex hidden md:block"}>
 				<ul className={"navigation__body flex"}>
