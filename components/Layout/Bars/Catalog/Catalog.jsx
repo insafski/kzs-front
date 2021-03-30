@@ -2,8 +2,9 @@ import React, { cloneElement } from "react";
 import { useToggle } from "ahooks";
 import { isMobile } from "react-device-detect";
 
-import Drawer from "../../../containers/Drawer";
-import Collapse from "../../../containers/Collapse";
+import Drawer from "@/components/containers/Drawer";
+import Collapse from "@/components/containers/Collapse";
+import Icon from "@/components/elements/Icon";
 
 export default function Catalog({ trigger }) {
 	const [state, { toggle }] = useToggle();
@@ -93,7 +94,7 @@ export default function Catalog({ trigger }) {
 			>
 				<>
 					<div className={"catalog-bar__header px-4 py-4 flex justify-between bg-gray-100"}>
-						<h4>Каталог</h4>
+						<h4><Icon type={"box"} className={"mr-4"} />Каталог</h4>
 						<button onClick={() => toggle(false)}>
 							Закрыть
 						</button>
