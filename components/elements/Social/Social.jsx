@@ -13,7 +13,7 @@ export default function Social({ items, className }) {
 						<a
 							key={idx}
 							href={link}
-							className={"social__item text-3xl"}
+							className={"social__item text-3xl transition-colors duration-500 ease-in-out hover:text-yellow-400 mr-2"}
 							target={"_blank"}
 							rel={"noreferrer"}
 						>
