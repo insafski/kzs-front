@@ -4,7 +4,7 @@ import RCCollapse from "rc-collapse";
 
 import motion from "../../../utils/motion.js";
 
-import Icon from "../../elements/Icon";
+import Icon from "@/components/elements/Icon";
 
 const Panel = RCCollapse.Panel;
 
@@ -17,17 +17,25 @@ export default function Collapse({ accordion, items }) {
 			expandIcon={({ isActive }) => <Icon type={isActive ? "angle-up" : "angle-down"} className={"mr-4"} />}
 		>
 			{
-				items.map(({ header, links }, idx) => {
+				items.map(({ header, image, links }, idx) => {
 					return (
 						<Panel
 							key={idx}
 							header={
-								<div className={"flex flex-1 p-4"}>
-									<img
-										src="https://nationalrent.ru/local/templates/nationalrent/img/catalog/doosan-logo.png"
-										style={{ height: 20 }}
-										className={"mr-4"}
-									/>
+								<div className={"flex flex-1 items-center p-4"}>
+									<div style={{ width: 80 }} className={"flex justify-center mr-4"}>
+										{
+											image && (
+												<img
+													src={image}
+													style={{
+														height: 40,
+														maxWidth: "100%",
+													}}
+												/>
+											)
+										}
+									</div>
 									{header}
 								</div>
 							}
@@ -67,3 +75,10 @@ Collapse.propTypes = {
 	accordion: PropTypes.bool,
 	items: PropTypes.array,
 };
+
+Collapse.propTypes = {
+	accordion: false,
+	items: [],
+};
+
+Collapse.displayName = "Collapse";
