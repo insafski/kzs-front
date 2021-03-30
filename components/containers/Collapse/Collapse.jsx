@@ -14,7 +14,7 @@ export default function Collapse({ accordion, items }) {
 			accordion={accordion}
 			className={"border-0"}
 			openMotion={motion}
-			expandIcon={({ isActive }) => <Icon type={isActive ? "angle-up" : "angle-down"} />}
+			expandIcon={({ isActive }) => <Icon type={isActive ? "angle-up" : "angle-down"} className={"mr-4"} />}
 		>
 			{
 				items.map(({ header, links }, idx) => {
