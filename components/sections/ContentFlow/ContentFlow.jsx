@@ -26,6 +26,7 @@ export default function ContentFlow({ items }) {
 									<Picture items={picture} />
 								</div>
 								<div className={"content-flow__content"}>
+									{/* TODO: NEED TO USE REACT MARKDOWN */}
 									{content}
 								</div>
 							</div>

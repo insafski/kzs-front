@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import RCCollapse from "rc-collapse";
 
-import "rc-collapse/assets/index.css";
-
 import motion from "../../../utils/motion.js";
 
 import Icon from "../../elements/Icon";
@@ -24,7 +22,7 @@ export default function Collapse({ accordion, items }) {
 						<Panel
 							key={idx}
 							header={
-								<div className={"flex flex-1"}>
+								<div className={"flex flex-1 p-4"}>
 									<img
 										src="https://nationalrent.ru/local/templates/nationalrent/img/catalog/doosan-logo.png"
 										style={{ height: 20 }}
@@ -35,7 +33,7 @@ export default function Collapse({ accordion, items }) {
 							}
 							// showArrow={false}
 							headerClass={"flex flex-row-reverse justify-between outline-none p-0 bg-white text-lg"}
-							className={"m-0"}
+							className={""}
 						>
 							<ul className={"flex flex-col bg-gray-100"}>
 								{

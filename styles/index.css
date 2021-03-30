@@ -1,9 +1,14 @@
 @import "fonts/fontello/css/fontello.css";
+
+@import "fonts/Montserrat/css/Montserrat.css";
+
 @import "swiper/swiper.min.css";
 @import "swiper/components/navigation/navigation.min.css";
 @import "swiper/components/pagination/pagination.min.css";
 
 @import "./react-components/rc-dialog.css";
+@import "./react-components/rc-drawer.css";
+@import "./react-components/rc-collapse.css";
 
 @tailwind base;
 

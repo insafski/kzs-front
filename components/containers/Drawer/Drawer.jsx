@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import RCDrawer from "rc-drawer";
 
-import "rc-drawer/assets/index.css";
-
 export default function Drawer({ open, placement, onChange, onClose, handler, level, width, height, children }) {
 	return (
 		<RCDrawer

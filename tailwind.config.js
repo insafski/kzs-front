@@ -14,6 +14,10 @@ module.exports = {
 			"xl": "1200px",
 			"2xl": "1400px",
 		},
+		fontFamily: {
+			sans: ["Montserrat", "sans-serif"],
+			serif: ["Montserrat", "sans-serif"],
+		},
 	},
 	variants: {
 		extend: {},
