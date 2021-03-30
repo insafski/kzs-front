@@ -65,6 +65,12 @@
       "css": "facebook-squared",
       "code": 62216,
       "src": "fontawesome"
+    },
+    {
+      "uid": "58a16628dcbd6456c61218f3d27591be",
+      "css": "skype",
+      "code": 61822,
+      "src": "fontawesome"
     }
   ]
 }
