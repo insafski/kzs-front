@@ -37,11 +37,11 @@ export default function FeedbackProvider({ children }) {
 			}}
 		>
 			<Modal
-				title={
-					<div className={"text-center text-black"}>
-						<h2 className={"mb-4 uppercase"}>Заказать звонок</h2>
-						<p>Оставьте ваши контактные данные и мы с вами свяжемся</p>
-					</div>
+				heading={
+					{
+						title: "Заказать звонок",
+						subtitle: "Оставьте ваши контактные данные и мы с вами свяжемся",
+					}
 				}
 				visible={isOpen}
 				onClose={handleClose}

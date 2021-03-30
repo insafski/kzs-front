@@ -20,7 +20,7 @@ export default function News({ heading, publishedAt, picture, slug }) {
 					</a>
 				</Link>
 			</div>
-			<div className={"news-item__date text-sm text-gray-700 mb-2"}>
+			<div className={"news-item__date text-sm text-gray-700 mb-4"}>
 				{newsDate}
 			</div>
 			<div className={"news-item__title mb-4"}>

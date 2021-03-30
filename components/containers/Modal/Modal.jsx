@@ -1,10 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Dialog from "rc-dialog";
+import get from "lodash/get";
 
-// import "rc-dialog/assets/index.css";
+function Title({ heading }) {
+	const title = get(heading, "title", "");
+	const subtitle = get(heading, "subtitle", "");
 
-export default function Modal({ title, className, visible, wrapClassName, animation, maskAnimation, onClose, style, mousePosition, forceRender, footer, children }) {
+	return (title || subtitle) && (
+		<div className={"border-b p-4 text-center"}>
+			{
+				title && (
+					<h2 className={"text-xl font-bold uppercase mb-4"}>{title}</h2>
+				)
+			}
+			{
+				subtitle && (
+					<p>{subtitle}</p>
+				)
+			}
+		</div>
+	);
+}
+
+Title.propTypes = {
+	heading: PropTypes.object,
+};
+
+export default function Modal({ heading, className, visible, wrapClassName, animation, maskAnimation, onClose, style, mousePosition, forceRender, footer, children }) {
 	return (
 		<Dialog
 			className={className}
@@ -14,7 +37,7 @@ export default function Modal({ title, className, visible, wrapClassName, animat
 			maskAnimation={maskAnimation}
 			onClose={onClose}
 			style={style}
-			title={title}
+			title={<Title heading={heading} />}
 			mousePosition={mousePosition}
 			destroyOnClose={true}
 			forceRender={forceRender}
@@ -27,7 +50,7 @@ export default function Modal({ title, className, visible, wrapClassName, animat
 }
 
 Modal.propTypes = {
-	title: PropTypes.string,
+	heading: PropTypes.object,
 	className: PropTypes.string,
 	visible: PropTypes.bool,
 	wrapClassName: PropTypes.string,
@@ -42,7 +65,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-	title: "",
+	heading: {},
 	className: "",
 	visible: false,
 	wrapClassName: "",
