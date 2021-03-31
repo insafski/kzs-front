@@ -7,11 +7,13 @@ import List from "@/components/containers/List";
 export default function Products({ heading, items, products }) {
 	return (
 		<Block heading={heading} className={"products"}>
-			<List
-				items={products || items}
-				type={"product"}
-				className={"flex -mx-2 flex-wrap md:flex-nowrap"}
-			/>
+			<div className={"container px-4"}>
+				<List
+					items={products || items}
+					type={"product"}
+					className={"flex -mx-2 flex-wrap md:flex-nowrap"}
+				/>
+			</div>
 		</Block>
 	);
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import moment from "moment";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 
 import Picture from "@/components/elements/Picture";
+import { Button } from "@/components/elements/Form";
+import Icon from "@/components/elements/Icon";
+import { useFeedback } from "@/components/widgets/FeedbackForm";
 
 export default function Product({ heading, picture, slug }) {
+	const { handleOpen } = useFeedback();
+
 	const title = get(heading, "title", "");
 	const description = get(heading, "description", "");
 
@@ -28,6 +32,15 @@ export default function Product({ heading, picture, slug }) {
 				<p>
 					{description}
 				</p>
+			</div>
+			<div className={"product__call text-sm"}>
+				<Button
+					className={"border-transparent bg-yellow-400"}
+					handlers={{ onClick: handleOpen }}
+				>
+					<Icon type={"phone"} className={"mr-2"} />
+					{"Узнать цену"}
+				</Button>
 			</div>
 		</div>
 	);
