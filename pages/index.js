@@ -30,18 +30,32 @@ export async function getStaticProps({ params, preview = null }) {
 					publishedAt
 					slug
 				}
+
+				products(limit: 8) {
+					picture
+					heading
+					articul
+					slug
+
+					category {
+					slug
+					heading
+					}
+				}
 			}
 		`,
 		variables: params,
 	});
 
 	const page = get(result, "data.pages[0]", {});
-	const news = get(result, "data.news", {});
+	const news = get(result, "data.news", []);
+	const products = get(result, "data.products", []);
 
 	return {
 		props: {
 			...page,
 			news,
+			products,
 		},
 	};
 }
