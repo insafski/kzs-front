@@ -35,7 +35,7 @@ export default function BanerSlide({ picture, heading, link }) {
 							<p className={"text-3xl md:text-3xl text-white font-semibold"}>{description}</p>
 						</div>
 					</div>
-					<div className={"baner-slide__link absolute right-0 bottom-0 text-white py-12 px-16 uppercase font-semibold text-lg"}>
+					<div className={cx("baner-slide__link absolute right-0 bottom-0 text-white py-12 px-16 uppercase font-semibold text-lg", styles["baner-slide__link"])}>
 						Подробнее
 						<Icon type={"angle-right"} className={"ml-2"} />
 					</div>
