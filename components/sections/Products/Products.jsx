@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Block from "../../containers/Block";
+import Block from "@/components/containers/Block";
+import List from "@/components/containers/List";
 
-export default function Products({ heading }) {
+export default function Products({ heading, items, products }) {
 	return (
 		<Block heading={heading} className={"products"}>
+			<List
+				items={products || items}
+				type={"product"}
+				className={"flex -mx-2 flex-wrap md:flex-nowrap"}
+			/>
 		</Block>
 	);
 }
@@ -16,4 +22,6 @@ Products.propTypes = {
 		subTitle: PropTypes.string,
 		subText: PropTypes.string,
 	}),
+	items: PropTypes.array,
+	products: PropTypes.array,
 };

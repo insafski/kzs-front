@@ -5,6 +5,7 @@ import Default from "./Default";
 import GalleryItem from "./GalleryItem";
 import Manufacturer from "./Manufacturer";
 import News from "./News";
+import Product from "./Product";
 
 export default {
 	advantage: Advantage,
@@ -14,6 +15,7 @@ export default {
 	manufacturer: Manufacturer,
 	news: News,
 	photo: GalleryItem,
+	product: Product,
 	get(type) {
 		return this[type] || this.imperial;
 	},
