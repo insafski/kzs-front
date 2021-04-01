@@ -12,7 +12,7 @@ export default function News({ heading, publishedAt, picture, slug }) {
 	const newsDate = moment(publishedAt).format("DD.MM.YYYY");
 
 	return (
-		<div className={"news-item mb-4 px-2 w-1/2 md:w-4/12"}>
+		<div className={"news-item mb-4 px-2 md:w-1/2 lg:w-4/12"}>
 			<div className={"news-item__picture mb-2"}>
 				<Link href={`/novosti/${slug}`}>
 					<a>

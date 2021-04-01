@@ -23,27 +23,27 @@ export default function Product({ heading, picture, slug, category, articul }) {
 					</a>
 				</Link>
 			</div>
-			<div className={"product__description text-sm pb-2 hover:underline"}>
+			<div className={"product__articul text-sm mb-2"}>
+				<span className={"font-semibold"}>Артикул: </span>
+				<span>{articul}</span>
+			</div>
+			<div className={"product__description text-sm mb-2 hover:underline"}>
 				<Link href={`/products/${get(category, "slug", "")}`}>
 					{get(category, "heading.title", "")}
 				</Link>
 			</div>
-			<div className={"product__title font-medium text-sm flex justify-start pb-2 h-12"}>
+			<div className={"product__title text-sm md:text-base font-semibold md:h-12 mb-4"}>
 				<Link href={`/products/${slug}`}>
 					{title}
 				</Link>
-			</div>
-			<div className={"product__articul text-sm mb-4"}>
-				<span className={"font-semibold"}>Артикул: </span>
-				<span>{articul}</span>
 			</div>
 			<div className={"product__call text-sm"}>
 				<Button
 					className={"border-transparent bg-yellow-400"}
 					handlers={{ onClick: handleOpen }}
 				>
-					{"Цену уточняйте"}
-					<Icon type={"phone"} className={"ml-2"} />
+					<Icon type={"phone"} className={"mr-2"} />
+					{"Узнать цену"}
 				</Button>
 			</div>
 		</div>
