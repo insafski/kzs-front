@@ -6,19 +6,20 @@ import uniqueId from "lodash/uniqueId";
 
 export default function Textarea({ name, placeholder, value, type, required, className }) {
 	const types = {
-		border: "border border-yellow-400 hover:border-yellow-500 focus:border-yellow-500",
+		border: "border border-yellow-400 hover:border-yellow-500 focus:border-yellow-500 rounded-md",
 		background: "",
-		outline: "focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-opacity-50",
+		outline: "outline-none ring-0 ring-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50 focus:outline-none",
+		transition: "transition-all duration-300 ease-in-out",
 	};
 
-	const { border, background, outline } = types;
+	const { border, background, outline, transition } = types;
 
 	return (
 		<Field name={name}>
 			<textarea
 				placeholder={placeholder}
 				value={value}
-				className={cx("block w-full px-4 py-2 font-medium rounded-md shadow-sm focus:ring focus:ring-yellow-400 focus:ring-opacity-50", border, background, outline, className)}
+				className={cx("block w-full px-4 py-2 font-medium shadow-sm", border, background, outline, transition, className)}
 				required={required}
 			/>
 		</Field>
