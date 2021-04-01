@@ -11,7 +11,9 @@ function Title({ heading }) {
 		<div className={"border-b p-4 text-center"}>
 			{
 				title && (
-					<h2 className={"text-xl font-bold uppercase mb-4"}>{title}</h2>
+					<h2 className={"text-3xl font-bold mb-4"}>
+						{title}
+					</h2>
 				)
 			}
 			{

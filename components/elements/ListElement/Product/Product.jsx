@@ -37,9 +37,9 @@ export default function Product({ heading, picture, slug, category, articul }) {
 					{title}
 				</Link>
 			</div>
-			<div className={"product__call text-sm"}>
+			<div className={"product__call"}>
 				<Button
-					className={"border-transparent bg-yellow-400"}
+					type={"primary"}
 					handlers={{ onClick: handleOpen }}
 				>
 					<Icon type={"phone"} className={"mr-2"} />

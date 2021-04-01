@@ -61,7 +61,7 @@ export default function FeedbackProvider({ children }) {
 							/>
 						</div>
 						<div className={"pl-2 flex-1"}>
-							<Button text={"Заказать"} />
+							<Button type={"primary"} text={"Заказать"} />
 						</div>
 					</div>
 				}

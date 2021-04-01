@@ -11,7 +11,7 @@ export default function Input({ name, placeholder, value, type, required, classN
 				type={type}
 				placeholder={placeholder}
 				value={value}
-				className={cx("block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50", className)}
+				className={cx("block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 font-medium focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50", className)}
 				required={required}
 			/>
 		</Field>

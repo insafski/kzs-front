@@ -20,7 +20,7 @@ export default function MapSection() {
 						<FeedbackForm />
 						<div className={"flex mt-4"}>
 							<div className={"flex-1"}>
-								<Button text={"Заказать"} />
+								<Button type={"primary"} text={"Заказать"} />
 							</div>
 						</div>
 					</div>

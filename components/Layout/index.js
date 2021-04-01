@@ -8,7 +8,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
-import { Button } from "@/components/elements/Form";
+import { Button, Input } from "@/components/elements/Form";
 import Icon from "@/components/elements/Icon";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 
@@ -41,7 +41,10 @@ export default function Layout({ children, global }) {
 							<div className={"w-full mb-4 mr-4 md:mb-0 md:w-2/12"}>
 								<Catalog
 									trigger={
-										<Button key={`catalog-trigger-${isMobile}`} className={"border-transparent bg-yellow-400"}>
+										<Button
+											key={`catalog-trigger-${isMobile}`}
+											type={"primary"}
+										>
 											{"Каталог"}
 											<Icon type={isMobile ? "angle-down" : "angle-right"} />
 										</Button>
@@ -49,14 +52,16 @@ export default function Layout({ children, global }) {
 								/>
 							</div>
 							<div className={"w-full mr-4 md:w-8/12"}>
-								<input
-									type="text"
-									className={"block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50"}
+								<Input
+									type={"text"}
 									placeholder={"Поиск"}
 								/>
 							</div>
 							<div className={"hidden md:block md:w-2/12"}>
-								<Button className={"border-transparent bg-yellow-400"} handlers={{ onClick: handleOpen }}>
+								<Button
+									type={"primary"}
+									handlers={{ onClick: handleOpen }}
+								>
 									<Icon type={"phone"} className={"mr-2"} />
 									{"Связаться"}
 								</Button>
