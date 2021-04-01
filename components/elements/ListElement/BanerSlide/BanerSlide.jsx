@@ -30,12 +30,16 @@ export default function BanerSlide({ picture, heading, link }) {
 						alt=""
 					/>
 					<div className={"baner-slide__content w-full absolute top-0"}>
-						<div className={"container mx-auto px-12 mt-16"}>
-							<h2 className={"text-4xl md:text-5xl text-white mb-8 font-semibold md:font-bold"}>{title}</h2>
-							<p className={"text-3xl md:text-3xl text-white font-semibold"}>{description}</p>
+						<div className={"container mx-auto px-6 mt-8 md:px-12 md:mt-16"}>
+							<h2 className={"text-3xl md:text-5xl text-white mb-8 font-semibold md:font-bold"}>
+								{title}
+							</h2>
+							<p className={"text-xl md:text-3xl text-white font-semibold"}>
+								{description}
+							</p>
 						</div>
 					</div>
-					<div className={cx("baner-slide__link absolute right-0 bottom-0 text-white py-12 px-16 uppercase font-semibold text-lg", styles["baner-slide__link"])}>
+					<div className={cx("baner-slide__link absolute right-0 bottom-0 text-white px-4 py-6 md:py-12 md:px-16 uppercase font-semibold text-lg", styles["baner-slide__link"])}>
 						Подробнее
 						<Icon type={"angle-right"} className={"ml-2"} />
 					</div>

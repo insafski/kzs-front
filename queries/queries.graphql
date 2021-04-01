@@ -11,3 +11,88 @@ query NEWS($limit: Int!, $offset: Int!) {
 		...NewsFields
 	}
 }
+
+query DETAILED_NEWS($slug: String!) {
+	news(where: {slug: {_eq: $slug}}) {
+		...NewsFields
+	}
+}
+
+query GLOBALS {
+	globals {
+		updatedAt
+		settings
+		seo
+		params
+		id
+		header
+		footer
+		deletedAt
+		createdAt
+		contacts
+	}
+}
+
+query MANUFACTURERS {
+	manufacturers {
+		createdAt
+		deletedAt
+		id
+		picture
+		seo
+		status
+		heading
+		updatedAt
+		slug
+	}
+}
+
+query MAIN_PAGE {
+	pages(where: {slug: {_eq: "/"}}) {
+		id
+		heading
+		createdAt
+		deletedAt
+		picture
+		sections
+		seo
+		settings
+		slug
+		status
+		updatedAt
+	}
+
+	news {
+		heading
+		picture
+		publishedAt
+		slug
+	}
+
+	products(limit: 8) {
+		picture
+		heading
+		articul
+		slug
+		category {
+			slug
+			heading
+		}
+	}
+}
+
+query DETAILED_PAGE($slug: String!) {
+	pages(where: {slug: {_eq: $slug}, _not: {slug: {_eq: "/"}}}) {
+		id
+		heading
+		createdAt
+		deletedAt
+		picture
+		sections
+		metaData
+		settings
+		slug
+		status
+		updatedAt
+	}
+}

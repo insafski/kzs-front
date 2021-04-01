@@ -11,8 +11,15 @@ export default function Baner({ items }) {
 					items={items}
 					type={"baner"}
 					slidesPerView={1}
-					navigation
+					navigation={false}
 					pagination={{ clickable: true }}
+					breakpoints={
+						{
+							768: {
+								navigation: true,
+							},
+						}
+					}
 					autoplay={
 						{
 							delay: 6000,

@@ -3,6 +3,8 @@ import get from "lodash/get";
 
 import { client } from "../pages/api/apollo";
 
+import { GLOBALS, MANUFACTURERS } from "@/queries/queries.graphql";
+
 export function getHasuraURL(path) {
 	return `${process.env.NEXT_HASURA_ENDPOINT || "http://localhost:1337"}${path}`;
 }
@@ -36,22 +38,7 @@ export async function getPageData(slug, preview = false) {
 // Get site data from Strapi (metadata, navbar, footer...)
 export async function getGlobalData() {
 	const result = await client.query({
-		query: gql`
-			query Globals {
-				globals {
-					updatedAt
-					settings
-					metaData
-					params
-					id
-					header
-					footer
-					deletedAt
-					createdAt
-					contacts
-				}
-			}
-		`,
+		query: GLOBALS,
 	});
 
 	const global = get(result, "data.globals[0]", {});
@@ -61,21 +48,7 @@ export async function getGlobalData() {
 
 export async function getManufacturersData() {
 	const result = await client.query({
-		query: gql`
-			query Manufacturers {
-				manufacturers {
-					createdAt
-					deletedAt
-					id
-					picture
-					seo
-					status
-					heading
-					updatedAt
-					slug
-				}
-			}
-		`,
+		query: MANUFACTURERS,
 	});
 
 	const manufacturers = get(result, "data.manufacturers", {});
