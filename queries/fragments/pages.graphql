@@ -1,0 +1,13 @@
+fragment PagesFields on Page {
+	id
+	heading
+	createdAt
+	deletedAt
+	picture
+	sections
+	seo
+	settings
+	slug
+	status
+	updatedAt
+}
