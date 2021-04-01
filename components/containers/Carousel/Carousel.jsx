@@ -19,6 +19,7 @@ export default function Carousel({ items, type, slidesPerView, navigation, pagin
 			scrollbar={{ draggable: true }}
 			breakpoints={breakpoints}
 			autoplay={autoplay}
+			loop={true}
 		>
 			{
 				items.map((item, idx) => {

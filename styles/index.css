@@ -90,13 +90,21 @@ html {
 }
 
 .swiper-pagination-bullet {
-    background-color: white !important;
+    background-color: rgb(251, 191, 36) !important;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: white !important;
+    background-color: rgb(251, 191, 36) !important;
 }
 
 .rc-dialog-content {
     border-radius: 0.375rem !important;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px !important;
+}
+
+.swiper-container {
+	padding-bottom: 2rem !important;
 }
