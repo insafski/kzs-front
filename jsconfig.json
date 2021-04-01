@@ -16,6 +16,9 @@
 			],
 			"@/queries/*": [
 				"queries/*"
+			],
+			"@/utils/*": [
+				"utils/*"
 			]
 		}
 	}

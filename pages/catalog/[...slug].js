@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import get from "lodash/get";
 
-import Page from "../../components/containers/Page";
+import Page from "@/components/containers/Page";
 import { client } from "./api/apollo";
 
 export async function getStaticPaths() {

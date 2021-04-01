@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import get from "lodash/get";
 
-import { Catalog } from "../../components/containers/Page";
+import { Catalog } from "@/components/containers/Page";
 
 import { client } from "../api/apollo";
 
