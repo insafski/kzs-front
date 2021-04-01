@@ -5,13 +5,21 @@ import cx from "classnames";
 import uniqueId from "lodash/uniqueId";
 
 export default function Input({ name, placeholder, value, type, required, className }) {
+	const types = {
+		border: "border border-yellow-400 hover:border-yellow-500 focus:border-yellow-500",
+		background: "",
+		outline: "focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-opacity-50",
+	};
+
+	const { border, background, outline } = types;
+
 	return (
 		<Field name={name}>
 			<input
 				type={type}
 				placeholder={placeholder}
 				value={value}
-				className={cx("block w-full px-4 py-2 rounded-md border-gray-300 shadow-sm hover:border-yellow-400 font-medium focus:border-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-opacity-50", className)}
+				className={cx("block w-full px-4 py-2 rounded-md shadow-sm font-medium focus:ring focus:ring-yellow-400 focus:ring-opacity-50", border, background, outline, className)}
 				required={required}
 			/>
 		</Field>
