@@ -1,4 +1,4 @@
-fragment PagesFields on Page {
+fragment PagesFields on pages {
 	id
 	heading
 	createdAt
