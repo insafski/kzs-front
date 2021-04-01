@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isArray } from "lodash";
+import cx from "classnames";
 
-export default function Picture({ items }) {
+export default function Picture({ items, classNames }) {
 	// TODO: Move to global params
 	const BREAKPOINTS = {
 		"sm": "640px",
@@ -15,7 +16,7 @@ export default function Picture({ items }) {
 	function makeSource(breakpoint, src, alt, title) {
 		switch (breakpoint) {
 			case "main":
-				return <img className={"h-full object-none rounded-md"} src={src} alt={alt} title={title} />;
+				return <img className={cx("h-full rounded-md", classNames)} src={src} alt={alt} title={title} />;
 			default:
 				return <source srcSet={src} media={`(min-width: ${BREAKPOINTS[breakpoint]})`} />;
 		}
@@ -32,10 +33,12 @@ export default function Picture({ items }) {
 
 Picture.propTypes = {
 	items: PropTypes.array,
+	classNames: PropTypes.string,
 };
 
 Picture.defaultProps = {
 	items: [],
+	classNames: "",
 };
 
 Picture.displayName = "Picture";
