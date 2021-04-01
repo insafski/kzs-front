@@ -89,7 +89,7 @@ query DETAILED_PAGE($slug: String!) {
 		deletedAt
 		picture
 		sections
-		metaData
+		seo
 		settings
 		slug
 		status
