@@ -34,7 +34,7 @@ export async function getStaticProps({ params, preview = null }) {
 					deletedAt
 					picture
 					sections
-					metaData
+					seo
 					settings
 					slug
 					status
