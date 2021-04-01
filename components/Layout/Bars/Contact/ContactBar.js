@@ -21,7 +21,7 @@ export default function ContactBar({ global }) {
 		<div className={"header-top hidden md:block py-2 border-b border-yellow-400"}>
 			<div className={"container mx-auto px-4"}>
 				<div className={"header-top__contacts flex justify-between"}>
-					<div className={"flex w-4/12"}>
+					<div className={"flex w-4/12 text-sm"}>
 						{title}
 					</div>
 					<ul className={"header-top__list flex w-8/12 justify-end"}>
