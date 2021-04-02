@@ -27,6 +27,20 @@ export default function FeedbackProvider({ children }) {
 		toggle(true);
 	}
 
+	function onSubmit(data) {
+		fetch("https://kzs-server.herokuapp.com/burer", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify({
+				name: "yo",
+				phone: "90",
+				message: "yo",
+			}),
+		});
+	}
+
 	return (
 		<FeedbackContextProvider
 			value={{
@@ -61,7 +75,13 @@ export default function FeedbackProvider({ children }) {
 							/>
 						</div>
 						<div className={"pl-2 flex-1"}>
-							<Button type={"primary"} text={"Заказать"} />
+							<Button
+								type={"primary"}
+								text={"Заказать"}
+								handlers={{
+									onClick: onSubmit,
+								}}
+							/>
 						</div>
 					</div>
 				}
