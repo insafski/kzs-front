@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
+import Icon from "@/components/elements/Icon";
+
 // TODO: Need to split classnames for button types
-export default function Button({ text, handlers, className, type, children }) {
+export default function Button({ text, handlers, className, type, icon, iconPosition }) {
 	const types = {
 		"default": {
 			border: "border hover:border-gray-300 focus:border-gray-300 rounded-md ",
@@ -29,8 +31,17 @@ export default function Button({ text, handlers, className, type, children }) {
 			className={cx("w-full inline-flex justify-center px-4 py-2 shadow-sm text-md font-medium uppercase", border, background, outline, transition, className)}
 			{...handlers}
 		>
+			{
+				icon && iconPosition === "left" && (
+					<Icon type={icon} className={"mr-2"} />
+				)
+			}
 			{text}
-			{children}
+			{
+				icon && iconPosition === "right" && (
+					<Icon type={icon} className={"ml-2"} />
+				)
+			}
 		</button>
 	);
 }
@@ -40,6 +51,8 @@ Button.propTypes = {
 	handlers: PropTypes.object,
 	className: PropTypes.string,
 	type: PropTypes.string,
+	icon: PropTypes.string,
+	iconPosition: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -47,4 +60,6 @@ Button.defaultProps = {
 	handlers: PropTypes.object,
 	className: PropTypes.string,
 	type: "",
+	icon: "",
+	iconPosition: "left",
 };

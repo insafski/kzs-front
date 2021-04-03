@@ -44,10 +44,10 @@ export default function Layout({ children, global }) {
 										<Button
 											key={`catalog-trigger-${isMobile}`}
 											type={"primary"}
-										>
-											{"Каталог"}
-											<Icon type={isMobile ? "angle-down" : "angle-right"} />
-										</Button>
+											text={"Каталог"}
+											icon={isMobile ? "angle-down" : "angle-right"}
+											iconPosition={"right"}
+										/>
 									}
 								/>
 							</div>
@@ -61,10 +61,9 @@ export default function Layout({ children, global }) {
 								<Button
 									type={"primary"}
 									handlers={{ onClick: handleOpen }}
-								>
-									<Icon type={"phone"} className={"mr-2"} />
-									{"Связаться"}
-								</Button>
+									text={"Связаться"}
+									icon={"phone"}
+								/>
 							</div>
 						</div>
 					</div>

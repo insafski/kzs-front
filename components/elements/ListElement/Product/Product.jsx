@@ -41,10 +41,9 @@ export default function Product({ heading, picture, slug, category, articul }) {
 				<Button
 					type={"primary"}
 					handlers={{ onClick: handleOpen }}
-				>
-					<Icon type={"phone"} className={"mr-2"} />
-					{"Узнать цену"}
-				</Button>
+					text={"Узнать цену"}
+					icon={"phone"}
+				/>
 			</div>
 		</div>
 	);
