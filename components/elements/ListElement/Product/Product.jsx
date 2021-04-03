@@ -8,18 +8,21 @@ import { Button } from "@/components/elements/Form";
 import Icon from "@/components/elements/Icon";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 
-export default function Product({ heading, picture, slug, category, articul }) {
+export default function Product({ heading, picture, slug, category, articul, manufacturers_products }) {
 	const { handleOpen } = useFeedback();
 
 	const title = get(heading, "title", "");
+	const categorySlug = get(category, "slug", "");
+	const categoryTitle = get(category, "heading.title", "");
+	const manufacturerSlug = get(manufacturers_products, "[0].manufacturer.slug", "");
 	// const description = get(heading, "description", "");
 
 	return (
 		<div className={"product mb-8 px-2 md:w-1/2"}>
 			<div className={"product__picture mb-2"}>
-				<Link href={`/novosti/${slug}`}>
+				<Link href={`/catalog/${categorySlug}/${manufacturerSlug}/${slug}`}>
 					<a>
-						<Picture items={picture} classNames={"w-full object-contain"} />
+						<Picture items={picture} className={"w-full object-contain"} />
 					</a>
 				</Link>
 			</div>
@@ -28,12 +31,12 @@ export default function Product({ heading, picture, slug, category, articul }) {
 				<span>{articul}</span>
 			</div>
 			<div className={"product__description text-sm mb-2 hover:underline"}>
-				<Link href={`/products/${get(category, "slug", "")}`}>
-					{get(category, "heading.title", "")}
+				<Link href={`/catalog/${categorySlug}`}>
+					{categoryTitle}
 				</Link>
 			</div>
 			<div className={"product__title text-sm md:text-base font-semibold md:h-12 mb-4"}>
-				<Link href={`/products/${slug}`}>
+				<Link href={`/catalog/${categorySlug}/${manufacturerSlug}/${slug}`}>
 					{title}
 				</Link>
 			</div>
@@ -57,6 +60,7 @@ Product.propTypes = {
 	category: PropTypes.object,
 	articul: PropTypes.string,
 	slug: PropTypes.array,
+	manufacturers_products: PropTypes.array,
 };
 
 Product.propTypes = {
@@ -67,6 +71,7 @@ Product.propTypes = {
 	category: {},
 	articul: "",
 	slug: "",
+	manufacturers_products: [],
 };
 
-Product.displayName = "NewsItem";
+Product.displayName = "Product";

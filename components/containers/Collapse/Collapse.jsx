@@ -7,6 +7,8 @@ import Icon from "@/components/elements/Icon";
 import ListItem from "@/components/elements/ListElement";
 
 export default function Collapse({ accordion, items, type }) {
+	const Panel = RCCollapse.Panel;
+
 	return (
 		<RCCollapse
 			accordion={accordion}

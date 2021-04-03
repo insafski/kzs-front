@@ -4,7 +4,7 @@ import cx from "classnames";
 
 import styles from "./heading.module.scss";
 export default function Heading({ className, heading, underline }) {
-	const { title, description, subtitle, type } = heading;
+	const { title, description, subtitle, type = "h2" } = heading;
 	const classNames = {
 		h1: cx("h1 text-3xl md:text-5xl mb-4", { "mb-6": underline }),
 		h2: "h2 mb-6 text-3xl",

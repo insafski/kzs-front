@@ -9,34 +9,53 @@ export async function getStaticProps({ params, preview = null }) {
 	const result = await client.query({
 		query: gql`
 			query CategoryPage {
-				categories {
-					heading
+				v_categories {
 					slug
+					updatedAt
+					status
+					seo
 					picture
+					m_slug
+					m_picture
+					m_heading
+					heading
+					deletedAt
+					createdAt
 				}
-
-				manufacturers {
+				products(limit: 10) {
+					updatedAt
+					status
+					slug
+					seo
+					picture
+					params
 					id
 					heading
-					createdAt
 					deletedAt
-					picture
-					seo
-					status
-					updatedAt
-					slug
+					createdAt
+					categoryid
+					articul
+					category {
+						heading
+						slug
+					}
+					manufacturers_products {
+						manufacturer {
+							slug
+						}
+					}
 				}
 			}
 		`,
 	});
 
-	const categories = get(result, "data.categories", {});
-	const manufacturers = get(result, "data.manufacturers", {});
+	const categories = get(result, "data.v_categories", {});
+	const products = get(result, "data.products", {});
 
 	return {
 		props: {
 			categories,
-			manufacturers,
+			products,
 		},
 	};
 }

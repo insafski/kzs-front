@@ -1,0 +1,14 @@
+fragment ProductsFields on products {
+	updatedAt
+    status
+    slug
+    seo
+    picture
+    params
+    id
+    heading
+    deletedAt
+    createdAt
+    categoryid
+    articul
+}
