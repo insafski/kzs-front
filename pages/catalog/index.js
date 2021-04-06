@@ -56,6 +56,9 @@ export async function getStaticProps({ params, preview = null }) {
 		props: {
 			categories,
 			products,
+			seo: {
+				metaTitle: "Каталог",
+			},
 		},
 	};
 }

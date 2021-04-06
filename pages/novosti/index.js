@@ -25,6 +25,9 @@ export async function getStaticProps() {
 					metadata: {},
 				},
 			],
+			seo: {
+				metaTitle: "Новости",
+			},
 		},
 	};
 }

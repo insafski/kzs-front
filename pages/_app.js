@@ -6,6 +6,7 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import { getGlobalData, getManufacturersData } from "utils/api";
+import get from "lodash/get";
 
 import { FeedbackProvider } from "@/components/widgets/FeedbackForm";
 import { AddressProvider } from "@/components/widgets/Address";
@@ -38,7 +39,7 @@ export default function Application({ Component, pageProps }) {
 			</Head>
 			<DefaultSeo
 				titleTemplate={`%s | ${seo.metaTitleSuffix}`}
-				title={"Page"}
+				title={get(pageProps, "seo.metaTitle", "Каззапчастьсервис")}
 				// description={metadata.metaDescription}
 				// openGraph={{
 				//   images: Object.values(metadata.shareImage.formats).map((image) => {
