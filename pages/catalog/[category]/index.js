@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import get from "lodash/get";
 
-import { Category } from "@/components/containers/Page";
+import { Catalog } from "@/components/containers/Page";
 import { client } from "../../api/apollo";
 
 export async function getStaticPaths() {
@@ -37,6 +37,19 @@ export async function getStaticProps({ params, preview = null }) {
 					status
 					updatedAt
 				}
+				v_categories {
+					slug
+					updatedAt
+					status
+					seo
+					picture
+					m_slug
+					m_picture
+					m_heading
+					heading
+					deletedAt
+					createdAt
+				}
 				products(where: {category: {slug: {_eq: $category}}}, limit: 10) {
 					updatedAt
 					status
@@ -67,13 +80,15 @@ export async function getStaticProps({ params, preview = null }) {
 
 	const page = get(result, "data.categories[0]", {});
 	const products = get(result, "data.products", []);
+	const categories = get(result, "data.v_categories", []);
 
 	return {
 		props: {
 			...page,
 			products,
+			categories,
 		},
 	};
 }
 
-export default Category;
+export default Catalog;
