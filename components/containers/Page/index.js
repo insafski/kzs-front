@@ -1,8 +1,11 @@
 import Page from "./Page";
 import Catalog from "./Catalog";
-
-export default Page;
+import Category from "./Category";
+import Manufacturer from "./Manufacturer";
 
 export {
 	Catalog,
+	Category,
+	Manufacturer,
 };
+export default Page;

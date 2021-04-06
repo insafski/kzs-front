@@ -6,31 +6,7 @@ import Block from "@/components/containers/Block";
 import Collapse from "@/components/containers/Collapse";
 import List from "@/components/containers/List";
 
-export default function Catalog({ heading, categories, products }) {
-	categories = categories.reduce((result, { slug, m_slug, m_picture, m_heading, ...props }) => {
-		const current = result.some(({ slug: currentSlug }) => currentSlug === slug);
-		const manufacturer = {
-			slug: m_slug,
-			picture: m_picture,
-			heading: m_heading,
-			categorySlug: slug,
-		};
-
-		if (current) {
-			const currentIdx = result.findIndex(({ slug: currentSlug }) => currentSlug === slug);
-
-			result[currentIdx].links.push(manufacturer);
-		} else {
-			result.push({
-				slug,
-				...props,
-				links: [manufacturer],
-			});
-		}
-
-		return result;
-	}, []);
-
+export default function Category({ heading, products, categories }) {
 	return (
 		<div className={"container"}>
 			<Seo metadata={{}} />
@@ -51,17 +27,17 @@ export default function Catalog({ heading, categories, products }) {
 	);
 }
 
-Catalog.propTypes = {
+Category.propTypes = {
 	heading: PropTypes.object,
 	categories: PropTypes.array,
 	products: PropTypes.array,
 	preview: PropTypes.bool,
 };
 
-Catalog.defaultProps = {
+Category.defaultProps = {
 	heading: {
 		type: "h1",
-		title: "Каталог",
+		title: "",
 		subtitle: "",
 		description: "",
 	},
@@ -70,4 +46,4 @@ Catalog.defaultProps = {
 	preview: false,
 };
 
-Catalog.displayName = "CatalogTemplate";
+Category.displayName = "CategoryTemplate";
