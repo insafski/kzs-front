@@ -16,7 +16,7 @@ export default function About({ heading, picture, bgColor }) {
 			background: bgColor,
 		}}>
 			<div className={"flex px-4 md:px-0"}>
-				<div className={cx("about__image hidden md:block relative md:w-1/2 rounded-3xl overflow-hidden", styles.about__image)}>
+				<div className={cx("about__image hidden md:block relative md:w-1/2 rounded-3xl overflow-hidden mt-4", styles.about__image)}>
 					<img src={src} alt={title} className={"w-full"} />
 				</div>
 				<div className={"about__content md:w-1/2 md:pl-14 md:pr-4"}>
