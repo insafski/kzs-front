@@ -16,7 +16,7 @@ export default function News({ heading, publishedAt, picture, slug }) {
 			<div className={"news-item__picture mb-2 h-80"}>
 				<Link href={`/novosti/${slug}`}>
 					<a>
-						<Picture items={picture} className={"object-none"}/>
+						<Picture items={picture} className={"object-cover"}/>
 					</a>
 				</Link>
 			</div>
