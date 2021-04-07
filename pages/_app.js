@@ -29,8 +29,6 @@ export default function Application({ Component, pageProps }) {
 	}
 	const { seo } = global;
 
-	// console.log("metadata", metadata);
-
 	return (
 		<>
 			<Head>

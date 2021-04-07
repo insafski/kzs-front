@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorPage from "next/error";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";

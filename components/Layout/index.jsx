@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import ContactBar from "./Bars/Contact";
 import Catalog from "./Bars/Catalog";
 import { Button, Input } from "@/components/elements/Form";
-import Icon from "@/components/elements/Icon";
+import Breadcrumbs from "@/components/elements/Breadcrumbs";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 
 export default function Layout({ children, global }) {
@@ -69,6 +69,7 @@ export default function Layout({ children, global }) {
 					</div>
 				}
 			/>
+			<Breadcrumbs />
 			{children}
 			<Footer
 				footer={footer}
