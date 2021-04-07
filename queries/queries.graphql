@@ -20,6 +20,22 @@ query DETAILED_NEWS($slug: String!) {
 	}
 }
 
+query CATALOG {
+	v_categories {
+		slug
+		updatedAt
+		status
+		seo
+		picture
+		m_slug
+		m_picture
+		m_heading
+		heading
+		deletedAt
+		createdAt
+	}
+}
+
 query GLOBALS {
 	globals {
 		updatedAt

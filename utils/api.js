@@ -1,9 +1,9 @@
-import { gql } from "@apollo/client";
 import get from "lodash/get";
 
+import makeCategories from "./makeCategories";
 import { client } from "../pages/api/apollo";
 
-import { GLOBALS, MANUFACTURERS } from "@/queries/queries.graphql";
+import { GLOBALS, MANUFACTURERS, CATALOG } from "@/queries/queries.graphql";
 
 export function getHasuraURL(path) {
 	return `${process.env.NEXT_HASURA_ENDPOINT || "http://localhost:1337"}${path}`;
@@ -54,4 +54,14 @@ export async function getManufacturersData() {
 	const manufacturers = get(result, "data.manufacturers", {});
 
 	return manufacturers;
+}
+
+export async function getCatalog() {
+	const result = await client.query({
+		query: CATALOG,
+	});
+
+	const catalog = makeCategories(get(result, "data.v_categories", []));
+
+	return catalog;
 }

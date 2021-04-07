@@ -2,17 +2,23 @@ import React, { cloneElement } from "react";
 import PropTypes from "prop-types";
 import { useToggle } from "ahooks";
 import { isMobile } from "react-device-detect";
+import get from "lodash/get";
+import Link from "next/link";
 import RCCollapse from "rc-collapse";
 
 import motion from "@/utils/motion.js";
 import Drawer from "@/components/containers/Drawer";
 import Icon from "@/components/elements/Icon";
+import Picture from "@/components/elements/Picture";
+import { useCatalog } from "@/components/widgets/Catalog";
 
 const Panel = RCCollapse.Panel;
 
 // TODO: NEED TO FIX THIS BAR !!!
 
-function Collapse({ accordion, items }) {
+function Collapse({ accordion }) {
+	const { catalog } = useCatalog();
+
 	return (
 		<RCCollapse
 			accordion={accordion}
@@ -21,7 +27,9 @@ function Collapse({ accordion, items }) {
 			expandIcon={({ isActive }) => <Icon type={isActive ? "angle-up" : "angle-down"} className={"mr-4"} />}
 		>
 			{
-				items.map(({ header, image, links = [] }, idx) => {
+				catalog.map(({ heading, picture, links = [] }, idx) => {
+					const title = get(heading, "title", "");
+
 					return (
 						<Panel
 							key={idx}
@@ -31,22 +39,17 @@ function Collapse({ accordion, items }) {
 										style={{
 											width: 80,
 											maxHeight: 80,
+											minWidth: 80,
 										}}
 										className={"flex justify-center mr-4"}
 									>
 										{
-											image && (
-												<img
-													src={image}
-													style={{
-														height: 40,
-														maxWidth: "100%",
-													}}
-												/>
+											picture && (
+												<Picture items={picture} className={"object-cover"} />
 											)
 										}
 									</div>
-									{header}
+									{title}
 								</div>
 							}
 							// showArrow={false}
@@ -55,19 +58,22 @@ function Collapse({ accordion, items }) {
 						>
 							<ul className={"flex flex-col bg-gray-100"}>
 								{
-									links.map(({ title, link }, idx) => {
+									links.map(({ heading, categorySlug, slug }, idx) => {
+										const title = get(heading, "title", "");
+
 										return (
 											<li
 												key={idx}
-												className={"px-8 py-4 border-gray-200 border-t"}
+												className={"border-gray-200 border-t"}
 											>
-												<a
-													href={link}
-													className={"flex flex-row items-center justify-between"}
-												>
-													{title}
-													<Icon type={"angle-right"} />
-												</a>
+												<Link href={`/katalog/${categorySlug}/${slug}`}>
+													<a
+														className={"flex flex-row items-center justify-between px-10 py-4 "}
+													>
+														{title}
+														<Icon type={"angle-right"} />
+													</a>
+												</Link>
 											</li>
 										);
 									})

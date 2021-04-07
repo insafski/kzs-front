@@ -5,12 +5,14 @@ import Head from "next/head";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
-import { getGlobalData, getManufacturersData } from "utils/api";
+import { getGlobalData, getManufacturersData, getCatalog } from "utils/api";
 import get from "lodash/get";
 
 import { FeedbackProvider } from "@/components/widgets/FeedbackForm";
 import { AddressProvider } from "@/components/widgets/Address";
+import { CatalogProvider } from "@/components/widgets/Catalog";
 import Layout from "@/components/Layout";
+
 import "@/styles/index.css";
 
 export default function Application({ Component, pageProps }) {
@@ -53,13 +55,15 @@ export default function Application({ Component, pageProps }) {
 				// 	handle: metadata.twitterUsername,
 				// }}
 			/>
-			<FeedbackProvider>
-				<AddressProvider>
-					<Layout global={global}>
-						<Component {...pageProps} />
-					</Layout>
-				</AddressProvider>
-			</FeedbackProvider>
+			<CatalogProvider catalog={pageProps.catalog}>
+				<FeedbackProvider>
+					<AddressProvider>
+						<Layout global={global}>
+							<Component {...pageProps} />
+						</Layout>
+					</AddressProvider>
+				</FeedbackProvider>
+			</CatalogProvider>
 		</>
 	);
 }
@@ -68,6 +72,7 @@ Application.getInitialProps = async ctx => {
 	const appProps = await App.getInitialProps(ctx);
 	const global = await getGlobalData();
 	const manufacturers = await getManufacturersData();
+	const catalog = await getCatalog();
 
 	// Pass the data to our page via props
 	return {
@@ -76,6 +81,7 @@ Application.getInitialProps = async ctx => {
 			global,
 			path: ctx.pathname,
 			manufacturers,
+			catalog,
 		},
 	};
 };

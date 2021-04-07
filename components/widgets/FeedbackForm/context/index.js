@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 export const FeedbackContext = createContext(
 	{
 		isOpen: false,
+		catalog: [],
 		toggle: () => Function,
 		handelClose: () => Function,
 		handleOpen: () => Function,
