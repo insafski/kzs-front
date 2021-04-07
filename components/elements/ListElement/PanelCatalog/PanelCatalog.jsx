@@ -47,7 +47,7 @@ export default function PanelCatalog({ picture, heading, links, ...props }) {
 								key={idx}
 								className={"border-gray-200 border-t"}
 							>
-								<Link href={`/catalog/${categorySlug}/${slug}`}>
+								<Link href={`/katalog/${categorySlug}/${slug}`}>
 									<a
 										className={"flex flex-row items-center justify-between px-8 py-4 "}
 									>

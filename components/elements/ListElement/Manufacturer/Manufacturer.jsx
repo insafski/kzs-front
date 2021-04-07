@@ -9,7 +9,7 @@ export default function Manufacturer({ heading, slug, picture }) {
 
 	return (
 		<div className={"manufacturer flex justify-center md:px-8"}>
-			<a href={`/catalog/${slug}`}>
+			<a href={`/katalog/${slug}`}>
 				<img
 					src={src}
 					alt={title}
