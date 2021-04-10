@@ -1,14 +1,12 @@
 import React from "react";
-import { gql } from "@apollo/client";
 import get from "lodash/get";
-
-import Page from "../components/containers/Page";
 
 import { MAIN_PAGE } from "@/queries/queries.graphql";
 
+import Page from "../components/containers/Page";
 import { client } from "./api/apollo";
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps({ params }) {
 	const result = await client.query({
 		query: MAIN_PAGE,
 		variables: params,
@@ -23,6 +21,7 @@ export async function getStaticProps({ params, preview = null }) {
 			...page,
 			news,
 			products,
+			breadcrumbs: false,
 		},
 	};
 }

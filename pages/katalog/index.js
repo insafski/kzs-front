@@ -5,7 +5,7 @@ import { Catalog } from "@/components/containers/Page";
 
 import { client } from "../api/apollo";
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps() {
 	const result = await client.query({
 		query: gql`
 			query CategoryPage {

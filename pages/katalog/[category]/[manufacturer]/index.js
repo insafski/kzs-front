@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps({ params }) {
 	const result = await client.query({
 		query: gql`
 			query Manufacturer($manufacturer: String!, $category: String!) {
@@ -56,6 +56,10 @@ export async function getStaticProps({ params, preview = null }) {
 					heading
 					deletedAt
 					createdAt
+				}
+				categories(where: {slug: {_eq: $category}}) {
+					heading
+					slug
 				}
 				v_categories {
 					slug
@@ -101,12 +105,17 @@ export async function getStaticProps({ params, preview = null }) {
 	const page = get(result, "data.manufacturers[0]", {});
 	const products = get(result, "data.products", []);
 	const categories = get(result, "data.v_categories", []);
+	const category = get(result, "data.categories[0]", []);
 
 	return {
 		props: {
 			...page,
 			products,
 			categories,
+			breadcrumbItems: [{
+				title: get(category, "heading.title", ""),
+				slug: `/katalog/${get(category, "slug", "")}`,
+			}],
 		},
 	};
 }

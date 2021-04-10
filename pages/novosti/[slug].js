@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps({ params }) {
 	const result = await client.query({
 		query: DETAILED_NEWS,
 		variables: params,
@@ -35,7 +35,13 @@ export async function getStaticProps({ params, preview = null }) {
 	const page = get(result, "data.news[0]", {});
 
 	return {
-		props: page,
+		props: {
+			...page,
+			breadcrumbItems: [{
+				title: "Новости",
+				slug: "/novosti",
+			}],
+		},
 	};
 }
 

@@ -58,7 +58,7 @@ export default function Application({ Component, pageProps }) {
 			<CatalogProvider catalog={pageProps.catalog}>
 				<FeedbackProvider>
 					<AddressProvider>
-						<Layout global={global}>
+						<Layout global={global} pageProps={pageProps}>
 							<Component {...pageProps} />
 						</Layout>
 					</AddressProvider>

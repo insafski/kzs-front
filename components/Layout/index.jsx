@@ -12,13 +12,25 @@ import { Button, Input } from "@/components/elements/Form";
 import Breadcrumbs from "@/components/elements/Breadcrumbs";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 
-export default function Layout({ children, global }) {
+export default function Layout({ children, global, pageProps }) {
 	const footer = get(global, "footer", {});
 	const contacts = get(global, "contacts.contacts", []);
 	const social = get(global, "contacts.social", []);
 	const headerMiddle = get(global, "header.middle", {});
 
 	const { handleOpen } = useFeedback();
+
+	const breadcrumbItems = get(pageProps, "breadcrumbItems", []);
+	const items = get(pageProps, "breadcrumbs", true)
+		?
+		[
+			...breadcrumbItems,
+			{
+				title: get(pageProps, "seo.metaTitle", ""),
+				slug: get(pageProps, "slug", ""),
+			},
+		]
+		: [];
 
 	// TODO: Need to make multiple fields for footer andd header (navigation, meta, etc. ).
 
@@ -69,7 +81,7 @@ export default function Layout({ children, global }) {
 					</div>
 				}
 			/>
-			<Breadcrumbs />
+			<Breadcrumbs items={items} />
 			{children}
 			<Footer
 				footer={footer}
@@ -83,9 +95,11 @@ export default function Layout({ children, global }) {
 Layout.propTypes = {
 	children: PropTypes.node,
 	global: PropTypes.object,
+	pageProps: PropTypes.object,
 };
 
 Layout.defaultProps = {
 	children: [],
 	global: {},
+	pageProps: {},
 };

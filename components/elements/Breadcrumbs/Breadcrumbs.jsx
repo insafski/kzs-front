@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import PropTypes from "prop-types";
+// import compact from "lodash/compact";
 
 const convertBreadcrumb = string => {
 	return string
@@ -11,29 +13,19 @@ const convertBreadcrumb = string => {
 		.toUpperCase();
 };
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({ items }) {
 	const router = useRouter();
-	const [breadcrumbs, setBreadcrumbs] = useState(null);
+	const [breadcrumbs, setBreadcrumbs] = useState(items);
+
+	// const linkPath = router.asPath.split("/");
+
+	// const showBreadcrumbs = !!compact(linkPath).length;
 
 	useEffect(() => {
-		window.ss = router;
-		if (router) {
-			const linkPath = router.asPath.split("/");
-
-			linkPath.shift();
-
-			const pathArray = linkPath.map((path, i) => {
-				return {
-					breadcrumb: path,
-					href: `/${linkPath.slice(0, i + 1).join("/")}`,
-				};
-			});
-
-			setBreadcrumbs(pathArray);
-		}
+		setBreadcrumbs(items);
 	}, [router]);
 
-	return breadcrumbs ? (
+	return breadcrumbs.length ? (
 		<div className={"container py-4"}>
 			<nav
 				aria-label={"breadcrumbs"}
@@ -48,17 +40,24 @@ export default function Breadcrumbs() {
 						</Link>
 					</li>
 					{
-						breadcrumbs.map(({ href, breadcrumb }, idx) => {
+						breadcrumbs.map(({ slug, title }, idx) => {
 							return (
 								<li
-									key={`${href}-${idx}`}
+									key={`${slug}-${idx}`}
 									className={"breadcrumbs__item ml-2"}
 								>
-									<Link href={href}>
-										<a className={"breadcrumbs__link"}>
-											{convertBreadcrumb(breadcrumb)}
-										</a>
-									</Link>
+									{"> "}
+									{
+										breadcrumbs.length - 1 !== idx
+											? (
+												<Link href={slug}>
+													<a className={"breadcrumbs__link"}>
+														{convertBreadcrumb(title)}
+													</a>
+												</Link>
+											)
+											: convertBreadcrumb(title)
+									}
 								</li>
 							);
 						})
@@ -68,3 +67,7 @@ export default function Breadcrumbs() {
 		</div>
 	) : null;
 }
+
+Breadcrumbs.propTypes = {
+	items: PropTypes.array,
+};

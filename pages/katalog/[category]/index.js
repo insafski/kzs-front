@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params, preview = null }) {
+export async function getStaticProps({ params }) {
 	const result = await client.query({
 		query: gql`
 			query Category($category: String!) {
@@ -87,6 +87,10 @@ export async function getStaticProps({ params, preview = null }) {
 			...page,
 			products,
 			categories,
+			breadcrumbItems: [{
+				title: "Каталог",
+				slug: "/katalog",
+			}],
 		},
 	};
 }

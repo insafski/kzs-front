@@ -20,11 +20,11 @@ export default function Product({ heading, picture, slug, category, articul, man
 	return (
 		<div className={"product mb-8 px-2 md:w-1/2"}>
 			<div className={"product__picture mb-2"}>
-				<Link href={`/katalog/${categorySlug}/${manufacturerSlug}/${slug}`}>
-					<a>
-						<Picture items={picture} className={"w-full object-contain"} />
-					</a>
-				</Link>
+				{/* <Link href={`/katalog/${categorySlug}/${manufacturerSlug}/${slug}`}> */}
+				{/* <a> */}
+				<Picture items={picture} className={"w-full object-contain"} />
+				{/* </a> */}
+				{/* </Link> */}
 			</div>
 			<div className={"product__articul text-sm mb-2"}>
 				<span className={"font-semibold"}>Артикул: </span>
@@ -36,9 +36,9 @@ export default function Product({ heading, picture, slug, category, articul, man
 				</Link>
 			</div>
 			<div className={"product__title text-sm md:text-base font-semibold md:h-12 mb-4"}>
-				<Link href={`/katalog/${categorySlug}/${manufacturerSlug}/${slug}`}>
-					{title}
-				</Link>
+				{/* <Link href={`/katalog/${categorySlug}/${manufacturerSlug}/${slug}`}> */}
+				{title}
+				{/* </Link> */}
 			</div>
 			<div className={"product__call"}>
 				<Button
