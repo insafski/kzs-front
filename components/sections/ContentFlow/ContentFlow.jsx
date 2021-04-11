@@ -26,10 +26,10 @@ export default function ContentFlow({ items }) {
 										)
 									}
 								>
-									<div className={"content-flow__picture md:px-4"}>
+									<div className={"content-flow__picture md:px-4 flex-1"}>
 										<Picture items={picture} />
 									</div>
-									<div className={"content-flow__content md:px-4"}>
+									<div className={"text-justify flex-1"}>
 										<ReactMarkdown>
 											{content}
 										</ReactMarkdown>

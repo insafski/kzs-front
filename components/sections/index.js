@@ -12,6 +12,7 @@ import ImageGallery from "./ImageGallery";
 import Products from "./Products";
 import Text from "./Text";
 import VideoGallery from "./VideoGallery";
+import Inn from "./Inn";
 
 export default {
 	"about": About,
@@ -30,6 +31,7 @@ export default {
 	"text": Text,
 	"video-gallery": VideoGallery,
 	"imperial": "div",
+	"inn": Inn,
 	get(type) {
 		return this[type] || this.imperial;
 	},

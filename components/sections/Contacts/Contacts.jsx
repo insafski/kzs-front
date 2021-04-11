@@ -13,7 +13,7 @@ export default function Contacts({ heading }) {
 							<div className="mb-1">
 								<i className="kzs-mail mr-2"></i>
 							</div>
-							<a href="mailto:marat-agro@mail.ru">
+							<a href="mailto:marat-agro@mail.ru" className={"hover:underline"}>
 							marat-agro@mail.ru
 							</a>
 						</li>
@@ -21,7 +21,7 @@ export default function Contacts({ heading }) {
 							<div className="mb-1">
 								<i className="kzs-skype mr-2"></i>
 							</div>
-							<a href="skype:marat-agro?chat">
+							<a href="skype:marat-agro?chat" className={"hover:underline"}>
 							marat-agro
 							</a>
 						</li>
@@ -53,17 +53,19 @@ export default function Contacts({ heading }) {
 							</a>
 						</li> */}
 					</ul>
-					<div className="social flex justify-center md:justify-start flex-1 md:px-4">
-						<a href="https://www.instagram.com/zapchasti_na_pogruzchik_02_16/" className="social__item text-3xl" target="_blank" rel="noreferrer">
-							<i className="kzs-instagram"></i>
-
-						</a>
-						<a href="https://vk.com/" className="social__item text-3xl" target="_blank" rel="noreferrer">
-							<i className="kzs-vkontakte"></i>
-						</a>
-						<a href="https://www.facebook.com/zapchastinapogruzchik0216/" className="social__item text-3xl" target="_blank" rel="noreferrer">
-							<i className="kzs-facebook-squared"></i>
-						</a>
+					<div className={"flex-1 md:px-4"}>
+						<p className={"text-center md:text-left font-bold text-xl"}>Мы в социальных сетях</p>
+						<div className="social flex justify-center md:justify-start">
+							<a href="https://www.instagram.com/zapchasti_na_pogruzchik_02_16/" className="social__item text-3xl" target="_blank" rel="noreferrer">
+								<i className="kzs-instagram"></i>
+							</a>
+							<a href="https://vk.com/" className="social__item text-3xl" target="_blank" rel="noreferrer">
+								<i className="kzs-vkontakte"></i>
+							</a>
+							<a href="https://www.facebook.com/zapchastinapogruzchik0216/" className="social__item text-3xl" target="_blank" rel="noreferrer">
+								<i className="kzs-facebook-squared"></i>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
