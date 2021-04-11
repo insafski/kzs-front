@@ -31,16 +31,16 @@ export default function Contacts({ heading }) {
 							<div className="mb-1">
 								<i className="kzs-phone mr-2"></i>
 							</div>
-							<a href="tel:+79870010565">
-							+7 (987) 001-05-65 - Харисов Рамиль (менеджер)
+							<a href="tel:+79872265040">
+							+7 (987) 226-50-40 - Хасанов Марат Васихович (директор)
 							</a>
 						</li>
 						<li className="md:w-full text-lg mb-4 flex">
 							<div className="mb-1">
 								<i className="kzs-phone mr-2"></i>
 							</div>
-							<a href="tel:+79872265040">
-							+7 (987) 226-50-40 - Хасанов Марат Васихович (директор)
+							<a href="tel:+79870010565">
+							+7 (987) 001-05-65 - Харисов Рамиль (менеджер)
 							</a>
 						</li>
 						{/* <li className="md:w-full text-lg mb-4 flex">

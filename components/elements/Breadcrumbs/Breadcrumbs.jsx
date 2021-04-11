@@ -36,7 +36,7 @@ export default function Breadcrumbs({ items }) {
 				>
 					<li className={"breadcrumbs__item"}>
 						<Link href={"/"}>
-							<a className={"breadcrumbs__link"}>Главная</a>
+							<a className={"breadcrumbs__link hover:underline hover:text-yellow-500 transition-all duration-200 ease-in-out"}>Главная</a>
 						</Link>
 					</li>
 					{
@@ -51,7 +51,7 @@ export default function Breadcrumbs({ items }) {
 										breadcrumbs.length - 1 !== idx
 											? (
 												<Link href={slug}>
-													<a className={"breadcrumbs__link"}>
+													<a className={"breadcrumbs__link hover:underline hover:text-yellow-500 transition-all duration-200 ease-in-out"}>
 														{convertBreadcrumb(title)}
 													</a>
 												</Link>

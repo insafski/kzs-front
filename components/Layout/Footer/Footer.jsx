@@ -23,7 +23,7 @@ export default function Footer({ footer, contacts, social }) {
 					<ul className={"mt-8 md:mt-0"}>
 						{
 							get(footer, "catalog", []).map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-2 text-base"}>
+								<li key={idx} className={"mb-2 text-base hover:underline hover:text-yellow-500 transition-colors duration-200 ease-in-out"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -37,7 +37,7 @@ export default function Footer({ footer, contacts, social }) {
 					<ul className={"mt-8 md:mt-0"}>
 						{
 							navigation.map(({ link, title }, idx) => (
-								<li key={idx} className={"mb-2 text-base"}>
+								<li key={idx} className={"mb-2 text-base hover:underline hover:text-yellow-500 transition-colors duration-200 ease-in-out"}>
 									<Link href={link}>
 										{title}
 									</Link>
@@ -56,7 +56,7 @@ export default function Footer({ footer, contacts, social }) {
 											<Icon type={icon} className={"mr-2"} />
 											{title}:
 										</div>
-										<a href={link}>
+										<a href={link} className={"hover:underline"}>
 											{showtitle}
 										</a>
 									</li>

@@ -5,16 +5,23 @@ import get from "lodash/get";
 
 import Picture from "@/components/elements/Picture";
 import { Button } from "@/components/elements/Form";
-import Icon from "@/components/elements/Icon";
+// import Icon from "@/components/elements/Icon";
 import { useFeedback } from "@/components/widgets/FeedbackForm";
 
-export default function Product({ heading, picture, slug, category, articul, manufacturers_products }) {
+export default function Product({
+	heading,
+	picture,
+	// slug,
+	category,
+	articul,
+	// manufacturers_products,
+}) {
 	const { handleOpen } = useFeedback();
 
 	const title = get(heading, "title", "");
 	const categorySlug = get(category, "slug", "");
 	const categoryTitle = get(category, "heading.title", "");
-	const manufacturerSlug = get(manufacturers_products, "[0].manufacturer.slug", "");
+	// const manufacturerSlug = get(manufacturers_products, "[0].manufacturer.slug", "");
 	// const description = get(heading, "description", "");
 
 	return (

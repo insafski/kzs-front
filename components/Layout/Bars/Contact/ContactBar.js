@@ -31,8 +31,8 @@ export default function ContactBar({ global }) {
 									<li key={idx} className={"header-top__item ml-4"}>
 										{
 											cloneElement(
-												<a href={link} className={"text-sm"}>
-													<Icon type={icon} className={"mr-1"} />
+												<a href={link} className={"group text-sm hover:underline"}>
+													<Icon type={icon} className={"mr-1 group-hover:text-yellow-500 transition-colors duration-100 ease-in-out"} />
 													{showtitle}
 												</a>,
 												{

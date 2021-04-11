@@ -5,7 +5,9 @@ export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang={"ru"}>
-				<Head />
+				<Head>
+					<link rel="shortcut icon" href="/favicon.ico" />
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
