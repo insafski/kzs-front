@@ -14,7 +14,7 @@ export default function ContentFlow({ items }) {
 				{
 					items.map(({ heading, picture, content }, idx) => {
 						return (
-							<div key={idx} className={"content-flow__item"}>
+							<div key={idx} className={"content-flow__item mb-14"}>
 								<Heading heading={heading} />
 								<div
 									className={

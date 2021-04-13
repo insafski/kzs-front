@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 import Block from "@/components/containers/Block";
+import Icon from "@/components/elements/Icon";
 
 import styles from "./Text.module.scss";
 
@@ -12,6 +13,7 @@ export default function Text({ heading, text }) {
 		<Block heading={heading} className={"text"}>
 			{text === "table-price" ?
 				<div className={cx("container", styles.markdown)}>
+					<DownloadTablePrice />
 					<TablePrice />
 				</div> :
 				<div className={cx("container", styles.markdown)}>
@@ -37,10 +39,18 @@ Text.propTypes = {
 	text: PropTypes.string,
 };
 
+function DownloadTablePrice() {
+	return (
+		<div className={"mb-4 text-xl font-bold text-center md:text-left hover:underline hover:text-yellow-500 transition-colors duration-100 ease-in-out"}>
+			<Icon type={"box"} className={"mr-4"} />
+			<a href="https://kzs.s3.eu-north-1.amazonaws.com/files/%D0%9D%D0%BE%D1%80%D0%BC%D1%8B_%D0%B8_%D1%80%D0%B0%D1%81%D1%86%D0%B5%D0%BD%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82_%D0%BF%D0%BE_%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D1%83_%D0%BF%D0%BE%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8.xlsx" download>Скачать таблицу</a>
+		</div>
+	);
+}
+
 function TablePrice() {
 	return (
 		<table className="w-full table-fixed border border-green-800 text-center text-lg">
-
 			<tbody>
 				<tr>
 					<td className={"border w-1/2 p-5"} rowSpan={2}>Наименование работы</td>
@@ -627,6 +637,5 @@ function TablePrice() {
 				</tr>
 			</tbody>
 		</table>
-
 	);
 }

@@ -1,6 +1,7 @@
 import React, { createElement } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import trim from "lodash/trim";
 
 import styles from "./heading.module.scss";
 export default function Heading({ className, heading, underline }) {
@@ -15,7 +16,7 @@ export default function Heading({ className, heading, underline }) {
 	return !!renderHeading && (
 		<div className={cx("heading")}>
 			{
-				title && createElement(
+				trim(title) && createElement(
 					type,
 					{
 						className: cx("heading__title font-bold relative", className, classNames[type], { [styles._title]: underline }),

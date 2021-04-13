@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import PropTypes from "prop-types";
 // import compact from "lodash/compact";
+import Icon from "@/components/elements/Icon";
 
 const convertBreadcrumb = string => {
 	return string
@@ -46,7 +47,7 @@ export default function Breadcrumbs({ items }) {
 									key={`${slug}-${idx}`}
 									className={"breadcrumbs__item ml-2"}
 								>
-									{"> "}
+									<Icon type={"angle-right"} />
 									{
 										breadcrumbs.length - 1 !== idx
 											? (
